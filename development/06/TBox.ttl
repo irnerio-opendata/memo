@@ -1,0 +1,202 @@
+@prefix : <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#cites
+
+:cites a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#datesBackTo
+
+:datesBackTo a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasCreator
+
+:hasCreator a owl:ObjectProperty ;
+    rdfs:range :Person ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasEmbodiment
+
+:hasEmbodiment a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasExtent
+
+:hasExtent a owl:ObjectProperty ;
+    rdfs:range :Extent ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasMaterial
+
+:hasMaterial a owl:ObjectProperty ;
+    rdfs:range :Material ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasPart
+
+:hasPart a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasSizeMeasurementUnit
+
+:hasSizeMeasurementUnit a owl:ObjectProperty ;
+    rdfs:domain :Extent ;
+    rdfs:range :SizeMeasurementUnit ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+# 
+# 
+# #################################################################
+# #
+# #    Datatype Properties
+# #
+# #################################################################
+# 
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasLength
+
+:hasLength a owl:DatatypeProperty ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasIdentifier
+
+:hasIdentifier a owl:DatatypeProperty ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasIntervalDate
+
+:hasIntervalDate a owl:DatatypeProperty ;
+    rdfs:domain :TimeInterval ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasIntervalEndDate
+
+:hasIntervalEndDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasIntervalDate ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasInteralStartDate
+
+:hasIntervalStartDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasIntervalDate ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasNumberOfColumns
+
+:hasNumberOfColumns a owl:DatatypeProperty ;
+    rdfs:domain :Side ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasTitle
+
+:hasTitle a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#hasWidth
+
+:hasWidth a owl:DatatypeProperty ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+#
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+#
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Binding
+
+:Binding a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Book
+
+:Book a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Codex
+
+:Codex a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Extent
+
+:Extent a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Folio
+
+:Folio a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Manuscript
+
+:Manuscript a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Material
+
+:Material a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Person
+
+:Person a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#SizeMeasurementUnit
+
+:SizeMeasurementUnit a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#Text
+
+:Text a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#TimeInterval
+
+:TimeInterval a owl:Class ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#millimeters
+
+:millimeters a :SizeMeasurementUnit ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#paper
+
+:paper a :Material ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#parchment
+
+:parchment a :Material ;
+    rdfs:isDefinedBy <https://n-e-s-p.github.io/project-irnerio/development/06/TBox.ttl#> .
