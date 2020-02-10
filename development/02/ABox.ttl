@@ -1,12 +1,12 @@
-@prefix : <https://github.com/irnerio-opendata/memo/development/02/ABox.ttl/> .
-@prefix memo: <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Linking to the main ontology
-<https://github.com/irnerio-opendata/memo/development/02/ABox.ttl/> a owl:Ontology ;
-   owl:imports <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
+   owl:imports <https://w3id.org/irnerio/ontology/memo> .
 
 :incipit_1 a memo:TextualMetadataInTime ;
     memo:withTextualRole memo:incipit ;

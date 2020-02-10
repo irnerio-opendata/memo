@@ -3,8 +3,8 @@
 ## CQ_2.1
 Return all the textual metadata in time with textual role "incipit" which have been provided between 1750 and 1850 and the manuscripts they are related to.
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/02/ABox.ttl/>
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/>
+PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?tmit ?manuscript
@@ -26,8 +26,8 @@ WHERE {
 Return all the textual metadata in time whose contents are based only on a text, their respective textual roles and the manuscripts they are related to.
 
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/02/ABox.ttl/>
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/>
+PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT ?tmit ?role ?manuscript
 WHERE {
