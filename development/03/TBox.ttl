@@ -1,0 +1,171 @@
+@prefix : <https://w3id.org/irnerio/ontology/memo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/irnerio/ontology/memo> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/irnerio/ontology/memo/annotates
+
+:annotates a owl:ObjectProperty ;
+    rdfs:subPropertyOf :refersTo ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/cites
+
+:cites a owl:ObjectProperty ;
+    rdfs:subPropertyOf :refersTo ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasCitedEntity
+
+:hasCitedEntity a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasCitingEntity
+
+:hasCitingEntity a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasContent
+
+:hasContent a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasTextualMetadata
+
+:hasTextualMetadata a owl:ObjectProperty ;
+    rdfs:range :TextualMetadataInTime ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasEmbodiment
+
+:hasEmbodiment a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasPart .
+
+:hasPart a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasRealization
+
+:hasRealization a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .    
+#
+#
+# #################################################################
+# #
+# #    Datatype Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/irnerio/ontology/memo/hasTitle
+
+:hasTitle a owl:DatatypeProperty ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+#
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2002/07/owl#Thing
+
+owl:Thing a owl:Class .
+#
+# https://w3id.org/irnerio/ontology/memo/Book
+
+:Book a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/CatalogDocument
+
+:CatalogDocument a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Citation
+
+:Citation a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Codex
+
+:Codex a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/CriticalEdition
+
+:CriticalEdition a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/CriticalEditionVolume
+
+:CriticalEditionVolume a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Folio
+
+:Folio a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Gloss
+
+:Gloss a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Manuscript
+
+:Manuscript a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Text
+
+:Text a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime
+
+:TextualMetadataInTime a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/TextualRole
+
+:TextualRole a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/irnerio/ontology/memo/explicit
+
+:explicit a :TextualRole ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/finalRubric
+
+:finalRubric a :TextualRole ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/incipit
+
+:incipit a :TextualRole ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
