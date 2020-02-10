@@ -1,11 +1,11 @@
-@prefix : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> .
-@prefix memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> .
+@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # Linking to the main ontology
-<https://github.com/irnerio-opendata/memo/development/01/ABox.ttl> a owl:Ontology ;
-    owl:imports <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
+    owl:imports <https://w3id.org/irnerio/ontology/memo> .
 
 :manuscript_1 a memo:Manuscript ;
     memo:hasPart :gloss_a , :gloss_b , :gloss_c , :gloss_d , :gloss_e , :gloss_f , :text_1 .

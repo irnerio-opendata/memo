@@ -1,8 +1,8 @@
-@prefix : <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> .
+@prefix : <https://w3id.org/irnerio/ontology/memo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> a owl:Ontology .
+<https://w3id.org/irnerio/ontology/memo> a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -12,32 +12,32 @@
 # #################################################################
 # 
 # 
-# https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/annotates
+# https://w3id.org/irnerio/ontology/memo/annotates
 
 :annotates a owl:ObjectProperty ;
     rdfs:subPropertyOf :refersTo ;
-    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/hasContent
+# https://w3id.org/irnerio/ontology/memo/hasContent
 
 :hasContent a owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/hasPart .
+# https://w3id.org/irnerio/ontology/memo/hasPart .
 
 :hasPart a owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/cites
+# https://w3id.org/irnerio/ontology/memo/cites
 
 :cites a owl:ObjectProperty ;
     rdfs:subPropertyOf :refersTo ;
-    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/refersTo
+# https://w3id.org/irnerio/ontology/memo/refersTo
 
 :refersTo a owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 # 
 # 
 # 
@@ -52,18 +52,18 @@
 
 owl:Thing a owl:Class .
 #
-# https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/Gloss
+# https://w3id.org/irnerio/ontology/memo/Gloss
 
 :Gloss a owl:Class ;
     rdfs:subClassOf :Comment ;
-    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/Manuscript
+# https://w3id.org/irnerio/ontology/memo/Manuscript
 
 :Manuscript a owl:Class ;
-    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/Text
+# https://w3id.org/irnerio/ontology/memo/Text
 
 :Text a owl:Class ;
-    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl> .
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .

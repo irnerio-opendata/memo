@@ -4,8 +4,8 @@
 Return all the glosses that are part of `manuscript_1`.
 
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> 
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> 
+PREFIX : <https://w3id.org/irnerio/data/memo/> 
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/> 
 
 SELECT ?gloss
 
@@ -21,8 +21,8 @@ WHERE {
 Return all the first-level glosses that are part of `manuscript_1` and cite `text_1`.
 
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> 
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> 
+PREFIX : <https://w3id.org/irnerio/data/memo/> 
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/> 
 
 SELECT ?gloss
 
@@ -39,8 +39,8 @@ WHERE {
 Return all the second-level glosses that are part of `manuscript_1` and that annotate or cite `text_1`.
 
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> 
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> 
+PREFIX : <https://w3id.org/irnerio/data/memo/> 
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/> 
 
 SELECT ?gloss
 
@@ -57,8 +57,8 @@ WHERE {
 Return all the second-level glosses that are part of `manuscript_1` and that annotate or refer to `gloss_a`.
 
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/>
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/>
+PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT ?gloss
 
@@ -75,8 +75,8 @@ WHERE {
 Return all the second-level glosses that annotate or cite `text_1`.
 
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> 
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> 
+PREFIX : <https://w3id.org/irnerio/data/memo/> 
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/> 
 
 SELECT ?gloss
 
@@ -92,8 +92,8 @@ WHERE {
 Return all the third-level glosses that annotate `gloss_b`.
 
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> 
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> 
+PREFIX : <https://w3id.org/irnerio/data/memo/> 
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/> 
 
 SELECT ?gloss
 
@@ -109,8 +109,8 @@ WHERE {
 Return all the glosses that cite a manuscript.
 
 ```
-PREFIX : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> 
-PREFIX memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> 
+PREFIX : <https://w3id.org/irnerio/data/memo/> 
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/> 
 
 SELECT ?gloss
 WHERE {
