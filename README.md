@@ -1,1 +1,1 @@
-# memo
+# The Medieval Manuscripts Ontology (MeMO)
