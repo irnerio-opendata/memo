@@ -1,0 +1,153 @@
+@prefix : <https://w3id.org/irnerio/ontology/memo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/irnerio/ontology/memo> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/irnerio/ontology/memo/annotates
+
+:annotates a owl:ObjectProperty ;
+    rdfs:subPropertyOf :refersTo ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/cites
+
+:cites a owl:ObjectProperty ;
+    rdfs:subPropertyOf :refersTo ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasCreator
+
+:hasCreator a owl:ObjectProperty ;
+    rdfs:range :Person ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasLiteral
+
+:hasLiteral a owl:ObjectProperty ;
+    rdfs:range :Literal ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasSameLiteralValueAs
+
+:hasSameLiteralValueAs a owl:ObjectProperty ;
+    rdfs:domain :Literal ;
+    rdfs:range:Literal ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasPart
+
+:hasPart a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/isValidInInterval
+
+:isValidInInterval a owl:ObjectProperty ;
+    rdfs:domain :Literal ;
+    rdfs:range :TimeInterval ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+#
+# #################################################################
+# #
+# #    Datatype Properties
+# #
+# #################################################################
+# 
+# 
+#
+# https://w3id.org/irnerio/ontology/memo/hasCreationDate
+
+:hasCreationDate a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasIntervalDate
+
+:hasIntervalDate a owl:DatatypeProperty ;
+    rdfs:domain :TimeInterval ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasIntervalEndDate
+
+:hasIntervalEndDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasIntervalDate ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasIntervalStartDate
+
+:hasIntervalStartDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasIntervalDate ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasLiteralValue
+
+:hasLiteralValue a owl:DatatypeProperty ;
+    rdfs:domain :Literal ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasName
+
+:hasName a owl:DatatypeProperty ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+#
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+#
+# https://w3id.org/irnerio/ontology/memo/Gloss
+
+:Gloss a owl:Class ;
+    rdfs:subClassOf :Comment ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Literal
+
+:Literal a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Manuscript
+
+:Manuscript a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Person
+
+:Person a owl:Class ;
+    rdfs:subClassOf :Agent ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Text
+
+:Text a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/TimeInterval
+
+:TimeInterval a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasIntervalStartDate ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :hasIntervalEndDate ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
