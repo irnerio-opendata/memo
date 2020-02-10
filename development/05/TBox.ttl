@@ -1,0 +1,148 @@
+@prefix : <https://w3id.org/irnerio/ontology/memo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/irnerio/ontology/memo> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/irnerio/ontology/memo/annotates
+
+:annotates a owl:ObjectProperty ;
+    rdfs:subPropertyOf :refersTo ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/cites
+
+:cites a owl:ObjectProperty ;
+    rdfs:subPropertyOf :refersTo ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasCreator
+
+:hasCreator a owl:ObjectProperty ;
+    rdfs:range :Person ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://n-e-s-p.github.io/project-irnerio/development/05/TBox.ittl#hasEmbodiment
+
+:hasEmbodiment a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/hasPart
+
+:hasPart a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/refersTo
+
+:refersTo a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+#
+#
+# https://w3id.org/irnerio/ontology/memo/BackBoard
+
+:BackBoard a owl:Class ;
+    rdfs:subClassOf :Board ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Binding
+
+:Binding a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Board
+
+:Board a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Codex
+
+:Codex a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Cover
+
+:Cover a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Flyleaf
+
+:Flyleaf a owl:Class ;
+    rdfs:subClassOf :Folio ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Folio
+
+:Folio a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/FrontBoard
+
+:FrontBoard a owl:Class ;
+    rdfs:subClassOf :Board ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Gloss
+
+:Gloss a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Manuscript
+
+:Manuscript a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasPart ;
+        owl:allValuesFrom [
+            a owl:Class ;
+            owl:unionOf ( :Gloss :Text )
+        ]
+    ] ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Person
+
+:Person a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Plate
+
+:Plate a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Recto
+
+:Recto a owl:Class ;
+    rdfs:subClassOf :Side ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Side
+
+:Side a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Text
+
+:Text a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
+# https://w3id.org/irnerio/ontology/memo/Verso
+
+:Verso a owl:Class ;
+    rdfs:subClassOf :Side ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
