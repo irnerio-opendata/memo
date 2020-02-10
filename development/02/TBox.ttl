@@ -1,0 +1,154 @@
+@prefix : <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/atTime
+
+:atTime a owl:ObjectProperty ;
+    rdfs:range :TimeInterval ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/hasTextualMetadata
+
+:hasTextualMetadata a owl:ObjectProperty ;
+    rdfs:range :TextualMetadataInTime ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/hasPart .
+
+:hasPart a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/isBasedOn
+
+:isBasedOn a owl:ObjectProperty ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf ( :Text :Gloss )
+    ] ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/relatesToManuscript
+
+:relatesToTextualContent a owl:ObjectProperty ;
+    rdfs:domain :TextualMetadataInTime ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/withTextualRole
+
+:withTextualRole a owl:ObjectProperty ;
+    rdfs:domain :TextualMetadataInTime ;
+    rdfs:range :TextualRole ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+# 
+# 
+# #################################################################
+# #
+# #    Datatype Properties
+# #
+# #################################################################
+# 
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/hasIntervalDate
+
+:hasIntervalDate a owl:DatatypeProperty ;
+    rdfs:domain :TimeInterval ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/hasIntervalEndDate
+
+:hasIntervalEndDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasIntervalDate ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/hasIntervalStartDate
+
+:hasIntervalStartDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasIntervalDate ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2002/07/owl#Thing
+
+owl:Thing a owl:Class .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/Gloss
+
+:Gloss a owl:Class ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/TimeInterval
+
+:TimeInterval a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasIntervalStartDate ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :hasIntervalEndDate ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+    ] ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/Manuscript
+
+:Manuscript a owl:Class ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/Text
+
+:Text a owl:Class ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/TextualMetadataInTime
+
+:TextualMetadataInTime a owl:Class ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/TextualRole
+
+:TextualRole a owl:Class ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/explicit
+
+:explicit a :TextualRole ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/finalRubric
+
+:finalRubric a :TextualRole ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
+#
+# https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/incipit
+
+:incipit a :TextualRole ;
+    rdfs:isDefinedBy <https://github.com/irnerio-opendata/memo/development/02/TBox.ttl/> .
