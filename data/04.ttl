@@ -1,0 +1,225 @@
+@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Linking to the main ontology
+<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
+   owl:imports <https://w3id.org/irnerio/ontology/memo> .
+
+:manuscript_1 a memo:Manuscript ;
+    memo:hasPart :gloss_a , :gloss_b , :gloss_c , :gloss_d , :gloss_e , :gloss_f , :text_1 ;
+    memo:hasCreator :author_1 ;
+    memo:hasCreationDate "1001"^^xsd:gYear .
+
+:author_1 a memo:Person ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Barbalo" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "950"^^xsd:gYear ;
+        ]
+    ] .
+
+:gloss_a a memo:Gloss ;
+    memo:hasCreator :glossator_1 ;
+    memo:hasCreationDate "1240"^^xsd:gYear ;
+    memo:cites :text_1 .
+
+:gloss_b a memo:Gloss ;
+    memo:hasCreator :glossator_1 ;
+    memo:hasCreationDate "1241"^^xsd:gYear ;
+    memo:refersTo :text_1 .
+
+:gloss_c a memo:Gloss ;
+    memo:hasCreator :glossator_1 ;
+    memo:hasCreationDate "1250"^^xsd:gYear ;
+    memo:annotates :gloss_a .
+
+:glossator_1 a memo:Person ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Ioannis Phasellus" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1220"^^xsd:gYear
+        ]
+    ] .
+
+:gloss_d a memo:Gloss ;
+    memo:hasCreator :glossator_2 ;
+    memo:hasCreationDate "1261"^^xsd:gYear ;
+    memo:refersTo :gloss_a .
+
+:gloss_e a memo:Gloss ;
+    memo:hasCreator :glossator_2 ;
+    memo:hasCreationDate "1265"^^xsd:gYear ;
+    memo:annotates :gloss_b , :gloss_c .
+
+:gloss_f a memo:Gloss ;
+    memo:hasCreator :glossator_2 ;
+    memo:hasCreationDate "1266"^^xsd:gYear ;
+    memo:cites :text_1 ;
+    memo:refersTo :gloss_d ;
+    memo:annotates :gloss_e .
+
+:glossator_2 a memo:Person ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Farnese de Vandimion" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1240"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1264"^^xsd:gYear
+        ]
+    ] ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Farnese" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1265"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1280"^^xsd:gYear
+        ]
+    ] .
+
+:text_1 a memo:Text .
+
+:manuscript_2 a memo:Manuscript ;
+    memo:hasCreator :author_2 ;
+    memo:hasPart :text_2 , :gloss_g , :gloss_h , :gloss_i , :gloss_l ;
+    memo:hasCreationDate "1012"^^xsd:gYear .
+
+:author_2 a memo:Person ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Serpico" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1000"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1020"^^xsd:gYear
+        ]
+    ] ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Serpicus" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1020"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1025"^^xsd:gYear 
+        ] 
+    ] ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Sorbo Serpico" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1025"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1030"^^xsd:gYear
+        ]
+    ] .
+
+:text_2 a memo:Text .
+
+:gloss_g a memo:Gloss ;
+    memo:hasCreationDate "1270"^^xsd:gYear ;
+    memo:hasCreator :glossator_3 ;
+    memo:cites :manuscript_1 ;
+    memo:refersTo :text_1 ;
+    memo:annotates :text_2 .
+
+:gloss_h a memo:Gloss ;
+    memo:hasCreationDate "1271"^^xsd:gYear ;
+    memo:hasCreator :glossator_3 ;
+    memo:refersTo :gloss_e ;
+    memo:annotates :gloss_f , :text_2 .
+
+:glossator_3 a memo:Person ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Boscogne" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1250"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1270"^^xsd:gYear
+        ]
+    ] ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Boscone" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1271"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1280"^^xsd:gYear
+        ]
+    ] .
+
+:gloss_i a memo:Gloss ;
+    memo:hasCreator :glossator_4 ;
+    memo:hasCreationDate "1276"^^xsd:gYear ;
+    memo:annotates :gloss_g .
+
+:gloss_l a memo:Gloss ;
+    memo:hasCreator :glossator_4 ;
+    memo:hasCreationDate "1280"^^xsd:gYear ;
+    memo:cites :gloss_h ;
+    memo:annotates :gloss_i .
+
+:glossator_4 a memo:Person ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Guriffis" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1250"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1279"^^xsd:gYear
+        ]
+    ] ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Femto" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1280"^^xsd:gYear
+        ]
+    ] .
+
+:manuscript_3 a memo:Manuscript ;
+    memo:hasCreator :author_2 ;
+    memo:hasPart :text_3 , :gloss_m , :gloss_n ;
+    memo:hasCreationDate "1014"^^xsd:gYear .
+
+:gloss_m a memo:Gloss ;
+    memo:hasCreator :glossator_5 ;
+    memo:hasCreationDate "1285"^^xsd:gYear ;
+    memo:annotates :text_3 ;
+    memo:cites :gloss_l .
+
+:gloss_n a memo:Gloss ;
+    memo:hasCreator :glossator_5 ;
+    memo:hasCreationDate "1289"^^xsd:gYear ;
+    memo:annotates :gloss_m .
+
+:glossator_5 a memo:Person ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Gattsus" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1240"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1286"^^xsd:gYear
+        ]
+    ] ;
+    memo:hasLiteral [
+        a memo:Literal , memo:hasName ;
+        memo:hasLiteralValue "Gatzo" ;
+        memo:isValidInInterval [
+            a memo:TimeInterval ;
+            memo:hasIntervalStartDate "1286"^^xsd:gYear ;
+            memo:hasIntervalEndDate "1290"^^xsd:gYear
+        ]
+    ] .
+
+:text_3 a memo:Text .

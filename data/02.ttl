@@ -1,0 +1,91 @@
+@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Linking to the main ontology
+<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
+   owl:imports <https://w3id.org/irnerio/ontology/memo> .
+
+:incipit_1 a memo:TextualMetadataInTime ;
+    memo:withTextualRole memo:incipit ;
+    memo:relatesToTextualContext :context_incipit_1 ;
+    memo:atTime :1779 .
+
+:context_incipit_1 a owl:Thing ;
+    memo:isBasedOn :text_1 , :gloss_a .
+
+:1779 a memo:TimeInterval ;
+    memo:hasIntervalStartDate "1779"^^xsd:gYear .
+
+:text_1 a memo:Text .
+
+:gloss_a a memo:Gloss .
+
+:manuscript_1 a memo:Manuscript ;
+    memo:hasPart :text_1 , :gloss_a , :gloss_f ;
+    memo:hasTextualMetadata :incipit_1 , :explicit_1 , :f_rubric_1 .
+
+:explicit_1 a memo:TextualMetadataInTime ;
+    memo:withTextualRole memo:explicit ;
+    memo:relatesToTextualContext :context_explicit_1 ;
+    memo:atTime :1780 .
+
+:context_explicit_1 a owl:Thing ;
+    memo:isBasedOn :text_1 , :gloss_f .
+
+:gloss_f a memo:Gloss .
+
+:1780 a memo:TimeInterval ;
+    memo:hasIntervalStartDate "1780"^^xsd:gYear .
+
+:f_rubric_1 a memo:TextualMetadataInTime ;
+    memo:withTextualRole memo:finalRubric ;
+    memo:relatesToTextualContext :context_f_rubric_1 ;
+    memo:atTime :1780 .
+
+:context_f_rubric_1 a owl:Thing ;
+    memo:isBasedOn :text_1 .
+
+:incipit_2 a memo:TextualMetadataInTime ;
+    memo:withTextualRole memo:incipit ;
+    memo:relatesToTextualContext :context_incipit_2 ;
+    memo:atTime :1861 .
+
+:context_incipit_2 a owl:Thing ;
+    memo:isBasedOn :text_2 .
+
+:1861 a memo:TimeInterval ;
+    memo:hasIntervalStartDate "1861"^^xsd:gYear .
+
+:text_2 a memo:Text .
+
+:manuscript_2 a memo:Manuscript ;
+    memo:hasPart :text_2 ;
+    memo:hasTextualMetadata :incipit_2 , :explicit_2 .
+
+:explicit_2 a memo:TextualMetadataInTime ;
+    memo:withTextualRole memo:explicit ;
+    memo:relatesToTextualContext :context_explicit_2 ;
+    memo:atTime :1861 .
+
+:context_explicit_2 a owl:Thing ;
+    memo:isBasedOn :text_2 .
+
+:incipit_3 a memo:TextualMetadataInTime ;
+    memo:withTextualRole memo:incipit ;
+    memo:relatesToTextualContext :context_incipit_3 ;
+    memo:atTime :1800 .
+
+:context_incipit_3 a owl:Thing ;
+    memo:isBasedOn :text_3 .
+
+:1800 a memo:TimeInterval ;
+    memo:hasIntervalStartDate "1800"^^xsd:gYear .
+
+:text_3 a memo:Text .
+
+:manuscript_3 a memo:Manuscript ;
+    memo:hasPart :text_3 ;
+    memo:hasTextualMetadata :incipit_3 .

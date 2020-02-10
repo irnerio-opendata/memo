@@ -1,0 +1,46 @@
+@prefix : <https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> .
+@prefix memo: <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Linking to the main ontology
+<https://github.com/irnerio-opendata/memo/development/01/ABox.ttl/> a owl:Ontology ;
+    owl:imports <https://github.com/irnerio-opendata/memo/development/01/TBox.ttl/> .
+
+:manuscript_1 a memo:Manuscript ;
+    memo:hasPart :gloss_a , :gloss_b , :gloss_c , :gloss_d , :gloss_e , :gloss_f , :text_1 .
+
+:manuscript_2 a memo:Manuscript ;
+    memo:hasPart :gloss_g , :gloss_h , :text_2 .
+
+:gloss_a a memo:Gloss ;
+    memo:cites :text_1 .
+
+:gloss_b a memo:Gloss ;
+    memo:refersTo :text_1 .
+
+:gloss_c a memo:Gloss ;
+    memo:annotates :gloss_a .
+
+:gloss_d a memo:Gloss ;
+    memo:refersTo :gloss_a .
+
+:gloss_e a memo:Gloss ;
+    memo:annotates :gloss_b , :gloss_c .
+
+:gloss_f a memo:Gloss ;
+    memo:cites :text_1 ;
+    memo:refersTo :gloss_d ;
+    memo:annotates :gloss_e .
+
+:text_1 a memo:Text .
+
+:gloss_g a memo:Gloss ;
+    memo:cites :manuscript_1 ;
+    memo:refersTo :text_1 .
+
+:gloss_h a memo:Gloss ;
+    memo:refersTo :gloss_e ;
+    memo:annotates :gloss_f .
+
+:text_2 a memo:Text .

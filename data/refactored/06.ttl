@@ -1,0 +1,150 @@
+@prefix : <https://w3id.org/irnerio/data/refactored/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/vocab/frbr/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/spar/frbr/> .
+@prefix litre: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix region: <http://www.ontologydesignpatterns.org/cp/owl/region.owl#> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://purl.org/spar/tvc> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Linking to the main ontology
+<https://w3id.org/irnerio/data/refactored/memo> a owl:Ontology ;
+   owl:imports <https://w3id.org/irnerio/ontology/memo> .
+
+
+:book_1 a fabio:Book ;
+    dcterms:title "Vermischte Schriften" ;
+    dcterms:creator :author_I ;
+    cito:cites :codex_1 , :codex_2 .
+
+:author_I a foaf:Person .
+
+:recto_1 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger .
+
+:recto_2 a memo:Recto ;
+    memo:hasNumberOfColumns "1"^^xsd:nonNegativeInteger .
+
+:recto_3 a memo:Recto ;
+    memo:hasNumberOfColumns "1"^^xsd:nonNegativeInteger .
+
+:recto_4 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger .
+
+:recto_5 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger .
+
+:recto_6 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger .
+
+:verso_1 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger .
+
+:verso_2 a memo:Verso ;
+    memo:hasNumberOfColumns "1"^^xsd:nonNegativeInteger .
+
+:verso_3 a memo:Verso ;
+    memo:hasNumberOfColumns "1"^^xsd:nonNegativeInteger .
+
+:verso_4 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger .
+
+:verso_5 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger .
+
+:verso_6 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger .
+
+:binding_1 a memo:Binding ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent :extent_1 .
+
+:binding_2 a memo:Binding ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent :extent_2 .
+
+:folio_1 a memo:Folio ;
+    dcterms:medium memo:paper ;
+    dcterms:extent :extent_1 ;
+    frbr:part :recto_1 , :verso_1 .
+
+:folio_2 a memo:Folio ;
+    dcterms:medium memo:paper ;
+    dcterms:extent :extent_1 ;
+    frbr:part :recto_2 , :verso_2 .
+
+:folio_3 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent :extent_1 ;
+    frbr:part :recto_3 , :verso_3 .
+
+:folio_4 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent :extent_1 ;
+    frbr:part :recto_4 , :verso_4 .
+
+:folio_5 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent :extent_3 ;
+    frbr:part :recto_5 , :verso_5 .
+
+:folio_6 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent :extent_3 ;
+    frbr:part :recto_6 , :verso_6 .
+
+:extent_1 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "210"^^xsd:nonNegativeInteger ;
+    memo:hasWidth "180"^^xsd:nonNegativeInteger .
+
+:extent_2 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "180"^^xsd:nonNegativeInteger ;
+    memo:hasWidth "140"^^xsd:nonNegativeInteger .
+
+:extent_3 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "160"^^xsd:nonNegativeInteger ;
+    memo:hasWidth "120"^^xsd:nonNegativeInteger .
+
+:codex_1 a memo:Codex ;
+    dcterms:identifier "001" ;
+    frbr:part :binding_1 , :folio_1 , :folio_2 , :folio_3 , :folio_4 .
+
+:codex_2 a memo:Codex ;
+    dcterms:identifier "002" ;
+    frbr:part :binding_2 , :folio_5 , :folio_6 .
+
+:manuscript_1 a memo:Manuscript ;
+    dcterms:title "Arbor cum Glossis Ioannis Phasellus" ;
+    frbr:part :text_1 .
+
+:manuscript_2 a memo:Manuscript ;
+    dcterms:title "Epistula ad Barbalum" ;
+    frbr:part :text_2 .
+
+:manuscript_3 a memo:Manuscript ;
+    dcterms:title "Fragmenta Decreti" ;
+    frbr:part :text_3 .
+
+:text_1 a memo:Text ;
+    frbr:embodiment :folio_1 , :folio_2 .
+
+:text_2 a memo:Text ;
+    frbr:embodiment :folio_3 , :folio_4 .
+
+:text_3 a memo:Text ;
+    frbr:embodiment :folio_5 , :folio_6 .

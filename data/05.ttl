@@ -1,0 +1,175 @@
+@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Linking to the main ontology
+<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
+    owl:imports <https://w3id.org/irnerio/ontology/memo> .
+
+:codex_1 a memo:Codex ;
+    memo:hasPart :folio_1 , :folio_2 , :folio_3 , :folio_4 .
+
+:codex_2 a memo:Codex ;
+    memo:hasPart :folio_5 , :folio_6 .
+
+:codex_3 a memo:Codex ;
+    memo:hasPart :folio_7 .
+
+:folio_1 a memo:Folio ;
+    memo:hasPart :recto_1 , :verso_1 .
+
+:folio_2 a memo:Folio ;
+    memo:hasPart :recto_2 , :verso_2 .
+
+:folio_3 a memo:Folio ;
+    memo:hasPart :recto_3 , :verso_3 .
+
+:folio_4 a memo:Folio ;
+    memo:hasPart :recto_4 , :verso_4 .
+
+:folio_5 a memo:Folio ;
+    memo:hasPart :recto_5 , :verso_5 .
+
+:folio_6 a memo:Folio ;
+    memo:hasPart :recto_6 , :verso_6 .
+
+:folio_7 a memo:Folio ;
+    memo:hasPart :recto_7 , :verso_7 .
+
+:recto_1 a memo:Recto .
+
+:recto_2 a memo:Recto .
+
+:recto_3 a memo:Recto .
+
+:recto_4 a memo:Recto .
+
+:recto_5 a memo:Recto .
+
+:recto_6 a memo:Recto .
+
+:recto_7 a memo:Recto .
+
+:verso_1 a memo:Verso .
+
+:verso_2 a memo:Verso .
+
+:verso_3 a memo:Verso .
+
+:verso_4 a memo:Verso .
+
+:verso_5 a memo:Verso .
+
+:verso_6 a memo:Verso .
+
+:verso_7 a memo:Verso .
+
+:manuscript_1 a memo:Manuscript ;
+    memo:hasPart :text_1 , :gloss_a , :gloss_b , :gloss_c , :gloss_d , :gloss_e , :gloss_f .
+
+:manuscript_2 a memo:Manuscript ;
+    memo:hasPart :text_2 , :gloss_g , :gloss_h , :gloss_i , :gloss_l .
+
+:manuscript_3 a memo:Manuscript ;
+    memo:hasPart :text_3 , :gloss_m , :gloss_n .
+
+:text_1 a memo:Text ;
+    memo:hasEmbodiment :folio_1 , :folio_2 .
+
+:text_2 a memo:Text ;
+    memo:hasEmbodiment :folio_3 , :folio_4 .
+
+:text_3 a memo:Text ;
+    memo:hasEmbodiment :folio_5 , :folio_6 .
+
+:gloss_a a memo:Gloss ;
+    memo:hasEmbodiment :folio_1 ;
+    memo:hasCreator :glossator_1 ;
+    memo:cites :text_1 .
+
+:gloss_b a memo:Gloss ;
+    memo:hasEmbodiment :folio_1 ;
+    memo:hasCreator :glossator_1 ;
+    memo:refersTo :text_1 .
+
+:gloss_c a memo:Gloss ;
+    memo:hasEmbodiment :folio_1 ;
+    memo:hasCreator :glossator_1 ;
+    memo:annotates :gloss_a .
+
+:gloss_d a memo:Gloss ;
+    memo:hasEmbodiment :folio_2 ;
+    memo:hasCreator :glossator_2 ;
+    memo:refersTo :gloss_a .
+
+:gloss_e a memo:Gloss ;
+    memo:hasEmbodiment :folio_2 ;
+    memo:hasCreator :glossator_2 ;
+    memo:annotates :gloss_b , :gloss_c .
+
+:gloss_f a memo:Gloss ;
+    memo:hasEmbodiment :folio_2 ;
+    memo:hasCreator :glossator_2 ;
+    memo:cites :text_1 ;
+    memo:refersTo :gloss_d ;
+    memo:annotates :gloss_e .
+
+:gloss_g a memo:Gloss ;
+    memo:hasEmbodiment :folio_3 ;
+    memo:hasCreator :glossator_3 ;
+    memo:cites :manuscript_1 ;
+    memo:refersTo :text_1 ;
+    memo:annotates :text_2 .
+
+:gloss_h a memo:Gloss ;
+    memo:hasEmbodiment :folio_3 ;
+    memo:hasCreator :glossator_3 ;
+    memo:refersTo :gloss_e ;
+    memo:annotates :gloss_f , :text_2 .
+
+:gloss_i a memo:Gloss ;
+    memo:hasEmbodiment :folio_4 ;
+    memo:hasCreator :glossator_4 ;
+    memo:annotates :gloss_g .
+
+:gloss_l a memo:Gloss ;
+    memo:hasEmbodiment :folio_4 ;
+    memo:hasCreator :glossator_4 ;
+    memo:cites :gloss_h ;
+    memo:annotates :gloss_i .
+
+:gloss_m a memo:Gloss ;
+    memo:hasEmbodiment :folio_5 ;
+    memo:hasCreator :glossator_5 ;
+    memo:annotates :text_3 ;
+    memo:cites :gloss_l .
+
+:gloss_n a memo:Gloss ;
+    memo:hasEmbodiment :folio_6 ;
+    memo:hasCreator :glossator_5 ;
+    memo:annotates :gloss_m ;
+    memo:refersTo :text_3 .
+
+:manuscript_4 a memo:Manuscript ;
+    memo:hasPart :text_4 .
+
+:manuscript_5 a memo:Manuscript ;
+    memo:hasPart :text_5 .
+
+:text_4 a memo:Text ;
+    memo:hasEmbodiment :folio_7 .
+
+:text_5 a memo:Text ;
+    memo:hasEmbodiment :folio_7 .
+
+:glossator_1 a memo:Person .
+
+:glossator_2 a memo:Person .
+
+:glossator_3 a memo:Person .
+
+:glossator_4 a memo:Person .
+
+:glossator_5 a memo:Person .

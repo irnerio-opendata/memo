@@ -1,0 +1,190 @@
+@prefix : <https://w3id.org/irnerio/data/refactored/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/vocab/frbr/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/spar/frbr/> .
+@prefix litre: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix region: <http://www.ontologydesignpatterns.org/cp/owl/region.owl#> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://purl.org/spar/tvc/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Linking to the main ontology
+<https://w3id.org/irnerio/data/refactored/memo> a owl:Ontology ;
+   owl:imports <https://w3id.org/irnerio/ontology/memo> .
+               
+:codex_1 a memo:Codex ;
+    frbr:part :folio_1 , :folio_2 , :folio_3 , :folio_4 .
+
+:codex_2 a memo:Codex ;
+    frbr:part :folio_5 , :folio_6 .
+
+:codex_3 a memo:Codex ;
+    frbr:part :folio_7 .
+
+:folio_1 a memo:Folio ;
+    frbr:part :recto_1 , :verso_1 .
+
+:folio_2 a memo:Folio ;
+    frbr:part :recto_2 , :verso_2 .
+
+:folio_3 a memo:Folio ;
+    frbr:part :recto_3 , :verso_3 .
+
+:folio_4 a memo:Folio ;
+    frbr:part :recto_4 , :verso_4 .
+
+:folio_5 a memo:Folio ;
+    frbr:part :recto_5 , :verso_5 .
+
+:folio_6 a memo:Folio ;
+    frbr:part :recto_6 , :verso_6 .
+
+:folio_7 a memo:Folio ;
+    frbr:part :recto_7 , :verso_7 .
+
+:recto_1 a memo:Recto .
+
+:recto_2 a memo:Recto .
+
+:recto_3 a memo:Recto .
+
+:recto_4 a memo:Recto .
+
+:recto_5 a memo:Recto .
+
+:recto_6 a memo:Recto .
+
+:recto_7 a memo:Recto .
+
+:verso_1 a memo:Verso .
+
+:verso_2 a memo:Verso .
+
+:verso_3 a memo:Verso .
+
+:verso_4 a memo:Verso .
+
+:verso_5 a memo:Verso .
+
+:verso_6 a memo:Verso .
+
+:verso_7 a memo:Verso .
+
+:manuscript_1 a memo:Manuscript ;
+    frbr:part :text_1 , :gloss_a , :gloss_b , :gloss_c , :gloss_d , :gloss_e , :gloss_f .
+
+:manuscript_2 a memo:Manuscript ;
+    frbr:part :text_2 , :gloss_g , :gloss_h , :gloss_i , :gloss_l .
+
+:manuscript_3 a memo:Manuscript ;
+    frbr:part :text_3 , :gloss_m , :gloss_n .
+
+:text_1 a memo:Text ;
+    frbr:embodiment :folio_1 , :folio_2 .
+
+:text_2 a memo:Text ;
+    frbr:embodiment :folio_3 , :folio_4 .
+
+:text_3 a memo:Text ;
+    frbr:embodiment :folio_5 , :folio_6 .
+
+:gloss_a a memo:Gloss ;
+    frbr:embodiment :folio_1 ;
+    dcterms:creator :glossator_1 ;
+    cito:cites :text_1 .
+
+:gloss_b a memo:Gloss ;
+    frbr:embodiment :folio_1 ;
+    dcterms:creator :glossator_1 ;
+    dcterms:relation :text_1 .
+
+:gloss_c a memo:Gloss ;
+    frbr:embodiment :folio_1 ;
+    dcterms:creator :glossator_1 ;
+    memo:annotates :gloss_a .
+
+:gloss_d a memo:Gloss ;
+    frbr:embodiment :folio_2 ;
+    dcterms:creator :glossator_2 ;
+    dcterms:relation :gloss_a .
+
+:gloss_e a memo:Gloss ;
+    frbr:embodiment :folio_2 ;
+    dcterms:creator :glossator_2 ;
+    memo:annotates :gloss_b , :gloss_c .
+
+:gloss_f a memo:Gloss ;
+    frbr:embodiment :folio_2 ;
+    dcterms:creator :glossator_2 ;
+    cito:cites :text_1 ;
+    dcterms:relation :gloss_d ;
+    memo:annotates :gloss_e .
+
+:gloss_g a memo:Gloss ;
+    frbr:embodiment :folio_3 ;
+    dcterms:creator :glossator_3 ;
+    cito:cites :manuscript_1 ;
+    dcterms:relation :text_1 ;
+    memo:annotates :text_2 .
+
+:gloss_h a memo:Gloss ;
+    frbr:embodiment :folio_3 ;
+    dcterms:creator :glossator_3 ;
+    dcterms:relation :gloss_e ;
+    memo:annotates :gloss_f , :text_2 .
+
+:gloss_i a memo:Gloss ;
+    frbr:embodiment :folio_4 ;
+    dcterms:creator :glossator_4 ;
+    memo:annotates :gloss_g .
+
+:gloss_l a memo:Gloss ;
+    frbr:embodiment :folio_4 ;
+    dcterms:creator :glossator_4 ;
+    cito:cites :gloss_h ;
+    memo:annotates :gloss_i .
+
+:gloss_m a memo:Gloss ;
+    frbr:embodiment :folio_5 ;
+    dcterms:creator :glossator_5 ;
+    memo:annotates :text_3 ;
+    cito:cites :gloss_l .
+
+:gloss_n a memo:Gloss ;
+    frbr:embodiment :folio_6 ;
+    dcterms:creator :glossator_5 ;
+    memo:annotates :gloss_m ;
+    dcterms:relation :text_3 .
+
+:manuscript_4 a memo:Manuscript ;
+    frbr:part :text_4 .
+
+:manuscript_5 a memo:Manuscript ;
+    frbr:part :text_5 .
+
+:text_4 a memo:Text ;
+    frbr:embodiment :folio_7 .
+
+:text_5 a memo:Text ;
+    frbr:embodiment :folio_7 .
+
+:glossator_1 a foaf:Person .
+
+:glossator_2 a foaf:Person .
+
+:glossator_3 a foaf:Person .
+
+:glossator_4 a foaf:Person .
+
+:glossator_5 a foaf:Person .
