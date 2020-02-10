@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/irnerio/data/refactored/memo/> .
+@prefix : <https://w3id.org/irnerio/data/memo/> .
 @prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
