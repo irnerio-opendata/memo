@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix ex: <https://w3id.org/irnerio/data/memo/> .
 @prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,39 +8,39 @@
     owl:imports <https://w3id.org/irnerio/ontology/memo> .
 
 :manuscript_1 a memo:Manuscript ;
-    memo:hasPart :gloss_a , :gloss_b , :gloss_c , :gloss_d , :gloss_e , :gloss_f , :text_1 .
+    memo:hasPart ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f , ex:text_1 .
 
 :manuscript_2 a memo:Manuscript ;
-    memo:hasPart :gloss_g , :gloss_h , :text_2 .
+    memo:hasPart ex:gloss_g , ex:gloss_h , ex:text_2 .
 
 :gloss_a a memo:Gloss ;
-    memo:cites :text_1 .
+    memo:cites ex:text_1 .
 
 :gloss_b a memo:Gloss ;
-    memo:refersTo :text_1 .
+    memo:refersTo ex:text_1 .
 
 :gloss_c a memo:Gloss ;
-    memo:annotates :gloss_a .
+    memo:annotates ex:gloss_a .
 
 :gloss_d a memo:Gloss ;
-    memo:refersTo :gloss_a .
+    memo:refersTo ex:gloss_a .
 
 :gloss_e a memo:Gloss ;
-    memo:annotates :gloss_b , :gloss_c .
+    memo:annotates ex:gloss_b , ex:gloss_c .
 
 :gloss_f a memo:Gloss ;
-    memo:cites :text_1 ;
-    memo:refersTo :gloss_d ;
-    memo:annotates :gloss_e .
+    memo:cites ex:text_1 ;
+    memo:refersTo ex:gloss_d ;
+    memo:annotates ex:gloss_e .
 
 :text_1 a memo:Text .
 
 :gloss_g a memo:Gloss ;
-    memo:cites :manuscript_1 ;
-    memo:refersTo :text_1 .
+    memo:cites ex:manuscript_1 ;
+    memo:refersTo ex:text_1 .
 
 :gloss_h a memo:Gloss ;
-    memo:refersTo :gloss_e ;
-    memo:annotates :gloss_f .
+    memo:refersTo ex:gloss_e ;
+    memo:annotates ex:gloss_f .
 
 :text_2 a memo:Text .
