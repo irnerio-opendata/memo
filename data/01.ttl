@@ -1,46 +1,62 @@
-@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix ex: <https://w3id.org/irnerio/data/memo/> .
 @prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/vocab/frbr/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/spar/frbr/> .
+@prefix litre: <http://www.essepuntato.it/2010/06/literalreification/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix region: <http://www.ontologydesignpatterns.org/cp/owl/region.owl#> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://purl.org/spar/tvc/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Linking to the main ontology
-<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
-    owl:imports <https://w3id.org/irnerio/ontology/memo> .
+<https://w3id.org/irnerio/data/memo> a owl:Ontology ;
+   owl:imports <https://w3id.org/irnerio/ontology/memo> .
 
-:manuscript_1 a memo:Manuscript ;
-    memo:hasPart :gloss_a , :gloss_b , :gloss_c , :gloss_d , :gloss_e , :gloss_f , :text_1 .
+ex:manuscript_1 a memo:Manuscript ;
+    frbr:part ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f , ex:text_1 .
 
-:manuscript_2 a memo:Manuscript ;
-    memo:hasPart :gloss_g , :gloss_h , :text_2 .
+ex:manuscript_2 a memo:Manuscript ;
+    frbr:part ex:gloss_g , ex:gloss_h , ex:text_2 .
 
-:gloss_a a memo:Gloss ;
-    memo:cites :text_1 .
+ex:gloss_a a memo:Gloss ;
+    cito:cites ex:text_1 .
 
-:gloss_b a memo:Gloss ;
-    memo:refersTo :text_1 .
+ex:gloss_b a memo:Gloss ;
+    dcterms:relation ex:text_1 .
 
-:gloss_c a memo:Gloss ;
-    memo:annotates :gloss_a .
+ex:gloss_c a memo:Gloss ;
+    memo:annotates ex:gloss_a .
 
-:gloss_d a memo:Gloss ;
-    memo:refersTo :gloss_a .
+ex:gloss_d a memo:Gloss ;
+    dcterms:relation ex:gloss_a .
 
-:gloss_e a memo:Gloss ;
-    memo:annotates :gloss_b , :gloss_c .
+ex:gloss_e a memo:Gloss ;
+    memo:annotates ex:gloss_b , ex:gloss_c .
 
-:gloss_f a memo:Gloss ;
-    memo:cites :text_1 ;
-    memo:refersTo :gloss_d ;
-    memo:annotates :gloss_e .
+ex:gloss_f a memo:Gloss ;
+    cito:cites ex:text_1 ;
+    dcterms:relation ex:gloss_d ;
+    memo:annotates ex:gloss_e .
 
-:text_1 a memo:Text .
+ex:text_1 a memo:Text .
 
-:gloss_g a memo:Gloss ;
-    memo:cites :manuscript_1 ;
-    memo:refersTo :text_1 .
+ex:gloss_g a memo:Gloss ;
+    cito:cites ex:manuscript_1 ;
+    dcterms:relation ex:text_1 .
 
-:gloss_h a memo:Gloss ;
-    memo:refersTo :gloss_e ;
-    memo:annotates :gloss_f .
+ex:gloss_h a memo:Gloss ;
+    dcterms:relation ex:gloss_e ;
+    memo:annotates ex:gloss_f .
 
-:text_2 a memo:Text .
+ex:text_2 a memo:Text .

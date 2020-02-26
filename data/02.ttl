@@ -1,91 +1,116 @@
-@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix ex: <https://w3id.org/irnerio/data/memo/> .
 @prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/vocab/frbr/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/spar/frbr/> .
+@prefix litre: <http://www.essepuntato.it/2010/06/literalreification/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix region: <http://www.ontologydesignpatterns.org/cp/owl/region.owl#> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://purl.org/spar/tvc/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Linking to the main ontology
-<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
+<https://w3id.org/irnerio/data/memo> a owl:Ontology ;
    owl:imports <https://w3id.org/irnerio/ontology/memo> .
 
-:incipit_1 a memo:TextualMetadataInTime ;
+ex:incipit_1 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_1 ;
     memo:withTextualRole memo:incipit ;
-    memo:relatesToTextualContext :context_incipit_1 ;
-    memo:atTime :1779 .
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_1 , ex:gloss_a 
+    ] ;
+    tvc:atTime ex:1779 .
 
-:context_incipit_1 a owl:Thing ;
-    memo:isBasedOn :text_1 , :gloss_a .
+ex:1779 a ti:TimeInterval ;
+    ti:hasIntervalStartDate "1779"^^xsd:gYear .
 
-:1779 a memo:TimeInterval ;
-    memo:hasIntervalStartDate "1779"^^xsd:gYear .
+ex:text_1 a memo:Text .
 
-:text_1 a memo:Text .
+ex:gloss_a a memo:Gloss .
 
-:gloss_a a memo:Gloss .
+ex:manuscript_1 a memo:Manuscript ;
+    frbr:part ex:text_1 , ex:gloss_a , ex:gloss_f ;
+    memo:hasTextualMetadata ex:incipit_1 , ex:explicit_1 , ex:f_rubric_1 .
 
-:manuscript_1 a memo:Manuscript ;
-    memo:hasPart :text_1 , :gloss_a , :gloss_f ;
-    memo:hasTextualMetadata :incipit_1 , :explicit_1 , :f_rubric_1 .
-
-:explicit_1 a memo:TextualMetadataInTime ;
+ex:explicit_1 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_1 ;
     memo:withTextualRole memo:explicit ;
-    memo:relatesToTextualContext :context_explicit_1 ;
-    memo:atTime :1780 .
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_1 , ex:gloss_f
+    ] ;
+    tvc:atTime ex:1780 .
 
-:context_explicit_1 a owl:Thing ;
-    memo:isBasedOn :text_1 , :gloss_f .
+ex:gloss_f a memo:Gloss .
 
-:gloss_f a memo:Gloss .
+ex:1780 a ti:TimeInterval ;
+    ti:hasIntervalStartDate "1780"^^xsd:gYear .
 
-:1780 a memo:TimeInterval ;
-    memo:hasIntervalStartDate "1780"^^xsd:gYear .
-
-:f_rubric_1 a memo:TextualMetadataInTime ;
+ex:f_rubric_1 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_1 ;
     memo:withTextualRole memo:finalRubric ;
-    memo:relatesToTextualContext :context_f_rubric_1 ;
-    memo:atTime :1780 .
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_1
+    ] ;
+    tvc:atTime ex:1780 .
 
-:context_f_rubric_1 a owl:Thing ;
-    memo:isBasedOn :text_1 .
-
-:incipit_2 a memo:TextualMetadataInTime ;
+ex:incipit_2 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_2 ;
     memo:withTextualRole memo:incipit ;
-    memo:relatesToTextualContext :context_incipit_2 ;
-    memo:atTime :1861 .
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_2
+    ] ;
+    tvc:atTime ex:1861 .
 
-:context_incipit_2 a owl:Thing ;
-    memo:isBasedOn :text_2 .
+ex:1861 a ti:TimeInterval ;
+    ti:hasIntervalStartDate "1861"^^xsd:gYear .
 
-:1861 a memo:TimeInterval ;
-    memo:hasIntervalStartDate "1861"^^xsd:gYear .
+ex:text_2 a memo:Text .
 
-:text_2 a memo:Text .
+ex:manuscript_2 a memo:Manuscript ;
+    frbr:part ex:text_2 ;
+    memo:hasTextualMetadata ex:incipit_2 , ex:explicit_2 .
 
-:manuscript_2 a memo:Manuscript ;
-    memo:hasPart :text_2 ;
-    memo:hasTextualMetadata :incipit_2 , :explicit_2 .
-
-:explicit_2 a memo:TextualMetadataInTime ;
+ex:explicit_2 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_2 ;
     memo:withTextualRole memo:explicit ;
-    memo:relatesToTextualContext :context_explicit_2 ;
-    memo:atTime :1861 .
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_2
+    ] ;
+    tvc:atTime ex:1861 .
 
-:context_explicit_2 a owl:Thing ;
-    memo:isBasedOn :text_2 .
-
-:incipit_3 a memo:TextualMetadataInTime ;
+ex:incipit_3 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_1 ;
     memo:withTextualRole memo:incipit ;
-    memo:relatesToTextualContext :context_incipit_3 ;
-    memo:atTime :1800 .
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_3
+    ] ;
+    tvc:atTime ex:1800 .
 
-:context_incipit_3 a owl:Thing ;
-    memo:isBasedOn :text_3 .
+ex:1800 a ti:TimeInterval ;
+    ti:hasIntervalStartDate "1800"^^xsd:gYear .
 
-:1800 a memo:TimeInterval ;
-    memo:hasIntervalStartDate "1800"^^xsd:gYear .
+ex:text_3 a memo:Text .
 
-:text_3 a memo:Text .
+ex:manuscript_3 a memo:Manuscript ;
+    frbr:part ex:text_3 ;
+    memo:hasTextualMetadata ex:incipit_3 .
 
-:manuscript_3 a memo:Manuscript ;
-    memo:hasPart :text_3 ;
-    memo:hasTextualMetadata :incipit_3 .
+ex:agent_1 a foaf:Agent .
+
+ex:agent_2 a foaf:Agent .

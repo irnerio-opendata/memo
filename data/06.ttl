@@ -1,135 +1,150 @@
-@prefix : <https://w3id.org/irnerio/data/memo/> .
+@prefix ex: <https://w3id.org/irnerio/data/memo/> .
 @prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/vocab/frbr/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/spar/frbr/> .
+@prefix litre: <http://www.essepuntato.it/2010/06/literalreification/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix region: <http://www.ontologydesignpatterns.org/cp/owl/region.owl#> .
+@prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
+@prefix tvc: <http://purl.org/spar/tvc> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Linking to the main ontology
-<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
+<https://w3id.org/irnerio/data/memo> a owl:Ontology ;
    owl:imports <https://w3id.org/irnerio/ontology/memo> .
 
-:book_1 a memo:Book ;
-    memo:hasTitle "Vermischte Schriften" ;
-    memo:hasCreator :author_I ;
-    memo:cites :codex_1 , :codex_2 .
 
-:author_I a memo:Person .
+ex:book_1 a fabio:Book ;
+    dcterms:title "Vermischte Schriften" ;
+    dcterms:creator ex:author_I ;
+    cito:cites ex:codex_1 , ex:codex_2 .
 
-:recto_1 a memo:Recto .
+ex:author_I a foaf:Person .
 
-:recto_2 a memo:Recto .
+ex:recto_1 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
 
-:recto_3 a memo:Recto .
+ex:recto_2 a memo:Recto ;
+    memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
 
-:recto_4 a memo:Recto .
+ex:recto_3 a memo:Recto ;
+    memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
 
-:recto_5 a memo:Recto .
+ex:recto_4 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
 
-:recto_6 a memo:Recto .
+ex:recto_5 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
 
-:verso_1 a memo:Verso .
+ex:recto_6 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
 
-:verso_2 a memo:Verso .
+ex:verso_1 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
 
-:verso_3 a memo:Verso .
+ex:verso_2 a memo:Verso ;
+    memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
 
-:verso_4 a memo:Verso .
+ex:verso_3 a memo:Verso ;
+    memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
 
-:verso_5 a memo:Verso .
+ex:verso_4 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
 
-:verso_6 a memo:Verso .
+ex:verso_5 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
 
-:folio_1 a memo:Folio ;
-    memo:hasMaterial memo:paper ;
-    memo:hasExtent :extent_1 ;
-    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger ;
-    memo:hasPart :recto_1 , :verso_1 .
+ex:verso_6 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
 
-:folio_2 a memo:Folio ;
-    memo:hasMaterial memo:paper ;
-    memo:hasExtent :extent_1 ;
-    memo:hasNumberOfColumns "1"^^xsd:nonNegativeInteger ;
-    memo:hasPart :recto_2 , :verso_2 .
+ex:binding_1 a memo:Binding ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_1 .
 
-:folio_3 a memo:Folio ;
-    memo:hasMaterial memo:parchment ;
-    memo:hasExtent :extent_1 ;
-    memo:hasNumberOfColumns "1"^^xsd:nonNegativeInteger ;
-    memo:hasPart :recto_3 , :verso_3 .
+ex:binding_2 a memo:Binding ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_2 .
 
-:folio_4 a memo:Folio ;
-    memo:hasMaterial memo:parchment ;
-    memo:hasExtent :extent_1 ;
-    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger ;
-    memo:hasPart :recto_4 , :verso_4 .
+ex:folio_1 a memo:Folio ;
+    dcterms:medium memo:paper ;
+    dcterms:extent ex:extent_1 ;
+    frbr:part ex:recto_1 , ex:verso_1 .
 
-:folio_5 a memo:Folio ;
-    memo:hasMaterial memo:parchment ;
-    memo:hasExtent :extent_3 ;
-    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger ;
-    memo:hasPart :recto_5 , :verso_5 .
+ex:folio_2 a memo:Folio ;
+    dcterms:medium memo:paper ;
+    dcterms:extent ex:extent_1 ;
+    frbr:part ex:recto_2 , ex:verso_2 .
 
-:folio_6 a memo:Folio ;
-    memo:hasMaterial memo:parchment ;
-    memo:hasExtent :extent_3 ;
-    memo:hasNumberOfColumns "2"^^xsd:nonNegativeInteger ;
-    memo:hasPart :recto_6 , :verso_6 .
+ex:folio_3 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_1 ;
+    frbr:part ex:recto_3 , ex:verso_3 .
 
-:extent_1 a memo:Extent ;
-    memo:hasHeight "210"^^xsd:nonNegativeInteger ;
-    memo:hasWidth "180"^^xsd:nonNegativeInteger .
+ex:folio_4 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_1 ;
+    frbr:part ex:recto_4 , ex:verso_4 .
 
-:extent_2 a memo:Extent ;
-    memo:hasHeight "180"^^xsd:nonNegativeInteger ;
-    memo:hasWidth "140"^^xsd:nonNegativeInteger .
+ex:folio_5 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_3 ;
+    frbr:part ex:recto_5 , ex:verso_5 .
 
-:extent_3 a memo:Extent ;
-    memo:hasHeight "160"^^xsd:nonNegativeInteger ;
-    memo:hasWidth "120"^^xsd:nonNegativeInteger .
+ex:folio_6 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_3 ;
+    frbr:part ex:recto_6 , ex:verso_6 .
 
-:codex_1 a memo:Codex ;
-    memo:hasIdentifier "001" ;
-    memo:datesBackTo :timeinterval_1 ;
-    memo:hasExtent :extent_1 ;
-    memo:hasPart :binding_1 , :folio_1 , :folio_2 , :folio_3 , :folio_4 .
+ex:extent_1 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "210"^^xsd:positiveInteger ;
+    memo:hasWidth "180"^^xsd:positiveInteger .
 
-:binding_1 a memo:Binding ;
-    memo:hasMaterial memo:parchment .
+ex:extent_2 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "180"^^xsd:positiveInteger ;
+    memo:hasWidth "140"^^xsd:positiveInteger .
 
-:codex_2 a memo:Codex ;
-    memo:hasIdentifier "002" ;
-    memo:datesBackTo :timeinterval_2 ;
-    memo:hasExtent :extent_2 ;
-    memo:hasPart :binding_2 , :folio_5 , :folio_6 .
+ex:extent_3 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "160"^^xsd:positiveInteger ;
+    memo:hasWidth "120"^^xsd:positiveInteger .
 
-:binding_2 a memo:Binding ;
-    memo:hasMaterial memo:parchment .
+ex:codex_1 a memo:Codex ;
+    dcterms:identifier "001" ;
+    frbr:part ex:binding_1 , ex:folio_1 , ex:folio_2 , ex:folio_3 , ex:folio_4 .
 
-:manuscript_1 a memo:Manuscript ;
-    memo:hasTitle "Arbor cum Glossis Ioannis Phasellus" ;
-    memo:hasPart :text_1 .
+ex:codex_2 a memo:Codex ;
+    dcterms:identifier "002" ;
+    frbr:part ex:binding_2 , ex:folio_5 , ex:folio_6 .
 
-:manuscript_2 a memo:Manuscript ;
-    memo:hasTitle "Epistula ad Barbalum" ;
-    memo:hasPart :text_2 .
+ex:manuscript_1 a memo:Manuscript ;
+    dcterms:title "Arbor cum Glossis Ioannis Phasellus" ;
+    frbr:part ex:text_1 .
 
-:manuscript_3 a memo:Manuscript ;
-    memo:hasTitle "Fragmenta Decreti" ;
-    memo:hasPart :text_3 .
+ex:manuscript_2 a memo:Manuscript ;
+    dcterms:title "Epistula ad Barbalum" ;
+    frbr:part ex:text_2 .
 
-:text_1 a memo:Text ;
-    memo:hasEmbodiment :folio_1 , :folio_2 .
+ex:manuscript_3 a memo:Manuscript ;
+    dcterms:title "Fragmenta Decreti" ;
+    frbr:part ex:text_3 .
 
-:text_2 a memo:Text ;
-    memo:hasEmbodiment :folio_3 , :folio_4 .
+ex:text_1 a memo:Text ;
+    frbr:embodiment ex:folio_1 , ex:folio_2 .
 
-:text_3 a memo:Text ;
-    memo:hasEmbodiment :folio_5 , :folio_6 .
+ex:text_2 a memo:Text ;
+    frbr:embodiment ex:folio_3 , ex:folio_4 .
 
-:timeinterval_1 a memo:TimeInterval ;
-    memo:hasIntervalStartDate "1200"^^xsd:gYear ;
-    memo:hasIntervalEndDate "1299"^^xsd:gYear .
-
-:timeinterval_2 a memo:TimeInterval ;
-    memo:hasIntervalStartDate "1300"^^xsd:gYear ;
-    memo:hasIntervalEndDate "1499"^^xsd:gYear .
+ex:text_3 a memo:Text ;
+    frbr:embodiment ex:folio_5 , ex:folio_6 .
