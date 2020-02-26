@@ -1,10 +1,10 @@
 # Formal Competency Questions (Iteration 6)
 
 ## CQ_6.1
-Return all the codices which are made up by folios made of different materials.
+Return all the codices in which at least one folio is made of a different material with respect to the other folios that are part of that codex.
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT DISTINCT ?codex
@@ -21,10 +21,10 @@ WHERE {
 ```
 
 ## CQ_6.2
-Return all the codices whose binding extent is different with respect to the folios they are made up by.
+Return all the codices in which the size measurements in terms of length and width (measured in millimeters) of their bindings are different with respect to the size measurements of the folios that are part of them.
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT DISTINCT ?codex
@@ -35,21 +35,21 @@ WHERE {
              memo:hasExtent ?extent .
     ?extent a memo:Extent ;
             memo:hasWidth ?width ;
-            memo:hasHeight ?height .
+            memo:hasLength ?length .
     ?folio a memo:Folio ;
            memo:hasExtent ?extent2 .
     ?extent2 a memo:Extent ;
              memo:hasWidth ?width2 ;
-             memo:hasHeight ?height2 .
-  FILTER ( ?width != ?width2 && ?height != ?height2 )
+             memo:hasLength ?length2 .
+  FILTER ( ?width != ?width2 && ?length != ?length2 )
 }
 ```
 
 ## CQ_6.3
-Return all the codices whose folios have a variable number of columns.
+Return all the codices in which at least one side of a folio has a number of columns that is different with respect the sides of the other folios that are part of that codex.
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT DISTINCT ?codex
@@ -66,10 +66,10 @@ WHERE {
 ```
 
 ## CQ_6.4
-Return all the titles of the manuscripts contained in codices being cited by works created by `author_I`.
+Return all the titles of the manuscripts contained in codices being cited by works created by `ex:author_I`, the identifier of each codex and the title of each work. 
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -86,7 +86,7 @@ WHERE {
          memo:hasIdentifier ?id ;
          ^memo:cites ?book .
   ?book a memo:Book ;
-        memo:hasCreator :author_I ;
+        memo:hasCreator ex:author_I ;
         memo:hasTitle ?titlebook.
 }
 ```

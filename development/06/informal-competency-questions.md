@@ -6,7 +6,7 @@
 CQ_6.1
 
 ### Question
-Return all the codices in which at least one folio is made of a different material with respect to the other folios.
+Return all the codices in which at least one folio is made of a different material with respect to the other folios that are part of that codex.
 
 ### Expected outcome
 A list of codices.
@@ -23,7 +23,7 @@ Example 1
 CQ_6.2
 
 ### Question
-Return all the codices whose binding size measurement (measured in millimeters) is different with respect to the folios they are made up by.
+Return all the codices in which the size measurements in terms of length and width (measured in millimeters) of their bindings are different with respect to the size measurements of the folios that are part of them.
 
 ### Expected outcome
 A list of codices.
@@ -37,7 +37,7 @@ A list of codices.
 CQ_6.3
 
 ### Question
-Return all the codices in which at least one side of a folio has a number of columns that is different with respect the sides of the other folios.
+Return all the codices in which at least one side of a folio has a number of columns that is different with respect the sides of the other folios that are part of that codex.
 
 ### Expected outcome
 A list of codices.

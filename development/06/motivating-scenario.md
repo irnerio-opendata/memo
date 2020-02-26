@@ -1,10 +1,10 @@
 # Motivating Scenario (Iteration 6)
 
 ## Name
-Codex metadata
+Codex dimensions and materials
 
 ## Description
-A codex is characterised by a series of features. First of all, a codex is identified by one or more identifiers including alphanumeric characters. Furthermore, a codex is made of one or more materials, such as parchment, paper, or a combination of both. Sometimes a particular material is also associated with specific folios or ranges of them. Moreover, a codex is characterised by having an extension in space which is expressed in terms of length and width and measured in millimeters. A second dimensional value can further refer to the set of folios that are part of the codex, or even specific ranges within that set. Finally, a codex is also characterised by a value that represents the number(s) of columns according to which the text of the manuscript(s) has been organised. Within a single codex, the number may be subject to change and may also refer to specific ranges of folios as well.
+A codex is characterized by a series of features. First of all, a codex is identified by one or more identifiers including alphanumeric characters. Furthermore, a codex is made of one or more materials, such as parchment, paper, or a combination of both. Sometimes a material is also associated with specific folios or ranges of them. Moreover, a codex is characterized by having an extension in space which is expressed in terms of length and width and measured in millimeters. A second dimensional value can further refer to the set of folios that are part of the codex, or even specific ranges within that set. Finally, a codex is also characterized by a value that represents the number(s) of columns according to which the text of the manuscript(s) has been organized. Within a single codex, the number may be subject to change and may also refer to specific ranges of folios as well.
 
 ## Example 1
 `codex_1` has identifier "001". It dates back to the XIII century. `binding_1`, `folio_1`, `folio_2`, `folio_3`, `folio_4` are part of it. `recto_1` and `verso_1` are part of `folio_1`. `recto_2` and `verso_2` are part of `folio_2`. `recto_3` and `verso_3` are part of `folio_3`. `recto_4` and `verso_4` are part of `folio_4`. 
@@ -15,21 +15,21 @@ A codex is characterised by a series of features. First of all, a codex is ident
 
 In particular:
 
-* `binding_1` is made up by `parchment`. The height of `codex_1` is 210mm and its width is 180mm.
+* `binding_1` is made up by `parchment`. The length of `codex_1` is 210mm and its width is 180mm.
 
-* `folio_1` is made up by `paper`. Its height is 210mm and its width is 180mm. It has 2 columns.
+* `folio_1` is made up by `paper`. Its length is 210mm and its width is 180mm. It has 2 columns.
 
-* `folio_2` is made up by `paper`. Its height is 210mm and its width is 180mm. It has 1 column.
+* `folio_2` is made up by `paper`. Its length is 210mm and its width is 180mm. It has 1 column.
 
-* `folio_3` is made up by `parchment`. Its height is 210mm and its width is 180mm. It has 1 column.
+* `folio_3` is made up by `parchment`. Its length is 210mm and its width is 180mm. It has 1 column.
 
-* `folio_4` is made up by `parchment`. Its height is 210mm and its width is 180mm. It has 2 columns.
+* `folio_4` is made up by `parchment`. Its length is 210mm and its width is 180mm. It has 2 columns.
 
-* `binding_2` is made up by `parchment`. The height of `codex_2` is 180mm and its width is 140mm.
+* `binding_2` is made up by `parchment`. The length of `codex_2` is 180mm and its width is 140mm.
 
-* `folio_5` is made up by `parchment`. Its height is 160mm and its width is 120mm. It has 2 columns.
+* `folio_5` is made up by `parchment`. Its length is 160mm and its width is 120mm. It has 2 columns.
 
-* `folio_6` is made up by `parchment`. Its height is 160mm and its width is 120mm. It has 2 columns.
+* `folio_6` is made up by `parchment`. Its length is 160mm and its width is 120mm. It has 2 columns.
 
 `book_1` (with title "Vermischte Schriften"), created by `author_I`, cites `codex_1` and `codex_2`.
 
