@@ -1,9 +1,9 @@
-@prefix : <https://n-e-s-p.github.io/project-irnerio/development/05/TBox.ttl#> .
+@prefix : <https://w3id.org/irnerio/ontology/memo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://n-e-s-p.github.io/project-irnerio/development/05/TBox.ttl#> a owl:Ontology .
+<https://w3id.org/irnerio/ontology/memo> a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -31,7 +31,7 @@
     rdfs:range :Person ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://n-e-s-p.github.io/project-irnerio/development/05/TBox.ittl#hasEmbodiment
+# https://w3id.org/irnerio/ontology/memo/hasEmbodiment
 
 :hasEmbodiment a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .

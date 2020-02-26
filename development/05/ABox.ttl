@@ -1,12 +1,12 @@
-@prefix ex: <https://n-e-s-p.github.io/project-irnerio/development/05/ABox.ttl#> .
-@prefix memo: <https://n-e-s-p.github.io/project-irnerio/development/05/TBox.ttl#> .
+@prefix ex: <https://w3id.org/irnerio/data/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Linking to the main ontology
-<https://n-e-s-p.github.io/project-irnerio/development/05/ABox.ttl> a owl:Ontology ;
-    owl:imports <https://n-e-s-p.github.io/project-irnerio/development/05/TBox.ttl> .
+<https://w3id.org/irnerio/data/memo-abox> a owl:Ontology ;
+    owl:imports <https://w3id.org/irnerio/ontology/memo> .
 
 ex:codex_1 a memo:Codex ;
     memo:hasPart ex:folio_1 , ex:folio_2 , ex:folio_3 , ex:folio_4 .
