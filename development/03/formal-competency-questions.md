@@ -1,16 +1,16 @@
 # Formal Competency Questions (Iteration 3)
 
 ## CQ_3.1
-Return the entities cited by the textual metadata in time of `manuscript_1`.
+Return the entities cited by the textual metadata in time of `ex:manuscript_2`.
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT ?entity
 
 WHERE {
-  ?tmit ^memo:hasTextualMetadata :manuscript_2 ;
+  ?tmit ^memo:hasTextualMetadata ex:manuscript_2 ;
         memo:cites ?entity .
 }
 ```
@@ -18,17 +18,17 @@ WHERE {
 ***
 
 ## CQ_3.2
-Return all the titles of the critical editions cited by second-level glosses that cite or annotate `text_2`.
+Return all the titles of the critical editions cited by second-level glosses that cite or annotate `ex:text_2`.
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT ?title
 
 WHERE {
   ?gloss a memo:Gloss ;
-         (memo:cites|memo:annotates) / (memo:cites|memo:annotates) :text_2 ;
+         (memo:cites|memo:annotates) / (memo:cites|memo:annotates) ex:text_2 ;
          memo:cites ?edition .
   ?edition a memo:CriticalEditionVolume ;
            ^memo:hasRealization ?editionwork .
@@ -42,7 +42,7 @@ WHERE {
 Return all the manuscripts in which at least a second-level gloss that annotates a text cites the same critical edition.
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT ?manuscript

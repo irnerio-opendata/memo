@@ -9,7 +9,7 @@ The objects that are both internal and external of the catalogue (codices, manus
 Finally, the catalogue metadata Bibliography contains a series of citations that relate the codex the metadata is about to one or more books that have been used as references to describe that codex.
 
 ## Example 1
-`incipit_2` and `explicit_2` are related to `manuscript_2`. `gloss_g`, `gloss_h`, `gloss_i`, `gloss_l` and `text_2` are part of `manuscript_2`. `incipit_3` is related to `manuscript_3`. `gloss_m`, `gloss_n` and `text_3` are part of `manuscript_3`.
+`manuscript_2` has `incipit_2` and `explicit_2`. `gloss_g`, `gloss_h`, `gloss_i`, `gloss_l` and `text_2` are part of `manuscript_2`. `manuscript_3` has `incipit_3`. `gloss_m`, `gloss_n` and `text_3` are part of `manuscript_3`.
 
 Provided that:
 

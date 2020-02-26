@@ -25,16 +25,6 @@
     rdfs:subPropertyOf :refersTo ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://w3id.org/irnerio/ontology/memo/hasCitedEntity
-
-:hasCitedEntity a owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
-#
-# https://w3id.org/irnerio/ontology/memo/hasCitingEntity
-
-:hasCitingEntity a owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
-#
 # https://w3id.org/irnerio/ontology/memo/hasContent
 
 :hasContent a owl:ObjectProperty ;
@@ -51,7 +41,7 @@
 :hasEmbodiment a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://w3id.org/irnerio/ontology/memo/hasPart .
+# https://w3id.org/irnerio/ontology/memo/hasPart
 
 :hasPart a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
@@ -92,16 +82,6 @@ owl:Thing a owl:Class .
 :Book a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://w3id.org/irnerio/ontology/memo/CatalogDocument
-
-:CatalogDocument a owl:Class ;
-    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
-#
-# https://w3id.org/irnerio/ontology/memo/Citation
-
-:Citation a owl:Class ;
-    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
-#
 # https://w3id.org/irnerio/ontology/memo/Codex
 
 :Codex a owl:Class ;
@@ -140,32 +120,4 @@ owl:Thing a owl:Class .
 # https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime
 
 :TextualMetadataInTime a owl:Class ;
-    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
-#
-# https://w3id.org/irnerio/ontology/memo/TextualRole
-
-:TextualRole a owl:Class ;
-    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# https://w3id.org/irnerio/ontology/memo/explicit
-
-:explicit a :TextualRole ;
-    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
-#
-# https://w3id.org/irnerio/ontology/memo/finalRubric
-
-:finalRubric a :TextualRole ;
-    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
-#
-# https://w3id.org/irnerio/ontology/memo/incipit
-
-:incipit a :TextualRole ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
