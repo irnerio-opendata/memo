@@ -13,3 +13,5 @@ This repository contains the full documentation produced during the development 
 * the `diagrams` directory contains a set of Graffoo diagrams representing the refactored model of each iteration;
 
 * the `sparql` directory contains a set of refactored Formal Competency Questions.
+
+![](https://github.com/irnerio-opendata/memo/blob/master/diagrams/memo_full_diagram.png)
