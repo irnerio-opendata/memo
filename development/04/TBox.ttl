@@ -49,9 +49,9 @@
 :hasPart a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://w3id.org/irnerio/ontology/memo/isValidInInterval
+# https://w3id.org/irnerio/ontology/memo/hasDateValid
 
-:isValidInInterval a owl:ObjectProperty ;
+:hasDateValid a owl:ObjectProperty ;
     rdfs:domain :Literal ;
     rdfs:range :TimeInterval ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
@@ -111,6 +111,11 @@
 # #################################################################
 # 
 #
+# https://w3id.org/irnerio/ontology/memo/Comment
+
+:Comment a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
 # https://w3id.org/irnerio/ontology/memo/Gloss
 
 :Gloss a owl:Class ;
@@ -141,13 +146,4 @@
 # https://w3id.org/irnerio/ontology/memo/TimeInterval
 
 :TimeInterval a owl:Class ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty :hasIntervalStartDate ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] , [
-        a owl:Restriction ;
-        owl:onProperty :hasIntervalEndDate ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-    ] ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
