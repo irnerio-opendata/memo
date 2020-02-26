@@ -4,41 +4,42 @@
 Textual metadata in time
 
 ## Description
-Textual metadata in time are entities related to a manuscript that record textual information about it. They hold textual roles that fulfill certain functions in the world of discourse represented by the manuscript. In particular, textual metadata in time can assume the following textual roles:
+Metadata that record textual information are not fixed. Each metadata is created by some agent, is held in a certain period by some entity (e.g. a manuscript) and has a value assigned to it within a particular context. In fact, metadata change in time and layer on the top of each other, thus creating a record of various interpretations with respect to certain aspects of that resource. Thus, it is of the utmost importance to keep track of these changes. In the case of manuscripts, these metadata can assume the following values:
 
 * incipit: the context of the textual metadata in time is equivalent to a string notifying the opening words of either the manuscript text, a gloss, or both;
 * explicit: the context of the textual metadata in time is equivalent to a string notifying the closing words of either the manuscript text, a gloss, or both;
-* final rubric: the context of the textual metadata in time is equivalent to a textual string notifying the explicit end of either the manuscript text, a gloss, or both;
+* final rubric: the context of the textual metadata in time is equivalent to a textual string notifying the explicit end of either the manuscript text, a gloss, or both.
 
-Each textual metadata is held in a certain period of time by some entity (e.g. a manuscript) and has a role assigned to it in relation to a certain textual context that is based on certain criteria. In the case of manuscripts, it is based on either the manuscript text, a gloss, or both.
-
-
+Also, if the metadata refers to a manuscript, the context is based on either the manuscript text, a gloss, or both.
 
 ## Example 1
-`incipit_1`, `explicit_1` and `f_rubric_1` are related to `manuscript_1`. `incipit_2` and `explicit_2` are related to `manuscript_2`. `incipit_3` is related to `manuscript_3`.
+`manuscript_1` has `incipit_1`, `explicit_1` and `f_rubric_1`. `manuscript_2` has `incipit_2` and `explicit_2`. `manuscript_3` has `incipit_3`. Given that:
 
-Given that:
+* `incipit_1` has context based on `text_1` and `gloss_a`, at time 1779. It has been created by `agent_1`;
 
-* `incipit_1` has content `content_incipit_1` based on `text_1` and `gloss_a`, at time 1779;
+* `explicit_1` has context based on `text_1` and `gloss_f`, at time 1780. It has been created by `agent_1`;
 
-* `explicit_1` has content `content_explicit_1` based on `text_1` and `gloss_f`, at time 1780;
+* `f_rubric_1` has context based on `text_1`, at time 1780. It has been created by `agent_1`;
 
-* `f_rubric_1` has content `content_f_rubric_1` based on `text_1`, at time 1780;
+* `incipit_2` has context based on `text_2`, at time 1861. It has been created by `agent_2`;
 
-* `incipit_2` has content `content_incipit_2` based on `text_2`, at time 1861;
+* `explicit_2` has context based on `text_2`, at time 1861. It has been created by `agent_2`;
 
-* `explicit_2` has content `content_explicit_2` based on `text_2`, at time 1861;
-
-* `incipit_3` has content `content_incipit_3` based on `text_3`, at time 1800;
+* `incipit_3` has context based on `text_3`, at time 1800. It has been created by `agent_1`.
 
 then:
 
-* all the Textual Metadata In Time with role "incipit" which have been provided between 1750 and 1850 are:
-    * `incipit_1`, in `manuscript_1`
-    * `incipit_3`, in `manuscript_3`
+* all the metadata with role "incipit" which have been provided between 1750 and 1850 are:
+    * `incipit_1`, in `manuscript_1`;
+    * `incipit_3`, in `manuscript_3`;
 
-* all the Textual Metadata In Time whose contents are based on only a text are:
-    * `f_rubric_1`, with textual role `final rubric`, in `manuscript_1`
-    * `incipit_2`, with textual role `incipit`, in `manuscript_2`
-    * `explicit_2`, with textual role `explicit`, in `manuscript_2`
-    * `incipit_3`, with textual role `incipit`, in `manuscript_3`
+* all the metadata whose contents are based on only a text are:
+    * `f_rubric_1`, with textual role `final rubric`, in `manuscript_1`;
+    * `incipit_2`, with textual role `incipit`, in `manuscript_2`;
+    * `explicit_2`, with textual role `explicit`, in `manuscript_2`;
+    * `incipit_3`, with textual role `incipit`, in `manuscript_3`;
+
+* all the metadata provided by `agent_1` starting from 1780, along with their textual roles, their dates and the manuscripts they are related to are:
+    * `explicit_1`, `explicit`, 1780, `manuscript_1`;
+    * `f_rubric_1`, `final rubric`, 1780, `manuscript_1`;
+    * `incipit_3`, `incipit`, 1800, `manuscript_3`.

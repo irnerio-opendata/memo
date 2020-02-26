@@ -19,6 +19,11 @@
     rdfs:range :TimeInterval ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
+# https://w3id.org/irnerio/ontology/memo/hasCreator
+
+:hasCreator a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
+#
 # https://w3id.org/irnerio/ontology/memo/hasTextualMetadata
 
 :hasTextualMetadata a owl:ObjectProperty ;
@@ -39,9 +44,9 @@
     ] ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
-# https://w3id.org/irnerio/ontology/memo/relatesToManuscript
+# https://w3id.org/irnerio/ontology/memo/relatesToTextualContext
 
-:relatesToTextualContent a owl:ObjectProperty ;
+:relatesToTextualContext a owl:ObjectProperty ;
     rdfs:domain :TextualMetadataInTime ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
@@ -89,6 +94,11 @@
 # http://www.w3.org/2002/07/owl#Thing
 
 owl:Thing a owl:Class .
+#
+# https://w3id.org/irnerio/ontology/memo/Agent
+
+:Agent a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> .
 #
 # https://w3id.org/irnerio/ontology/memo/Gloss
 
