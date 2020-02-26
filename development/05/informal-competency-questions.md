@@ -18,8 +18,6 @@ A list of glosses.
 ### Based on
 Example 1
 
-***
-
 ## Question 2
 
 ### Identifier
@@ -37,8 +35,6 @@ A list of [Folio, Gloss] pairs.
 
 ### Based on
 Example 1
-
-***
 
 ## Question 3
 

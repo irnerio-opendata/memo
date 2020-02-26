@@ -4,9 +4,9 @@
 Foliation
 
 ## Description
-Foliation is the numbering of the folios that are part of a codex. A folio has two parts, each called side. A side can be either a recto or a verso. Each side of a folio is identified by a string consisting of the number of the folio followed by either a “r” (for recto) or “v” (for verso). 
+Foliation is the numbering of the folios that are part of a codex. A folio has two parts, each called side. A side can be either a recto or a verso. Each side of a folio is identified by a string consisting of the number of the folio followed by either a “r” (for recto) or “v” (for verso).
 
-The foliation of a codex might not be physically consequential. There could exist multiple manuscript texts in the same folio. A manuscript could exist outside the physical sequence of foliation by starting at a certain point, being interrupted by another manuscript, and then resuming after the latter ends. A manuscript could also start in a given codex and continue and finish in another. Moreover, there are also other components of the foliation of a codex (called “unnumbered pages” in the catalogue) that may be relevant for scholarly research. A folio that serves as protection of the actual text, usually located at the beginning or end of a codex, is called flyleaf. Another relevant component of a codex is the binding. A binding is made up by two rigid parts, called frontboard and backboard. Each board is in turn made up by an external cover and an internal plate.
+The foliation of a codex might not be physically consequential. There could exist multiple manuscript texts in the same folio. A manuscript could exist outside the physical sequence of foliation by starting at a certain point, being interrupted by another manuscript, and then resuming after the latter ends. A manuscript could also start in a codex and continue and finish in another.
 
 ## Example 1
 `folio_1`, `folio_2`, `folio_3` and `folio_4` are part of `codex_1`. `recto_1` and `verso_1` are part of `folio_1`. `recto_2` and `verso_2` are part of `folio_2`. `recto_3` and `verso_3` are part of `folio_3`. `recto_4` and `verso_4` are part of `folio_4`. In addition, `text_1` and `gloss_a`, `gloss_b`, `gloss_c`, `gloss_d`, `gloss_e`, `gloss_f` are part of `manuscript_1`. `text_2` and `gloss_g`, `gloss_h`, `gloss_i`, `gloss_l` are part of `manuscript_2`. In particular:

@@ -1,9 +1,9 @@
 # Informal Competency Questions (Iteration 5)
 
 ## CQ_5.1
-Return all the glosses that refer to the text embodied in `folio_2` but that are not embodied in it.
+Return all the glosses that refer to the text embodied in `ex:folio_2` but that are not embodied in it.
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT ?gloss
@@ -12,26 +12,26 @@ WHERE {
          memo:hasEmbodiment ?folio ;
          memo:refersTo ?text .
   ?text a memo:Text ;
-        memo:hasEmbodiment :folio_2 .
+        memo:hasEmbodiment ex:folio_2 .
   ?folio a memo:Folio .
   
-  FILTER ( :folio_2 != ?folio )
+  FILTER ( ex:folio_2 != ?folio )
 }
 ```
 
 ## CQ_5.2
-Return all the folios embodying second-level glosses, which have been made by `glossator_2` and refer to or cite or annotate `text_1`, and also return the aforementioned glosses.
+Return all the folios embodying second-level glosses, which have been made by `ex:glossator_2` and refer to or cite or annotate `ex:text_1`, and also return the aforementioned glosses.
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 
 SELECT ?folio ?gloss
 WHERE {
   ?gloss a memo:Gloss ;
          memo:hasEmbodiment ?folio ;
-         memo:hasCreator :glossator_2 ;
-         (memo:refersTo|memo:cites|memo:annotates) / (memo:refersTo|memo:cites|memo:annotates) :text_1 .
+         memo:hasCreator ex:glossator_2 ;
+         (memo:refersTo|memo:cites|memo:annotates) / (memo:refersTo|memo:cites|memo:annotates) ex:text_1 .
 }
 ```
 
@@ -39,7 +39,7 @@ WHERE {
 Return all the folios in which more than one manuscript text is embodied.
 
 ```
-PREFIX : <https://w3id.org/irnerio/data/memo/>
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
 PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
