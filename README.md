@@ -12,7 +12,7 @@ This repository contains the full documentation produced during the development 
 
 * the `diagrams` directory contains a set of Graffoo diagrams representing the refactored model of each iteration;
 
-* the `docs` directory contains all the files related to the ontology and its versions in time.
+* the `docs` directory contains all the files related to the ontology and its versions in time;
 
 * the `sparql` directory contains a set of refactored Formal Competency Questions.
 
