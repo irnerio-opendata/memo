@@ -1,0 +1,2341 @@
+[
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The definite magnitude of a quantity, defined and adopted by convention or by law, that is used as a standard for measurement of size."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "size measurement unit"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/cito/cites",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Subproperty of dcterms:relation. It refers to an entity citing a cited entity, either directly and explicitly, indirectly, or implicitly."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/cito"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "cites"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/relation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/spar/cito/isCitedBy"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/parchment",
+    "@type": [
+      "http://purl.org/dc/terms/PhysicalMedium"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Named individual of physical medium. It indicates a material made from animal skin."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "parchment"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/extent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates the extent of a resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has extent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/dc/terms/SizeOrDuration"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/name",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates the full name for something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has name"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/relation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that an entity refers in the most general way to another entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "refers to"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Recto",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The side of a folio that usually (but not necessarily) is to be read first."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "recto"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Side"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2010/06/literalreification/hasLiteral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates individuals of any class to a reified literal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.essepuntato.it/2010/06/literalreification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has literal"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.essepuntato.it/2010/06/literalreification/isLiteralOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/isContentOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that some thing has some other thing as content."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is content of"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#realization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates a work, that has been realized by an expression, to that particular expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has realization"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#realizationOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/isBasedOn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that some entity is based on another entity. For example, the textual context on which some textual metadata in time has assumed a certain textual role may be based on a manuscript text, a gloss, or both."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is based on"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/centimeters",
+    "@type": [
+      "https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Named individual of size measurement unit. It represents a unit of length or width equal to one hundredth of a meter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "centimeters"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Gloss",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An annotation that is part of a manuscript. It consists of a brief explanation or a continuous commentary accompanying a manuscript text (as in the margin or between the lines of the text)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "gloss"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/spar/fabio/Comment"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Work",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "work"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/contributor": [
+      {
+        "@value": "Monica Palmirani (https://orcid.org/0000-0002-8557-8084)"
+      },
+      {
+        "@value": "Silvio Peroni (http://orcid.org/0000-0003-0530-4305)"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@value": "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "\r\n    \r\n    MeMO, the Medieval Manuscripts Ontology, is an OWL 2 DL ontology that aims to provide a framework for the formal description of the medieval codices and manuscripts described in the Project IRNERIO catalogue and the relations that exist between them.\r\n    \r\n    It is centered on a set of concepts (codex, manuscript, folio, text and gloss), which have been precisely defined via the Functional Requirements for Bibliographic Records (FRBR) standard in order to model such complexity in an accurate and logically consistent structure.\r\n    \r\n    The model thus becomes able to cover multiple use cases and scenarios in proportion to how many requirements have been adequately met.\r\n    \r\n    While developing MeMO, a high priority has been given to the goal of reaching a sound balance between precision (to satisfy the user’s needs) and coverage (to ensure a certain degree of extensibility and reuse) of the model. Ultimately, the idea behind the development of MeMO has been to provide a data model for representing the aforementioned collection of medieval codices and manuscripts according to certain requirements and with the possibility to extend it for representing similar resources that exist in other collections.\r\n\r\n    FRBR allows a holistic perspective about the resource, on multiple levels of conceptualization, by breaking down the semantic and conceptual ambiguities related to objects created by human hands into different but related and layered concepts and by allowing the description of an artifact and its relations with other entities to be more expressive, precise and dynamic.\r\n\r\n    Nonetheless, FRBR has some limitations. Even though the definitions of its concepts are quite straightforward, FRBR is not easily understood by the common user, who finds the terms work, expression, manifestation and item not very clear. \r\n    \r\n    According to FRBR, any object (such as a manuscript, for example) has to be described by taking into consideration all the four levels in order to have a complete overview of it. This multi-leveled conceptualization is difficult for an average user to comprehend, because it is much more intuitive to expect the concept of that object to exist at a single FRBR level. In order to avoid this issue without giving up the expressivity of FRBR, a good solution is to place that object at the level that is deemed more appropriate in relation to the scenario taken into consideration. \r\n    \r\n    This approach has been used systematically for the FRBR-aligned Bibliographic Ontology (FaBiO) (Peroni and Shotton 2012), with which MeMO has been aligned. Being an ontology focused on entities that are published, textual in nature, and/or referred to by bibliographic references, FaBiO defines its own set of entities that are subclasses of the original FRBR entities by taking advantage of the FRBRcore RDF vocabulary (FRBRcore, http://purl.org/vocab/frbr/core#). In order to embrace this approach and be consistent with the scenarios that are present in the case study, MeMO reuses FaBiO interpretations of FRBR entities as superclasses of its entities. In particular: manuscript, text and gloss are conceptualized as subclasses of `fabio:Expression` (since they are carry a content and are not inherently related to a precise format), while codex and folio are conceptualized as subclasses of `fabio:Manifestation`, since they carry a format that functions as a container for both text and glosses, and thus for manuscripts as well.\r\n\r\n    Currently, MeMO is able to describe the following situations:\r\n\r\n    * the gloss apparatus of a manuscript, made of glosses and annotation relationships between them and other entities, such as a manuscript, a manuscript text and other glosses;\r\n\r\n    * textual metadata related to manuscripts (e.g. incipit, explicit and final rubric) and how they change in time;\r\n\r\n    * the structure of citations that exists between manuscripts, glosses, textual metadata, editions and other similar resources;\r\n\r\n    * the variations of people’s names in time;\r\n\r\n    * foliation;\r\n\r\n    * codex metadata (e.g. dimensions and materials)\r\n\r\n    The following figure contains a [Graffoo diagram](http://www.essepuntato.it/graffoo) that provides an overview of the classes and properties introduced in MeMO.\r\n\r\n    ![A Graffoo diagram of MeMO](memo.png)\r\n\r\n    The current version of MeMO reuses several ontologies:\r\n\r\n    * [CiTO](http://purl.org/spar/cito), an ontology that enables characterization of the nature or type of citations, both factually and rhetorically;\r\n\r\n    * [DCTerms](http://purl.org/dc/terms), a specification implementing all the metadata terms maintained by the Dublin Core Metadata Initiative, including properties, vocabulary encoding schemes, syntax encoding schemes, and classes;\r\n\r\n    * [FaBiO](http://purl.org/spar/fabio), an ontology based on the FRBR model and used for describing bibliographical entities in all their various essences;\r\n\r\n    * [FOAF](http://xmlns.com/foaf/0.1), a vocabulary for describing people and their relations with other people, documents, and other information objects;\r\n\r\n    * [FRBRcore](http://purl.org/vocab/frbr/core), an RDF vocabulary incorporating the basic concepts and relations described in the IFLA report on the Functional Requirements for Bibliographic Records (FRBR);\r\n\r\n    * [literal](http://www.essepuntato.it/2010/06/literalreification), an ontology pattern which allows modelling certain literals as individuals of a class so that one may use them as proper subjects or objects of RDF statements within an ontology;\r\n\r\n    * [TI](http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl), an ontology pattern enables the description of periods of time, each characterized by a starting date and an ending date;\r\n\r\n    * [TVC](http://purl.org/spar/tvc), an ontology pattern for the description of situations in which entities have values during a particular time and within a particular context.\r\n\r\n    The next subsections provide a quick overview of all the entities defined, some examples of usage and some queries that MeMO can answer.\r\n    \r\n    ### FRBR alignment with FaBiO\r\n\r\n    In order to adequately represent the domain in question according to the demands of the domain expert, it was necessary to design MeMO so as to represent different levels of conceptualization of the collection resources. Moreover, the dynamic nature of the catalogue and the resources it describes had to be taken in consideration as well. Finally, MeMO needed to be flexible enough to accommodate external entities (e.g. critical editions citing the corresponding manuscripts) with ease and to be eventually extended for describing specific scenarios related to manuscript study, representation and analysis.\r\n\r\n    In light of these considerations, it was chosen to design MeMO around the Functional Requirements for Bibliographic Records standard (FRBR), highly adaptable model that is not bound to a specific implementation and can be applied to both physical and digital resources. FRBR allows a holistic perspective about the resource, on multiple levels of conceptualization (Work, Expression, Manifestation, Item), by breaking down the semantic and conceptual ambiguities related to objects created by human hands into different but related and layered concepts and by allowing the description of an artifact and its relations with other entities to be more expressive, precise and dynamic.\r\n\r\n    According to FRBR, any object (such as a manuscript, for example) has to be described by taking into consideration all the four levels in order to have a complete overview of it. This multi-leveled conceptualization is difficult for an average user to comprehend, because it is much more intuitive to expect the concept of that object to exist at a single FRBR level. In order to avoid this issue without giving up the expressivity of FRBR, a good solution is to place that object at the level that is deemed more appropriate in relation to the scenario taken into consideration. This approach has been used systematically for the FRBR-aligned Bibliographic Ontology (FaBiO), with which MeMO has been aligned.\r\n\r\n    Being an ontology focused on entities that are published, textual in nature, and/or referred to by bibliographic references, FaBiO defines its own set of entities that are subclasses of the original FRBR entities. MeMO reuses FaBiO interpretations of FRBR entities as superclasses of its entities. In particular: manuscript, text and gloss are conceptualized as subclasses of fabio:Expression (since they are carry a content and are not inherently related to a precise format), while codex and folio are conceptualized as subclasses of fabio:Manifestation, since they carry a format that functions as a container for both text and glosses, and thus for manuscripts as well.\r\n\r\n    ### MeMO entities\r\n\r\n    MeMO classes model the components of the collection (codices and manuscripts), their parts (folios, text and glosses) and other ancillary entities (such as books, editions, people, etc.).\r\n    \r\n    A manuscript (represented by the class memo:Manuscript) is made up by one text and zero or more glosses. In MeMO, the term “manuscript” refers to an entity made up by other conceptual elements such as the manuscript text (represented by the class memo:Text, it is understood as the primary text of the manuscript) and glosses (represented by the class memo:Gloss, they are comments on the text and are part of the entirety of the manuscript universe). Text and glosses attain a physical realization in the moment they themselves in the physical format carried by a folio.\r\n\r\n    The distribution of a manuscript through one or more folios is expressed in MeMO by stating that memo:Manuscript, memo:Text and memo:Gloss are embodied in memo:Folio. In this way, it is possible to represent the structure of a manuscript in terms of text and glosses that are part of it. Moreover, MeMO can also represent in an accurate way many different scenarios that are effectively present in the collection of Progetto IRNERIO (e.g. multiples manuscript in the same folio, non-sequential foliation, bilocation of the same manuscript in two codices, etc.).\r\n\r\n    A codex (represented by the class memo:Codex) is composed by one or more folios, in which one or more manuscripts are embodied. The MeMO understanding of the term “codex” is very precise and refers to a physical object that should not be confused with “the Codex” (i.e. the Codex Justinianeus), nor with the concept of manuscript (classically understood as a physical document written by hand by someone). Instead, it is a composite entity, without a clear authorship and title, that embodies manuscripts.\r\n\r\n    A folio (a leaf or sheet of paper or another material, represented by the class memo:Folio) is a physical object that is usually - but not necessarily - part of a codex. It is made up of two sides, one called recto (the front side of a folio) and the other called verso (the back side of a folio). It carries a specific format and layout. Most of the time, a folio is part of a codex and accommodates the text and the glosses of a manuscript. However, it is also possible that certain folios may be missing or may function as protection to eventual damage to the codex they are part of (the so-called flyleaves). Folios can be cut from a codex and rearranged in the same or even in another codex. Since there is no closure between a folio and a manuscript, no part-whole relation between them can be established. This is represented in the model via FRBR, in which part-whole relations can exist only between same-level entities. Since a folio is a manifestation and a manuscript is an expression, the relation does not hold up.\r\n\r\n    Codices and folios are characterized by a series of relevant information for any scholar. Two examples of important information that have been addressed during the development of MeMO are the foliation (the sequence according to which folios are arranged in the codex) and the physical attributes of a codex, such as dimensions (measured in terms of length and width) and materials. MeMO is thus able to represent the structure of a codex in terms of foliation and to return the physical information about the codex, such as its materials, dimensions, identifiers and number of columns.\r\n    \r\n    In addition to the aforementioned entities, MeMO contains other classes that represent resources and agents contributing somehow to the information contained within the Progetto IRNERIO catalogue (e.g. books, editions, catalog documents, but also people, materials, etc.). Many of these entities have been easily handled through FaBiO, with classes like fabio:Book and fabio:CriticalEdition. FOAF and DCTerms have been reused to model useful concepts, such as person and materials, through the classes foaf:Person and dcterms:PhysicalMedium.\r\n    \r\n    Certain classes, on the other hand, have been specifically created for modelling particular aspects of the catalogue which had not or could not be modelled by other existing models. New classes have been created as subclasses of existing classes existing in other models, in order to refine them in a more accurate way (e.g. memo:SizeMeasurement as subclass of dcterms:SizeOrDuration for representing only the idea of physical dimensions). Finally, some classes have been reused or created in MeMO on the basis of particular Ontology Design Patterns, in order to deal with specific modelling issues.\r\n\r\n    ### MeMO relationships\r\n\r\n    The part-whole relation between members of the same FRBR level through frbr:part (along with its inverse frbr:partOf) through the OWL 2 formalization of FRBRcore (http://purl.org/spar/frbr) which forces frbr:part and frbr:partOf at the same FRBR level by introducing a series of restrictions to the classes. This way, it is possible to assert that a folio is part of a codex and that a text or a gloss is part of a manuscript by using the same property at different FRBR levels of conceptualization without incurring in logical inconsistencies.\r\n\r\n    A key aspect of MeMO is the representation of relationships between and within the different resources that constitute the collection of codices and manuscripts provided by Progetto IRNERIO. For example, citations may play an important role in the description of these kind of resources, because the network of citations created by combining this kind of information represents a very useful resource for scholarly research. A medievalist’s research might be centered around the reconstruction of the network of references between a manuscript text and a series of glosses. Instead, a modern historian might focus on the way glosses and other resources (such as textual metadata) comment on other glosses, thus spreading the volume of commentaries beyond the collection itself. Finally, a contemporary historian might be interested in retracing how a certain manuscript has been cited by critical editions over time.\r\n\r\n    Overall, with MeMO it becomes possible to easily browse this intricate data and to compute the level of annotation of each gloss, changing dynamically the perspective on a certain source and inferring new information. In order to do so, it was necessary to take into consideration, during the development of MeMO, a number of different entities and the disparate ways in which these entities could relate to each other. These relationships build up a complex record of interpretations, commentaries and references. In fact, glosses made by different people in different time periods keep layering on the top of each other, either citing or annotating or referring to the text, or another gloss, or a whole manuscript.\r\n\r\n    In the current version of MeMO, the properties that express these relationships are three: dcterms:relation, memo:annotates and cito:cites. The object property dcterms:relation is the most general way to express the idea of an entity that refers to another entity and does not specify the nature of the relationship. memo:annotates indicates that some entity (most likely a comment or a gloss) provides a critical or explanatory observation to another entity, thus implying an interpretive and supplementary intention underlying the relationship (e.g. a gloss may annotate a manuscript text to explain an obscure passage contained within). cito:cites indicates that some citing entity mentions a cited entity and, with respect to the resources of Progetto IRNERIO, it is used to model the particular way a gloss or a comment may refer to another entity (e.g. by including a quotation from the cited entity). It is also used to represent the bibliographic references that are present in the descriptions of codices and manuscript and in other scenarios as well (e.g. metadata citing other works, a book citing one or more codices, a critical edition citing one or more manuscripts, and so on).\r\n\r\n    When developing MeMO, domain and range constraints of these properties have not been defined so as to allow an easy integration with other models and augment the model extensibility in addition to what has already been defined, thus allowing the further addition of other types of properties in the future.\r\n    \r\n    MeMO reuses existing and well-known models extensively, with the aim of making the ontology as much interoperable as possible. Properties belonging to widely used models, such as DCTerms and FOAF, have been used to describe certain features of the modelled concepts (e.g. dcterms:title, dcterms:identifier, dcterms:extent, dcterms:medium, foaf:name, etc.). However, the model also covers functions that are not offered by existing models, such as the property memo:hasNumbersOfColumns, which involves extremely specialized information that was not taken into consideration by high-level, general ontologies such as those reused. Other properties, such as memo:hasContent and memo:isBasedOn, in spite of being generic in nature, have been created due to the actual specificity that was needed to be expressed by them. The property memo:hasContent, for example, has been added as a way to distinguish the idea of containment relation from the idea of part-whole relation, already expressed by frbr:part. Another example of a very specific property is represented by memo:isBasedOn, which indicates whether the context in which a value in time (such as textual metadata) assumes a certain value depends on a text or a gloss or even both.\r\n\r\n    ### Examples of use\r\n\r\n    A description of a medieval codex or manuscript has to necessarily meet the needs of several different types of scholars. Textual scholars, for example, look for precise information about the contents of a codex, a clear overview of the manuscript texts it contains, the title of each manuscript as well as other textual metadata that record more useful information about the single manuscript. They also might be interested in determining the identity of the manuscript text by referencing to one or more editions that cite that manuscript. Scholars whose concerns are primarily artistic, on the other hand, are interested in the decorations of a manuscript, such as illumination, initials, rubrics and illustrations. Paleographers and codicologists need information about the physical features of a codex, such as its dimensions, the foliation, the number of columns per page and so on. Historians are especially interested in the glosses and other forms of commentary that take place in the margins of the page, because the explanatory comments and annotations that medieval manuscripts hoarded over the centuries can present the scholars with a living record of use, study and reference of that resource.\r\n\r\n    In the following subsections, some scenarios are presented by way of examples of what can be achieved by using MeMO to address certain scholarly needs. The examples are based on test data encoded in RDF Turtle, a RDF serialization that allows one to write RDF statements in a form that is intuitive and compact, with the possibility of concatenating prefixes with base URIs in order to abbreviate them into prefixed names. All the entities that refer to the test data have a specific base URI (https://w3id.org/irnerio/data/memo/) with the prefix ex:. These Turtle sources are available on Github at https://github.com/irnerio-opendata/memo/tree/master/data.\r\n\r\n    The prefixes that are used in all the examples provided below are defined as follows:\r\n\r\n    ```\r\n    @prefix ex: <https://w3id.org/irnerio/data/memo/> .\r\n    @prefix memo: <https://w3id.org/irnerio/ontology/memo/> .\r\n    @prefix cito: <http://purl.org/spar/cito/> .\r\n    @prefix dcterms: <http://purl.org/dc/terms/> .\r\n    @prefix fabio: <http://purl.org/spar/fabio/> .\r\n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\r\n    @prefix frbr: <http://purl.org/vocab/frbr/core#> .\r\n    @prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .\r\n    @prefix owl: <http://www.w3.org/2002/07/owl#> .\r\n    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\r\n    @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .\r\n    @prefix tvc: <http://purl.org/spar/tvc/> .\r\n    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\r\n    ```\r\n\r\n    #### Scenario 1\r\n\r\n    A given manuscript (ex:manuscript_1) is made up by a text (ex:text_1) and six glosses (ex:gloss_a, ex:gloss_b, ex:gloss_c, ex:gloss_d, ex:gloss_e, ex:gloss_f). The network of annotative relationships in which these elements exist is structured as follows:\r\n\r\n    * `ex:gloss_a` cites `ex:text_1` ;\r\n    * `ex:gloss_b` refers to `ex:text_1` ;\r\n    * `ex:gloss_c` annotates `ex:gloss_a` ;\r\n    * `ex:gloss_d` refers to `ex:gloss_a` ; \r\n    * `ex:gloss_e` annotates `ex:gloss_b` and `ex:gloss_c` ;\r\n    * `ex:gloss_f` cites `ex:text_1`, refers to `ex:gloss_d` and annotates `ex:gloss_e`.\r\n\r\n    ```\r\n    ex:manuscript_1 a memo:Manuscript ;\r\n        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .\r\n\r\n    ex:gloss_a a memo:Gloss ;\r\n        cito:cites ex:text_1 .\r\n\r\n    ex:gloss_b a memo:Gloss ;\r\n        dcterms:relation ex:text_1 .\r\n    \r\n    ex:gloss_c a memo:Gloss ;\r\n        memo:annotates ex:gloss_a .\r\n\r\n    ex:gloss_d a memo:Gloss ;\r\n        dcterms:relation ex:gloss_a .\r\n\r\n    ex:gloss_e a memo:Gloss ;\r\n        memo:annotates ex:gloss_b , ex:gloss_c .\r\n\r\n    ex:gloss_f a memo:Gloss ;\r\n        cito:cites ex:text_1 ;\r\n        dcterms:relation ex:gloss_d ;\r\n        memo:annotates ex:gloss_e .\r\n\r\n    ex:text_1 a memo:Text .\r\n    ```\r\n\r\n    #### Scenario 2\r\n\r\n    `ex:manuscript_1` has `ex:incipit_1`, `ex:explicit_1` and `ex:f_rubric_1`. `ex:manuscript_2` has `ex:incipit_2` and `ex:explicit_2`. `ex:manuscript_3` has `ex:incipit_3`.\r\n\r\n    * `ex:incipit_1` has context based on `ex:text_1` and `ex:gloss_a`, at time 1779. It has been created by `ex:agent_1`;\r\n\r\n    * `ex:explicit_1` has context based on `ex:text_1` and `ex:gloss_f`, at time 1780. It has been created by `ex:agent_1`;\r\n\r\n    * `ex:f_rubric_1` has context based on `ex:text_1`, at time 1780. It has been created by `ex:agent_1`;\r\n\r\n    * `ex:incipit_2` has context based on `ex:text_2`, at time 1861. It has been created by `ex:agent_2`;\r\n\r\n    * `ex:explicit_2` has context based on `ex:text_2`, at time 1861. It has been created by `ex:agent_2`;\r\n\r\n    * `ex:incipit_3` has context based on `ex:text_3`, at time 1800. It has been created by `ex:agent_1`.\r\n\r\n    ```\r\n    ex:incipit_1 a memo:TextualMetadataInTime ;\r\n        dcterms:creator ex:agent_1 ;\r\n        memo:withTextualRole memo:incipit ;\r\n        memo:relatesToTextualContext [\r\n            a owl:Thing ;\r\n            memo:isBasedOn ex:text_1 , ex:gloss_a \r\n        ] ;\r\n        tvc:atTime ex:1779 .\r\n\r\n    ex:1779 a ti:TimeInterval ;\r\n        ti:hasIntervalStartDate \"1779\"^^xsd:gYear .\r\n\r\n    ex:text_1 a memo:Text .\r\n\r\n    ex:gloss_a a memo:Gloss .\r\n\r\n    ex:manuscript_1 a memo:Manuscript ;\r\n        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_f ;\r\n        memo:hasTextualMetadata ex:incipit_1 , ex:explicit_1 , ex:f_rubric_1 .\r\n\r\n    ex:explicit_1 a memo:TextualMetadataInTime ;\r\n        dcterms:creator ex:agent_1 ;\r\n        memo:withTextualRole memo:explicit ;\r\n        memo:relatesToTextualContext [\r\n            a owl:Thing ;\r\n            memo:isBasedOn ex:text_1 , ex:gloss_f\r\n        ] ;\r\n        tvc:atTime ex:1780 .\r\n\r\n    ex:gloss_f a memo:Gloss .\r\n\r\n    ex:1780 a ti:TimeInterval ;\r\n        ti:hasIntervalStartDate \"1780\"^^xsd:gYear .\r\n\r\n    ex:f_rubric_1 a memo:TextualMetadataInTime ;\r\n        dcterms:creator ex:agent_1 ;\r\n        memo:withTextualRole memo:finalRubric ;\r\n        memo:relatesToTextualContext [\r\n            a owl:Thing ;\r\n            memo:isBasedOn ex:text_1\r\n        ] ;\r\n        tvc:atTime ex:1780 .\r\n\r\n    ex:incipit_2 a memo:TextualMetadataInTime ;\r\n        dcterms:creator ex:agent_2 ;\r\n        memo:withTextualRole memo:incipit ;\r\n        memo:relatesToTextualContext [\r\n            a owl:Thing ;\r\n            memo:isBasedOn ex:text_2\r\n        ] ;\r\n        tvc:atTime ex:1861 .\r\n\r\n    ex:1861 a ti:TimeInterval ;\r\n        ti:hasIntervalStartDate \"1861\"^^xsd:gYear .\r\n\r\n    ex:text_2 a memo:Text .\r\n\r\n    ex:manuscript_2 a memo:Manuscript ;\r\n        frbr:part ex:text_2 ;\r\n        memo:hasTextualMetadata ex:incipit_2 , ex:explicit_2 .\r\n\r\n    ex:explicit_2 a memo:TextualMetadataInTime ;\r\n        dcterms:creator ex:agent_2 ;\r\n        memo:withTextualRole memo:explicit ;\r\n        memo:relatesToTextualContext [\r\n            a owl:Thing ;\r\n            memo:isBasedOn ex:text_2\r\n        ] ;\r\n        tvc:atTime ex:1861 .\r\n\r\n    ex:incipit_3 a memo:TextualMetadataInTime ;\r\n        dcterms:creator ex:agent_1 ;\r\n        memo:withTextualRole memo:incipit ;\r\n        memo:relatesToTextualContext [\r\n            a owl:Thing ;\r\n            memo:isBasedOn ex:text_3\r\n        ] ;\r\n        tvc:atTime ex:1800 .\r\n\r\n    ex:1800 a ti:TimeInterval ;\r\n        ti:hasIntervalStartDate \"1800\"^^xsd:gYear .\r\n\r\n    ex:text_3 a memo:Text .\r\n\r\n    ex:manuscript_3 a memo:Manuscript ;\r\n        frbr:part ex:text_3 ;\r\n        memo:hasTextualMetadata ex:incipit_3 .\r\n\r\n    ex:agent_1 a foaf:Agent .\r\n\r\n    ex:agent_2 a foaf:Agent .\r\n    ```\r\n\r\n    #### Scenario 3\r\n    The manuscript `ex:manuscript_2` has `ex:incipit_2` and `ex:explicit_2` as textual metadata. The glosses `ex:gloss_g`, `ex:gloss_h`, `ex:gloss_i`, `ex:gloss_l` and the text `ex:text_2` are part of `ex:manuscript_2`. The manuscript `ex:manuscript_3` has `ex:incipit_3` as textual metadata. The glosses `ex:gloss_m`, `ex:gloss_n` and the text `ex:text_3` are part of `ex:manuscript_3`. Additionally:\r\n\r\n    * `ex:incipit_2` cites `ex:manuscript_1`;\r\n    * `explicit_2` cites `ex:gloss_g`;\r\n    * `ex:gloss_g` annotates `ex:text_2`;\r\n    * `ex:gloss_h` annotates `ex:text_2`;\r\n    * `ex:gloss_i` annotates `ex:gloss_g` and cites `ex:edition_realization_1`, which is the realization of `ex:edition_1`. The title of `ex:edition_1` is \"Edition One\";\r\n    * `ex:gloss_l` cites `ex:gloss_h`, annotates `ex:gloss_i` and cites `ex:edition_realization_2`, which is the realization of `ex:edition_2`. The title of `ex:edition_2` is \"Edition Two\";\r\n    * `ex:incipit_3` cites `ex:manuscript_2`;\r\n    * `ex:gloss_m` annotates `ex:text_3` and cites `ex:gloss_l`;\r\n    * `ex:gloss_n` annotates `ex:gloss_m` and cites `ex:edition_realization_1`;\r\n    * `ex:edition_realization_3` cites `ex:manuscript_1`, `ex:manuscript_2` and `ex:manuscript_3`. It is the realization of `ex:edition_3`. The title of `ex:edition_3` is \"Edition Three\";\r\n\r\n    ```\r\n    ex:manuscript_1 a memo:Manuscript ;\r\n        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .\r\n\r\n    ex:gloss_a a memo:Gloss ;\r\n        cito:cites ex:text_1 .\r\n\r\n    ex:gloss_b a memo:Gloss ;\r\n        dcterms:relation ex:text_1 .\r\n\r\n    ex:gloss_c a memo:Gloss ;\r\n        memo:annotates ex:gloss_a .\r\n\r\n    ex:gloss_d a memo:Gloss ;\r\n        dcterms:relation ex:gloss_a .\r\n\r\n    ex:gloss_e a memo:Gloss ;\r\n        memo:annotates ex:gloss_b , ex:gloss_c .\r\n\r\n    ex:gloss_f a memo:Gloss ;\r\n        cito:cites ex:text_1 ;\r\n        dcterms:relation ex:gloss_d ;\r\n        memo:annotates ex:gloss_e .\r\n\r\n    ex:text_1 a memo:Text .\r\n\r\n    ex:manuscript_2 a memo:Manuscript ;\r\n        frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l ;\r\n        memo:hasTextualMetadata ex:incipit_2 , ex:explicit_2 .\r\n\r\n    ex:incipit_2 a memo:TextualMetadataInTime ;\r\n        cito:cites ex:manuscript_1 .\r\n\r\n    ex:explicit_2 a memo:TextualMetadataInTime ;\r\n        cito:cites ex:gloss_g .\r\n\r\n    ex:text_2 a memo:Text .\r\n\r\n    ex:gloss_g a memo:Gloss ;\r\n        cito:cites ex:manuscript_1 ;\r\n        dcterms:relation ex:text_1 ;\r\n        memo:annotates ex:text_2 .\r\n\r\n    ex:gloss_h a memo:Gloss ;\r\n        dcterms:relation ex:gloss_e ;\r\n        memo:annotates ex:gloss_f , ex:text_2 .\r\n\r\n    ex:gloss_i a memo:Gloss ;\r\n        memo:annotates ex:gloss_g ;\r\n        cito:cites ex:edition_1 .\r\n\r\n    ex:gloss_l a memo:Gloss ;\r\n        memo:annotates ex:gloss_i ;\r\n        cito:cites ex:gloss_h , ex:edition_2 .\r\n\r\n    ex:edition_1 a memo:CriticalEditionVolume ;\r\n        dcterms:title \"Edition One\".\r\n\r\n    ex:edition_2 a memo:CriticalEditionVolume ;\r\n        dcterms:title \"Edition Two\" .\r\n\r\n    ex:manuscript_3 a memo:Manuscript ;\r\n        frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n ;\r\n        memo:hasTextualMetadata ex:incipit_3 .\r\n\r\n    ex:incipit_3 a memo:TextualMetadataInTime ;\r\n        cito:cites ex:manuscript_2 .\r\n\r\n    ex:gloss_m a memo:Gloss ;\r\n        memo:annotates ex:text_3 ;\r\n        cito:cites ex:gloss_l .\r\n\r\n    ex:gloss_n a memo:Gloss ;\r\n        memo:annotates ex:gloss_m ;\r\n        cito:cites ex:edition_1 .\r\n\r\n    ex:text_3 a memo:Text .\r\n\r\n    ex:edition_3 a memo:CriticalEditionVolume ;\r\n        cito:cites ex:manuscript_1 , ex:manuscript_2, ex:manuscript_3 ;\r\n        dcterms:title \"Edition Three\" .\r\n    ```\r\n\r\n    #### Scenario 4\r\n\r\n    The glosses `ex:gloss_a`, `ex:gloss_b` and `ex:gloss_c` have been created by `ex:glossator_1`, where:\r\n    * `ex:gloss_a` has been created in 1240 under the name _Ioannis Phasellus_;\r\n    * `ex:gloss_b` has been created in 1241 under the name _Ioannis Phasellus_;\r\n    * `ex:gloss_c` has been created in 1250 under the name _Ioannis Phasellus_.\r\n\r\n    The glosses `ex:gloss_d`, `ex:gloss_e` and `ex:gloss_f` have been created by `ex:glossator_2`, where:\r\n    * `ex:gloss_d` has been created in 1261 under the name _Farnese de Vandimion_;\r\n    * `ex:gloss_e` has been created in 1265 under the name _Farnese_;\r\n    * `ex:gloss_f` has been created in 1266 under the name _Farnese_.\r\n\r\n    The glosses `ex:gloss_g` and `ex:gloss_h` have been created by `ex:glossator_3`, where:\r\n    * `ex:gloss_g` has been created in 1270 under the name _Boscogne_;\r\n    * `ex:gloss_h` has been created in 1271 under the name _Boscone_.\r\n\r\n    The glosses `ex:gloss_i` and `ex:gloss_l` have been created by `ex:glossator_4`, where:\r\n    * `ex:gloss_i` has been created in 1276 under the name _Griffith_;\r\n    * `ex:gloss_l` has been created in 1280 under the name _Femto_.\r\n\r\n    The glosses `ex:gloss_m` and `ex:gloss_n` have been created by `ex:glossator_5`, where:\r\n    * `ex:gloss_m` has been created in 1285 under the name _Gattsu_;\r\n    * `ex:gloss_n` has been created in 1289 under the name _Guts_.\r\n\r\n    The manuscript `ex:manuscript_1` has been created in 1001 by `ex:author_1` under the name _Barbalo_.\r\n\r\n    The manuscripts `ex:manuscript_2` and `ex:manuscript_3` have been created by `ex:author_2`, where:\r\n    * `ex:manuscript_2` has been created in 1012 under the name _Serpico_.\r\n    * `ex:manuscript_3` has been created in 1014 under the name _Serpico_.\r\n    * other variants of `ex:author_2`'s name are _Serpicus_ and _Sorbo Serpico_.\r\n\r\n    ```\r\n    ex:manuscript_1 a memo:Manuscript ;\r\n        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f ;\r\n        dcterms:creator ex:author_1 ;\r\n        dcterms:created \"1001\"^^xsd:gYear .\r\n\r\n    ex:author_1 a foaf:Person ;\r\n        literal:hasLiteral [\r\n            a literal:Literal , foaf:name ;\r\n            literal:hasLiteralValue \"Barbalo\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"950\"^^xsd:gYear ;\r\n            ]\r\n        ] .\r\n\r\n    ex:gloss_a a memo:Gloss ;\r\n        dcterms:creator ex:glossator_1 ;\r\n        dcterms:created \"1240\"^^xsd:gYear ;\r\n        cito:cites ex:text_1 .\r\n\r\n    ex:gloss_b a memo:Gloss ;\r\n        dcterms:creator ex:glossator_1 ;\r\n        dcterms:created \"1241\"^^xsd:gYear ;\r\n        dcterms:relation ex:text_1 .\r\n\r\n    ex:gloss_c a memo:Gloss ;\r\n        dcterms:creator ex:glossator_1 ;\r\n        dcterms:created \"1250\"^^xsd:gYear ;\r\n        memo:annotates ex:gloss_a .\r\n\r\n    ex:glossator_1 a foaf:Person ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Ioannis Phasellus\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1220\"^^xsd:gYear\r\n            ]\r\n        ] .\r\n\r\n    ex:gloss_d a memo:Gloss ;\r\n        dcterms:creator ex:glossator_2 ;\r\n        dcterms:created \"1261\"^^xsd:gYear ;\r\n        dcterms:relation ex:gloss_a .\r\n\r\n    ex:gloss_e a memo:Gloss ;\r\n        dcterms:creator ex:glossator_2 ;\r\n        dcterms:created \"1265\"^^xsd:gYear ;\r\n        memo:annotates ex:gloss_b , ex:gloss_c .\r\n\r\n    ex:gloss_f a memo:Gloss ;\r\n        dcterms:creator ex:glossator_2 ;\r\n        dcterms:created \"1266\"^^xsd:gYear ;\r\n        cito:cites ex:text_1 ;\r\n        dcterms:relation ex:gloss_d ;\r\n        memo:annotates ex:gloss_e .\r\n\r\n    ex:glossator_2 a foaf:Person ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Farnese de Vandimion\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1240\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1264\"^^xsd:gYear\r\n            ]\r\n        ] ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Farnese\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1265\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1280\"^^xsd:gYear\r\n            ]\r\n        ] .\r\n\r\n    ex:text_1 a memo:Text .\r\n\r\n    ex:manuscript_2 a memo:Manuscript ;\r\n        frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l ;\r\n        dcterms:creator ex:author_2 ;\r\n        dcterms:created \"1012\"^^xsd:gYear .\r\n\r\n    ex:author_2 a foaf:Person ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Serpico\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1000\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1020\"^^xsd:gYear\r\n            ]\r\n        ] ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Serpicus\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1020\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1025\"^^xsd:gYear \r\n            ] \r\n        ] ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Sorbo Serpico\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1025\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1030\"^^xsd:gYear\r\n            ]\r\n        ] .\r\n\r\n    ex:text_2 a memo:Text .\r\n\r\n    ex:gloss_g a memo:Gloss ;\r\n        dcterms:creator ex:glossator_3 ;\r\n        dcterms:created \"1270\"^^xsd:gYear ;\r\n        cito:cites ex:manuscript_1 ;\r\n        dcterms:relation ex:text_1 ;\r\n        memo:annotates ex:text_2 .\r\n\r\n    ex:gloss_h a memo:Gloss ;\r\n        dcterms:creator ex:glossator_3 ;\r\n        dcterms:created \"1271\"^^xsd:gYear ;\r\n        dcterms:relation ex:gloss_e ;\r\n        memo:annotates ex:gloss_f , ex:text_2 .\r\n\r\n    ex:glossator_3 a foaf:Person ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Boscogne\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1250\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1270\"^^xsd:gYear\r\n            ]\r\n        ] ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Boscone\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1271\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1280\"^^xsd:gYear\r\n            ]\r\n        ] .\r\n\r\n    ex:gloss_i a memo:Gloss ;\r\n        dcterms:creator ex:glossator_4 ;\r\n        dcterms:created \"1276\"^^xsd:gYear ;\r\n        memo:annotates ex:gloss_g .\r\n\r\n    ex:gloss_l a memo:Gloss ;\r\n        dcterms:creator ex:glossator_4 ;\r\n        dcterms:created \"1280\"^^xsd:gYear ;\r\n        cito:cites ex:gloss_h ;\r\n        memo:annotates ex:gloss_i .\r\n\r\n    ex:glossator_4 a foaf:Person ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Guriffis\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1250\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1279\"^^xsd:gYear\r\n            ]\r\n        ] ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Femto\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1280\"^^xsd:gYear\r\n            ]\r\n        ] .\r\n\r\n    ex:manuscript_3 a memo:Manuscript ;\r\n        frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n ;\r\n        dcterms:creator ex:author_2 ;\r\n        dcterms:created \"1014\"^^xsd:gYear .\r\n\r\n    ex:gloss_m a memo:Gloss ;\r\n        dcterms:creator ex:glossator_5 ;\r\n        dcterms:created \"1285\"^^xsd:gYear ;\r\n        memo:annotates ex:text_3 ;\r\n        cito:cites ex:gloss_l .\r\n\r\n    ex:gloss_n a memo:Gloss ;\r\n        dcterms:creator ex:glossator_5 ;\r\n        dcterms:created \"1289\"^^xsd:gYear ;\r\n        memo:annotates ex:gloss_m .\r\n\r\n    ex:glossator_5 a foaf:Person ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Gattsus\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1240\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1286\"^^xsd:gYear\r\n            ]\r\n        ] ;\r\n        literal:hasLiteral [\r\n            a literal:Literal  , foaf:name ;\r\n            literal:hasLiteralValue \"Gatzo\" ;\r\n            dcterms:valid [\r\n                a ti:TimeInterval ;\r\n                ti:hasIntervalStartDate \"1286\"^^xsd:gYear ;\r\n                ti:hasIntervalEndDate \"1290\"^^xsd:gYear\r\n            ]\r\n        ] .\r\n\r\n    ex:text_3 a memo:Text .\r\n    ```\r\n\r\n    #### Scenario 5\r\n\r\n    The folios `ex:folio_1`, `ex:folio_2`, `ex:folio_3` and `ex:folio_4` are part of the codex `ex:codex_1`. The sides `ex:recto_1` and `ex:verso_1` are part of `ex:folio_1`. The sides `ex:recto_2` and `ex:verso_2` are part of `ex:folio_2`. The sides `ex:recto_3` and `ex:verso_3` are part of `ex:folio_3`. The sides `ex:recto_4` and `ex:verso_4` are part of `ex:folio_4`. In addition, the text `ex:text_1` and the glosses `ex:gloss_a`, `ex:gloss_b`, `ex:gloss_c`, `ex:gloss_d`, `ex:gloss_e`, `ex:gloss_f` are part of `ex:manuscript_1`. The text `ex:text_2` and the glosses `ex:gloss_g`, `ex:gloss_h`, `ex:gloss_i`, `ex:gloss_l` are part of `ex:manuscript_2`. In particular:\r\n\r\n    * `ex:text_1` and `ex:gloss_a`, `ex:gloss_b`, `ex:gloss_c` are embodied in `ex:folio_1`;\r\n    * `ex:text_1` and `ex:gloss_d`, `ex:gloss_e`, `ex:gloss_f` are embodied in `ex:folio_2`;\r\n    * `ex:text_2` and `ex:gloss_g`, `ex:gloss_h` are embodied in `ex:folio_3`;\r\n    * `ex:text_2` and `ex:gloss_i`, `ex:gloss_l` are embodied in `ex:folio_4`.\r\n\r\n    `ex:folio_5` and `ex:folio_6` are part of `ex:codex_2`. `ex:recto_5` and `ex:verso_5` are part of `ex:folio_5`. `ex:recto_6` and `ex:verso_6` are part of `ex:folio_6`. In addition, `ex:text_3` and `ex:gloss_m`, `ex:gloss_n` are part of `ex:manuscript_3`. In particular:\r\n\r\n    * `ex:text_3` and `ex:gloss_m` are embodied in `ex:folio_5`;\r\n    * `ex:text_3` and `ex:gloss_n` are embodied in `ex:folio_6`.\r\n\r\n    `ex:folio_7` is part of `ex:codex_3`. `ex:recto_7` and `ex:verso_7` are part of `ex:folio_7`. In addition, `ex:text_4` is part of `ex:manuscript_4`. `ex:text_5` is part of `ex:manuscript_5`. In particular:\r\n\r\n    * `ex:text_4` is embodied in `ex:folio_7`;\r\n    * `ex:text_5` is embodied in `ex:folio_7`.\r\n\r\n    ```\r\n    ex:codex_1 a memo:Codex ;\r\n        frbr:part ex:folio_1 , ex:folio_2 , ex:folio_3 , ex:folio_4 .\r\n\r\n    ex:codex_2 a memo:Codex ;\r\n        frbr:part ex:folio_5 , ex:folio_6 .\r\n\r\n    ex:codex_3 a memo:Codex ;\r\n        frbr:part ex:folio_7 .\r\n\r\n    ex:folio_1 a memo:Folio ;\r\n        frbr:part ex:recto_1 , ex:verso_1 .\r\n\r\n    ex:folio_2 a memo:Folio ;\r\n        frbr:part ex:recto_2 , ex:verso_2 .\r\n\r\n    ex:folio_3 a memo:Folio ;\r\n        frbr:part ex:recto_3 , ex:verso_3 .\r\n\r\n    ex:folio_4 a memo:Folio ;\r\n        frbr:part ex:recto_4 , ex:verso_4 .\r\n\r\n    ex:folio_5 a memo:Folio ;\r\n        frbr:part ex:recto_5 , ex:verso_5 .\r\n\r\n    ex:folio_6 a memo:Folio ;\r\n        frbr:part ex:recto_6 , ex:verso_6 .\r\n\r\n    ex:folio_7 a memo:Folio ;\r\n        frbr:part ex:recto_7 , ex:verso_7 .\r\n\r\n    ex:recto_1 a memo:Recto .\r\n\r\n    ex:recto_2 a memo:Recto .\r\n\r\n    ex:recto_3 a memo:Recto .\r\n\r\n    ex:recto_4 a memo:Recto .\r\n\r\n    ex:recto_5 a memo:Recto .\r\n\r\n    ex:recto_6 a memo:Recto .\r\n\r\n    ex:recto_7 a memo:Recto .\r\n\r\n    ex:verso_1 a memo:Verso .\r\n\r\n    ex:verso_2 a memo:Verso .\r\n\r\n    ex:verso_3 a memo:Verso .\r\n\r\n    ex:verso_4 a memo:Verso .\r\n\r\n    ex:verso_5 a memo:Verso .\r\n\r\n    ex:verso_6 a memo:Verso .\r\n\r\n    ex:verso_7 a memo:Verso .\r\n\r\n    ex:manuscript_1 a memo:Manuscript ;\r\n        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .\r\n\r\n    ex:manuscript_2 a memo:Manuscript ;\r\n        frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l .\r\n\r\n    ex:manuscript_3 a memo:Manuscript ;\r\n        frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n .\r\n\r\n    ex:text_1 a memo:Text ;\r\n        frbr:embodiment ex:folio_1 , ex:folio_2 .\r\n\r\n    ex:text_2 a memo:Text ;\r\n        frbr:embodiment ex:folio_3 , ex:folio_4 .\r\n\r\n    ex:text_3 a memo:Text ;\r\n        frbr:embodiment ex:folio_5 , ex:folio_6 .\r\n\r\n    ex:gloss_a a memo:Gloss ;\r\n        frbr:embodiment ex:folio_1 ;\r\n        dcterms:creator ex:glossator_1 ;\r\n        cito:cites ex:text_1 .\r\n\r\n    ex:gloss_b a memo:Gloss ;\r\n        frbr:embodiment ex:folio_1 ;\r\n        dcterms:creator ex:glossator_1 ;\r\n        dcterms:relation ex:text_1 .\r\n\r\n    ex:gloss_c a memo:Gloss ;\r\n        frbr:embodiment ex:folio_1 ;\r\n        dcterms:creator ex:glossator_1 ;\r\n        memo:annotates ex:gloss_a .\r\n\r\n    ex:gloss_d a memo:Gloss ;\r\n        frbr:embodiment ex:folio_2 ;\r\n        dcterms:creator ex:glossator_2 ;\r\n        dcterms:relation ex:gloss_a .\r\n\r\n    ex:gloss_e a memo:Gloss ;\r\n        frbr:embodiment ex:folio_2 ;\r\n        dcterms:creator ex:glossator_2 ;\r\n        memo:annotates ex:gloss_b , ex:gloss_c .\r\n\r\n    ex:gloss_f a memo:Gloss ;\r\n        frbr:embodiment ex:folio_2 ;\r\n        dcterms:creator ex:glossator_2 ;\r\n        cito:cites ex:text_1 ;\r\n        dcterms:relation ex:gloss_d ;\r\n        memo:annotates ex:gloss_e .\r\n\r\n    ex:gloss_g a memo:Gloss ;\r\n        frbr:embodiment ex:folio_3 ;\r\n        dcterms:creator ex:glossator_3 ;\r\n        cito:cites ex:manuscript_1 ;\r\n        dcterms:relation ex:text_1 ;\r\n        memo:annotates ex:text_2 .\r\n\r\n    ex:gloss_h a memo:Gloss ;\r\n        frbr:embodiment ex:folio_3 ;\r\n        dcterms:creator ex:glossator_3 ;\r\n        dcterms:relation ex:gloss_e ;\r\n        memo:annotates ex:gloss_f , ex:text_2 .\r\n\r\n    ex:gloss_i a memo:Gloss ;\r\n        frbr:embodiment ex:folio_4 ;\r\n        dcterms:creator ex:glossator_4 ;\r\n        memo:annotates ex:gloss_g .\r\n\r\n    ex:gloss_l a memo:Gloss ;\r\n        frbr:embodiment ex:folio_4 ;\r\n        dcterms:creator ex:glossator_4 ;\r\n        cito:cites ex:gloss_h ;\r\n        memo:annotates ex:gloss_i .\r\n\r\n    ex:gloss_m a memo:Gloss ;\r\n        frbr:embodiment ex:folio_5 ;\r\n        dcterms:creator ex:glossator_5 ;\r\n        memo:annotates ex:text_3 ;\r\n        cito:cites ex:gloss_l .\r\n\r\n    ex:gloss_n a memo:Gloss ;\r\n        frbr:embodiment ex:folio_6 ;\r\n        dcterms:creator ex:glossator_5 ;\r\n        memo:annotates ex:gloss_m ;\r\n        dcterms:relation ex:text_3 .\r\n\r\n    ex:manuscript_4 a memo:Manuscript ;\r\n        frbr:part ex:text_4 .\r\n\r\n    ex:manuscript_5 a memo:Manuscript ;\r\n        frbr:part ex:text_5 .\r\n\r\n    ex:text_4 a memo:Text ;\r\n        frbr:embodiment ex:folio_7 .\r\n\r\n    ex:text_5 a memo:Text ;\r\n        frbr:embodiment ex:folio_7 .\r\n\r\n    ex:glossator_1 a foaf:Person .\r\n\r\n    ex:glossator_2 a foaf:Person .\r\n\r\n    ex:glossator_3 a foaf:Person .\r\n\r\n    ex:glossator_4 a foaf:Person .\r\n\r\n    ex:glossator_5 a foaf:Person .\r\n    ```\r\n\r\n    #### Scenario 6\r\n\r\n    `ex:codex_1` has identifier \"001\". It dates back to the XIII century. `ex:binding_1`, `ex:folio_1`, `ex:folio_2`, `ex:folio_3`, `ex:folio_4` are part of it. `ex:recto_1` and `ex:verso_1` are part of `ex:folio_1`. `ex:recto_2` and `ex:verso_2` are part of `ex:folio_2`. `ex:recto_3` and `ex:verso_3` are part of `ex:folio_3`. `ex:recto_4` and `ex:verso_4` are part of `ex:folio_4`. \r\n\r\n    `ex:codex_2` has identifier \"002\". It dates back to a period between the XIV and the XV century. `ex:binding_2`, `ex:folio_5` and `ex:folio_6` are part of it. `ex:recto_5` and `ex:verso_5` are part of `ex:folio_5`. `ex:recto_6` and `ex:verso_6` are part of `ex:folio_6`. \r\n\r\n    `ex:text_1` is part of `ex:manuscript_1` (with title \"Arbor cum Glossis Ioannis Phasellus\") and is embodied in `ex:folio_1` and `ex:folio_2`. `ex:text_2` is part of `ex:manuscript_2` (with title \"Epistula ad Barbalum\") and is embodied in `ex:folio_3` and `ex:folio_4`. `ex:text_3` is part of `ex:manuscript_3` (with title \"Fragmenta Decreti\") and is embodied in `ex:folio_5` and `ex:folio_6`.\r\n\r\n    In particular:\r\n\r\n    * `ex:binding_1` is made up by `parchment`. The length of `ex:codex_1` is 210mm and its width is 180mm.\r\n\r\n    * `ex:folio_1` is made up by `paper`. Its length is 210mm and its width is 180mm. It has 2 columns.\r\n\r\n    * `ex:folio_2` is made up by `paper`. Its length is 210mm and its width is 180mm. It has 1 column.\r\n\r\n    * `ex:folio_3` is made up by `parchment`. Its length is 210mm and its width is 180mm. It has 1 column.\r\n\r\n    * `ex:folio_4` is made up by `parchment`. Its length is 210mm and its width is 180mm. It has 2 columns.\r\n\r\n    * `ex:binding_2` is made up by `parchment`. The length of `ex:codex_2` is 180mm and its width is 140mm.\r\n\r\n    * `ex:folio_5` is made up by `parchment`. Its length is 160mm and its width is 120mm. It has 2 columns.\r\n\r\n    * `ex:folio_6` is made up by `parchment`. Its length is 160mm and its width is 120mm. It has 2 columns.\r\n\r\n    `ex:book_1` (with title \"Vermischte Schriften\"), created by `ex:author_I`, cites `ex:codex_1` and `ex:codex_2`.\r\n\r\n    ```\r\n    ex:book_1 a fabio:Book ;\r\n        dcterms:title \"Vermischte Schriften\" ;\r\n        dcterms:creator ex:author_I ;\r\n        cito:cites ex:codex_1 , ex:codex_2 .\r\n\r\n    ex:author_I a foaf:Person .\r\n\r\n    ex:recto_1 a memo:Recto ;\r\n        memo:hasNumberOfColumns \"2\"^^xsd:positiveInteger .\r\n\r\n    ex:recto_2 a memo:Recto ;\r\n        memo:hasNumberOfColumns \"1\"^^xsd:positiveInteger .\r\n\r\n    ex:recto_3 a memo:Recto ;\r\n        memo:hasNumberOfColumns \"1\"^^xsd:positiveInteger .\r\n\r\n    ex:recto_4 a memo:Recto ;\r\n        memo:hasNumberOfColumns \"2\"^^xsd:positiveInteger .\r\n\r\n    ex:recto_5 a memo:Recto ;\r\n        memo:hasNumberOfColumns \"2\"^^xsd:positiveInteger .\r\n\r\n    ex:recto_6 a memo:Recto ;\r\n        memo:hasNumberOfColumns \"2\"^^xsd:positiveInteger .\r\n\r\n    ex:verso_1 a memo:Verso ;\r\n        memo:hasNumberOfColumns \"2\"^^xsd:positiveInteger .\r\n\r\n    ex:verso_2 a memo:Verso ;\r\n        memo:hasNumberOfColumns \"1\"^^xsd:positiveInteger .\r\n\r\n    ex:verso_3 a memo:Verso ;\r\n        memo:hasNumberOfColumns \"1\"^^xsd:positiveInteger .\r\n\r\n    ex:verso_4 a memo:Verso ;\r\n        memo:hasNumberOfColumns \"2\"^^xsd:positiveInteger .\r\n\r\n    ex:verso_5 a memo:Verso ;\r\n        memo:hasNumberOfColumns \"2\"^^xsd:positiveInteger .\r\n\r\n    ex:verso_6 a memo:Verso ;\r\n        memo:hasNumberOfColumns \"2\"^^xsd:positiveInteger .\r\n\r\n    ex:binding_1 a memo:Binding ;\r\n        dcterms:medium memo:parchment ;\r\n        dcterms:extent ex:extent_1 .\r\n\r\n    ex:binding_2 a memo:Binding ;\r\n        dcterms:medium memo:parchment ;\r\n        dcterms:extent ex:extent_2 .\r\n\r\n    ex:folio_1 a memo:Folio ;\r\n        dcterms:medium memo:paper ;\r\n        dcterms:extent ex:extent_1 ;\r\n        frbr:part ex:recto_1 , ex:verso_1 .\r\n\r\n    ex:folio_2 a memo:Folio ;\r\n        dcterms:medium memo:paper ;\r\n        dcterms:extent ex:extent_1 ;\r\n        frbr:part ex:recto_2 , ex:verso_2 .\r\n\r\n    ex:folio_3 a memo:Folio ;\r\n        dcterms:medium memo:parchment ;\r\n        dcterms:extent ex:extent_1 ;\r\n        frbr:part ex:recto_3 , ex:verso_3 .\r\n\r\n    ex:folio_4 a memo:Folio ;\r\n        dcterms:medium memo:parchment ;\r\n        dcterms:extent ex:extent_1 ;\r\n        frbr:part ex:recto_4 , ex:verso_4 .\r\n\r\n    ex:folio_5 a memo:Folio ;\r\n        dcterms:medium memo:parchment ;\r\n        dcterms:extent ex:extent_3 ;\r\n        frbr:part ex:recto_5 , ex:verso_5 .\r\n\r\n    ex:folio_6 a memo:Folio ;\r\n        dcterms:medium memo:parchment ;\r\n        dcterms:extent ex:extent_3 ;\r\n        frbr:part ex:recto_6 , ex:verso_6 .\r\n\r\n    ex:extent_1 a memo:SizeMeasurement ;\r\n        memo:hasSizeMeasurementUnit memo:millimeters ;\r\n        memo:hasLength \"210\"^^xsd:positiveInteger ;\r\n        memo:hasWidth \"180\"^^xsd:positiveInteger .\r\n\r\n    ex:extent_2 a memo:SizeMeasurement ;\r\n        memo:hasSizeMeasurementUnit memo:millimeters ;\r\n        memo:hasLength \"180\"^^xsd:positiveInteger ;\r\n        memo:hasWidth \"140\"^^xsd:positiveInteger .\r\n\r\n    ex:extent_3 a memo:SizeMeasurement ;\r\n        memo:hasSizeMeasurementUnit memo:millimeters ;\r\n        memo:hasLength \"160\"^^xsd:positiveInteger ;\r\n        memo:hasWidth \"120\"^^xsd:positiveInteger .\r\n\r\n    ex:codex_1 a memo:Codex ;\r\n        dcterms:identifier \"001\" ;\r\n        frbr:part ex:binding_1 , ex:folio_1 , ex:folio_2 , ex:folio_3 , ex:folio_4 .\r\n\r\n    ex:codex_2 a memo:Codex ;\r\n        dcterms:identifier \"002\" ;\r\n        frbr:part ex:binding_2 , ex:folio_5 , ex:folio_6 .\r\n\r\n    ex:manuscript_1 a memo:Manuscript ;\r\n        dcterms:title \"Arbor cum Glossis Ioannis Phasellus\" ;\r\n        frbr:part ex:text_1 .\r\n\r\n    ex:manuscript_2 a memo:Manuscript ;\r\n        dcterms:title \"Epistula ad Barbalum\" ;\r\n        frbr:part ex:text_2 .\r\n\r\n    ex:manuscript_3 a memo:Manuscript ;\r\n        dcterms:title \"Fragmenta Decreti\" ;\r\n        frbr:part ex:text_3 .\r\n\r\n    ex:text_1 a memo:Text ;\r\n        frbr:embodiment ex:folio_1 , ex:folio_2 .\r\n\r\n    ex:text_2 a memo:Text ;\r\n        frbr:embodiment ex:folio_3 , ex:folio_4 .\r\n\r\n    ex:text_3 a memo:Text ;\r\n        frbr:embodiment ex:folio_5 , ex:folio_6 .\r\n    ```\r\n\r\n    ### Competency questions\r\n\r\n    MeMO can be used for answering several questions related to the medieval manuscripts and codices published on the digital catalogue of Progetto IRNERIO. The following subsections introduce some of them, and we accompany them with exemplar SPARQL queries.\r\n\r\n    The prefixes that are used in all the SPARQL queries provided below are defined as follows:\r\n\r\n    ```\r\n    PREFIX ex: <https://w3id.org/irnerio/data/memo/>\r\n    PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>\r\n    PREFIX cito: <http://purl.org/spar/cito/>\r\n    PREFIX dcterms: <http://purl.org/dc/terms/>\r\n    PREFIX fabio: <http://purl.org/spar/fabio/>\r\n    PREFIX foaf: <http://xmlns.com/foaf/0.1/>\r\n    PREFIX frbr: <http://purl.org/vocab/frbr/core#>\r\n    PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>\r\n    PREFIX owl: <http://www.w3.org/2002/07/owl#>\r\n    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\r\n    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\r\n    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl>\r\n    PREFIX tvc: <http://purl.org/spar/tvc/>\r\n    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\r\n    ```\r\n\r\n    #### Question 1\r\n    Return all the second-level glosses that are part of `ex:manuscript_1` and that annotate or cite `ex:text_1`.\r\n\r\n    ```\r\n    SELECT ?gloss\r\n    WHERE {\r\n    ?gloss a memo:Gloss .\r\n    ?gloss ^frbr:part ex:manuscript_1 .\r\n    ?gloss (memo:annotates|cito:cites) / (memo:annotates|cito:cites) ex:text_1\r\n    }\r\n    ```\r\n\r\n    #### Question 2\r\n    Return all the second-level glosses that are part of `ex:manuscript_1` and that annotate or refer to `ex:gloss_a`.\r\n\r\n    ```\r\n    SELECT ?gloss\r\n    WHERE {\r\n    ?gloss a memo:Gloss .\r\n    ?gloss ^frbr:part ex:manuscript_1 .\r\n    ?gloss (memo:annotates|dcterms:relation) / (memo:annotates|dcterms:relation) ex:gloss_a\r\n    }\r\n    ```\r\n\r\n    #### Question 3\r\n    Return all the textual metadata in time with textual role \"incipit\" which have been provided between 1750 and 1850 and the manuscripts they are related to.\r\n\r\n    ```\r\n    SELECT ?tmit ?manuscript\r\n    WHERE {\r\n    ?tmit a memo:TextualMetadataInTime ;\r\n            ^memo:hasTextualMetadata ?manuscript ;\r\n            memo:withTextualRole memo:incipit ;\r\n            tvc:atTime ?time .\r\n    ?time ti:hasIntervalStartDate ?date .\r\n    FILTER\r\n    (\r\n        ?date > \"1750\"^^xsd:gYear && \r\n        ?date < \"1850\"^^xsd:gYear\r\n    )\r\n    }\r\n    ```\r\n\r\n    #### Question 4\r\n    Return all the textual metadata in time whose contents are based only on a text, their respective textual roles and the manuscripts they are related to.\r\n\r\n    ```\r\n    SELECT ?tmit ?role ?manuscript\r\n    WHERE {\r\n    ?tmit a memo:TextualMetadataInTime ;\r\n            ^memo:hasTextualMetadata ?manuscript ;\r\n            memo:withTextualRole ?role ;\r\n            memo:relatesToTextualContext ?context .\r\n    FILTER NOT EXISTS\r\n    {\r\n        ?text a memo:Gloss .\r\n        ?context memo:isBasedOn ?text .\r\n    }\r\n    }\r\n    ```\r\n\r\n    #### Question 5\r\n    Return all the manuscripts in which at least a second-level gloss that annotates a text cites the same critical edition.\r\n\r\n    ```\r\n    SELECT ?manuscript\r\n    WHERE {\r\n    ?text a memo:Text .\r\n    ?gloss a memo:Gloss ;\r\n            ^frbr:part ?manuscript ;\r\n            memo:annotates / memo:annotates ?text ;\r\n            cito:cites ?edition .\r\n    ?edition a memo:CriticalEditionVolume .\r\n    }\r\n    ```\r\n\r\n    #### Question 6\r\n    Return all the name variants of `ex:author_2` under which he created a manuscript, all the manuscripts he created and all the respective glossators of each manuscript.\r\n\r\n    ```\r\n    SELECT DISTINCT ?name ?manuscript ?glossator\r\n    WHERE\r\n    {\r\n        ex:author_2 ^dcterms:creator ?manuscript ;\r\n                litre:hasLiteral ?literal .\r\n        ?gloss a memo:Gloss ;\r\n                ^frbr:part ?manuscript ;\r\n                dcterms:creator ?glossator .\r\n        ?literal litre:hasLiteralValue ?name .\r\n        ?manuscript dcterms:created ?date .\r\n        FILTER EXISTS\r\n            {\r\n                ?literal dcterms:valid ?interval .\r\n                ?interval ti:hasIntervalStartDate ?start ;\r\n                        ti:hasIntervalEndDate ?end .\r\n                FILTER \r\n                (\r\n                ?date >= ?start && \r\n                ?date <= ?end\r\n                )\r\n            }  \r\n    }\r\n    ```\r\n\r\n    #### Question 7\r\n    Return all the glosses that refer to the text embodied in `ex:folio_2` but that are not themselves embodied in it.\r\n\r\n    ```\r\n    SELECT ?gloss\r\n    WHERE {\r\n    ?gloss a memo:Gloss ;\r\n            frbr:embodiment ?folio ;\r\n            dcterms:relation ?text .\r\n    ?text a memo:Text ;\r\n            frbr:embodiment ex:folio_2 .\r\n    ?folio a memo:Folio .\r\n    FILTER ( ex:folio_2 != ?folio )\r\n    }\r\n    ```\r\n\r\n    #### Question 8\r\n    Return all the folios in which more than one manuscript text is embodied.\r\n\r\n    ```\r\n    SELECT ?folio (COUNT(?folio) AS ?count)\r\n    WHERE {\r\n    ?manuscript frbr:part ?text .\r\n    ?text a memo:Text ;\r\n            frbr:embodiment ?folio .\r\n    }\r\n    GROUP BY ?folio HAVING ( ?count > \"1\"^^xsd:integer )\r\n    ```\r\n\r\n    #### Question 9\r\n    Return all the titles of the manuscripts contained in codices being cited by works created by `ex:author_I`, the identifier of each codex and the title of each work.\r\n    \r\n    ```\r\n    SELECT DISTINCT ?manuscripttitle ?id ?booktitle\r\n    WHERE {\r\n    ?manuscript a memo:Manuscript ;\r\n                dcterms:title ?manuscripttitle ;\r\n                frbr:part ?text .\r\n    ?text a memo:Text ;\r\n            frbr:embodiment ?folio .\r\n    ?folio a memo:Folio ;\r\n            ^frbr:part ?codex .\r\n    ?codex a memo:Codex ;\r\n            dcterms:identifier ?id ;\r\n            ^cito:cites ?book .\r\n    ?book a fabio:Book ;\r\n            dcterms:creator ex:author_I ;\r\n            dcterms:title ?booktitle.\r\n    }\r\n    ```\r\n\r\n    "
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/rights": [
+      {
+        "@language": "en",
+        "@value": "This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/)."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "en",
+        "@value": "The Medieval Manuscript Ontology (MeMO)"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The Medieval Manuscript Ontology (MeMO) is an ontology that aims at providing a means to represent medieval manuscripts and all the entities and relations that are related to them."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "MeMO"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/2020-03-06"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@language": "en",
+        "@value": "March 3, 2020"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/meters",
+    "@type": [
+      "https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Named individual of size measurement unit. It represents a unit of length or width equal to one meter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "meters"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2010/06/literalreification/hasSameLiteralValueAs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#TransitiveProperty",
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates the reified literal to another one that has the same literal value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.essepuntato.it/2010/06/literalreification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has same literal value as"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#part",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates an endeavor that is part of another endeavour."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has part"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#partOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#embodiment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that the expression of a work is embodied in a particular manifestation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has embodiment"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#embodimentOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#Thing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/isTextualMetadataOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates some textual metadata to some resource that has been provided with it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is textual metadata of"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#partOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates an endeavour incorporating another endeavour."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is part of"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates a name given to a resource by which the resource is formally known."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has title"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/CriticalEditionVolume",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The specific realization of a critical edition."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "critical edition volume"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/spar/fabio/Expression"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/relatesToTextualContext",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates a time-indexed situation describing textual metadata with a certain textual role to a textual context for that situation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "relates to textual context"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/spar/tvc/withinContext"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/isTextualContextFor"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/annotates",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that an entity makes a critical or explanatory observation for another entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "annotates"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/relation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/isAnnotatedBy"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Expression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owlhasIntervalStartDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates the start date of a time interval."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has interval start date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owlhasIntervalDate"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/tvc/atTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property specifies the particular time interval that has been associated to something."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/tvc"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "at time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/PhysicalMedium",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A physical material or carrier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "physical medium"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/hasTextualMetadata",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates some resource to some textual metadata in time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has textual metadata"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/spar/tvc/hasValue"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/isTextualMetadataOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Binding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The structure that holds a codex together."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "binding"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/spar/fabio/Manifestation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/isTextualRoleIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates a textual role to the textual metadata with that role."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is textual role in"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owlhasTimeIndexedSetting"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Codex",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A book constructed of one or more folios and at most one binding."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "codex"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub1bL2684C9"
+      },
+      {
+        "@id": "http://purl.org/spar/fabio/Manifestation"
+      },
+      {
+        "@id": "_:ub1bL2679C9"
+      },
+      {
+        "@id": "_:ub1bL2672C43"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2684C9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Folio"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#part"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2679C9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Binding"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#maxCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#part"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2672C43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "_:ub1bL2675C27"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#part"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2675C27",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/irnerio/ontology/memo/Folio"
+          },
+          {
+            "@id": "https://w3id.org/irnerio/ontology/memo/Binding"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/hasSizeMeasurementUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that an size is being measured with a certain size measurement unit."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/SizeMeasurement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has size measurement unit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/paper",
+    "@type": [
+      "http://purl.org/dc/terms/PhysicalMedium"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Named individual of physical medium. It indicates a thin, flat material made from vegetable fibers."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "paper"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates an entity primarily responsible for making the resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has creator"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owlhasIntervalDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property encodes values from xsd:date (or any other date-related xsd datatype) for a time interval. A same time interval can have more than one date value: begin date, end date, date at which the interval holds, as well as dates expressed in different formats: xsd:gYear, xsd:dateTime, etc."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owlTimeInterval"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has interval date"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/isTextualContextFor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property relating a textual context to the textual role for which that textual context provides the context."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is textual context for"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owlhasTimeIndexedSetting"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/explicit",
+    "@type": [
+      "https://w3id.org/irnerio/ontology/memo/TextualRole"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A textual role assumed by a textual metadata in time. It is based on the textual string containing the closing words of either the manuscript text, a gloss, or both."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "explicit"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Text",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The primary text that is part of a manuscript."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "text"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/spar/fabio/Expression"
+      },
+      {
+        "@id": "_:ub1bL2844C40"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2844C40",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Manuscript"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#partOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Side",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A single side of a folio."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "side"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/spar/fabio/Manifestation"
+      },
+      {
+        "@id": "_:ub1bL2804C43"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2804C43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/hasNumberOfColumns"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Manifestation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "manifestation"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owlTimeInterval",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Any region in a dimensional space that aims at representing time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "time interval"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property is used to specify the literal value that an individual of Literal represents."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.essepuntato.it/2010/06/literalreification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has literal value"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/Agent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An entity that has the power to act in the world of discourse (for example, a person or a group of people)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/hasLength",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates the size of something in terms of length."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has length"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#positiveInteger"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Manuscript",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A handwritten composition constructed of one text and zero or more glosses."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "manuscript"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/spar/fabio/Expression"
+      },
+      {
+        "@id": "_:ub1bL2746C9"
+      },
+      {
+        "@id": "_:ub1bL2739C40"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2746C9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Text"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#part"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2739C40",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "_:ub1bL2742C27"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#part"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2742C27",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/irnerio/ontology/memo/Text"
+          },
+          {
+            "@id": "https://w3id.org/irnerio/ontology/memo/Gloss"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/SizeMeasurement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The amount of space or surface that something occupies or the distance over which it extends."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "size measurement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub1bL2820C9"
+      },
+      {
+        "@id": "http://purl.org/dc/terms/SizeOrDuration"
+      },
+      {
+        "@id": "_:ub1bL2816C46"
+      },
+      {
+        "@id": "_:ub1bL2824C9"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2820C9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/hasWidth"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2816C46",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/hasLength"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2824C9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/hasSizeMeasurementUnit"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/millimeters",
+    "@type": [
+      "https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Named individual of size measurement unit. It represents a unit of length or width equal to one thousandth of a meter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "millimeters"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A set of textual data that gives information about certain aspects of a manuscript according to the textual role it assumes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "textual metadata in time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/spar/tvc/ValueInTime"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/hasWidth",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates the size of something in terms of width."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has width"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#positiveInteger"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Verso",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The side of a folio that usually (but not necessarily) is to be read second."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "verso"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Side"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/created",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates the date of creation of the resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has creation date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/identifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates a unique and unambiguous reference to the resource within a given context."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/TextualRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A function assumed by some textual metadata in time. A textual metadata in time can assume the role of either incipit, explicit or final rubric."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "textual role"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/decimeters",
+    "@type": [
+      "https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Named individual of size measurement unit. It represents a unit of length or width equal to one tenth of a meter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "decimeters"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/incipit",
+    "@type": [
+      "https://w3id.org/irnerio/ontology/memo/TextualRole"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A textual role assumed by a textual metadata in time. It is based on the textual string containing the opening words of either the a manuscript text, a gloss, or both."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "incipit"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/hasContent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property links two entities that share a relation of containment with each other."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has content"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/isContentOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/medium",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates the material of a resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has medium"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/Folio",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The page of a codex. It is made up by two sides, called respectively recto and verso."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "folio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub1bL2768C9"
+      },
+      {
+        "@id": "_:ub1bL2763C9"
+      },
+      {
+        "@id": "http://purl.org/spar/fabio/Manifestation"
+      },
+      {
+        "@id": "_:ub1bL2759C43"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2768C9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Verso"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#part"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2763C9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Recto"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#part"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2759C43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Side"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#part"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/withTextualRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates some textual metadata in time to its textual role."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "with textual role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/TextualRole"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/spar/tvc/withValue"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/isTextualRoleIn"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/cito/isCitedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that the cited entity is cited by the citing entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/cito"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is cited by"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/valid",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates a date range in which something related to a resource is valid."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has date valid"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2010/06/literalreification/isLiteralOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property connects the reified literal to the individuals that are using it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.essepuntato.it/2010/06/literalreification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is literal of"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/Person",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An individual human being."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "person"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/Agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/hasNumberOfColumns",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property specifies the number of columns that are present on the side of a folio."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/Side"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has number of columns"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#positiveInteger"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owlhasIntervalEndDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates the end date of a time interval."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has interval end date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owlhasIntervalDate"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2010/06/literalreification/Literal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "It describes reified literals, where the literal value they represent is specified through the property literal:hasLiteralValue. Each individual of this class must always have a specified value."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.essepuntato.it/2010/06/literalreification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "literal"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/finalRubric",
+    "@type": [
+      "https://w3id.org/irnerio/ontology/memo/TextualRole"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A textual role assumed by a textual metadata in time. It is based on the textual string containing the words that explicitly indicate the end of the manuscript text, a gloss, or both."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "final rubric"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/irnerio/ontology/memo/isAnnotatedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that some entity is given a critical explanation by another entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is annotated by"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Comment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A verbal or written remark concerning some entity. In written form, a comment is often appended to that entity and termed an annotation (for example, a notation added by way of explanation, interpretation, etc.)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "comment"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/CriticalEdition",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A new edition of a historical publication, edited by a scholar other than the original author."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "critical edition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/spar/fabio/Work"
+      },
+      {
+        "@id": "_:ub1bL2704C34"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL2704C34",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/irnerio/ontology/memo/CriticalEditionVolume"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#realization"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#realizationOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property relates an expression, that is an intellectual or artistic realization of a work, to that work."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is realization of"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#embodimentOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property indicates that a particular manifestation embodies an expression of a work."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is embodiment of"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Book",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A non-serial document that is complete in one volume or a designated finite number of volumes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "book"
+      }
+    ]
+  }
+]
