@@ -151,7 +151,7 @@
 
     #### Scenario 1
 
-    A given manuscript (ex:manuscript_1) is made up by a text (ex:text_1) and six glosses (ex:gloss_a, ex:gloss_b, ex:gloss_c, ex:gloss_d, ex:gloss_e, ex:gloss_f). The network of annotative relationships in which these elements exist is structured as follows:
+    A given manuscript (`ex:manuscript_1`) is made up by a text (`ex:text_1`) and six glosses (`ex:gloss_a`, `ex:gloss_b`, `ex:gloss_c`, `ex:gloss_d`, `ex:gloss_e`, `ex:gloss_f`). The network of annotative relationships in which these elements exist is structured as follows:
 
     * `ex:gloss_a` cites `ex:text_1` ;
     * `ex:gloss_b` refers to `ex:text_1` ;
