@@ -26,1144 +26,1142 @@
     rdfs:label "MeMO"@en ;
     dc:title "The Medieval Manuscript Ontology (MeMO)"@en ;
     dc:rights "This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/)."@en ;
-    dc:description """
+    dc:description """MeMO, the Medieval Manuscripts Ontology, is an OWL 2 DL ontology that aims to provide a framework for the formal description of the medieval codices and manuscripts described in the Project IRNERIO catalogue and the relations that exist between them.
     
-    MeMO, the Medieval Manuscripts Ontology, is an OWL 2 DL ontology that aims to provide a framework for the formal description of the medieval codices and manuscripts described in the Project IRNERIO catalogue and the relations that exist between them.
+It is centered on a set of concepts (codex, manuscript, folio, text and gloss), which have been precisely defined via the Functional Requirements for Bibliographic Records (FRBR) standard in order to model such complexity in an accurate and logically consistent structure.
     
-    It is centered on a set of concepts (codex, manuscript, folio, text and gloss), which have been precisely defined via the Functional Requirements for Bibliographic Records (FRBR) standard in order to model such complexity in an accurate and logically consistent structure.
+The model thus becomes able to cover multiple use cases and scenarios in proportion to how many requirements have been adequately met.
+  
+While developing MeMO, a high priority has been given to the goal of reaching a sound balance between precision (to satisfy the user’s needs) and coverage (to ensure a certain degree of extensibility and reuse) of the model. Ultimately, the idea behind the development of MeMO has been to provide a data model for representing the aforementioned collection of medieval codices and manuscripts according to certain requirements and with the possibility to extend it for representing similar resources that exist in other collections.
+
+FRBR allows a holistic perspective about the resource, on multiple levels of conceptualization, by breaking down the semantic and conceptual ambiguities related to objects created by human hands into different but related and layered concepts and by allowing the description of an artifact and its relations with other entities to be more expressive, precise and dynamic.
+
+Nonetheless, FRBR has some limitations. Even though the definitions of its concepts are quite straightforward, FRBR is not easily understood by the common user, who finds the terms work, expression, manifestation and item not very clear. 
+   
+According to FRBR, any object (such as a manuscript, for example) has to be described by taking into consideration all the four levels in order to have a complete overview of it. This multi-leveled conceptualization is difficult for an average user to comprehend, because it is much more intuitive to expect the concept of that object to exist at a single FRBR level. In order to avoid this issue without giving up the expressivity of FRBR, a good solution is to place that object at the level that is deemed more appropriate in relation to the scenario taken into consideration. 
     
-    The model thus becomes able to cover multiple use cases and scenarios in proportion to how many requirements have been adequately met.
+This approach has been used systematically for the FRBR-aligned Bibliographic Ontology (FaBiO) (Peroni and Shotton 2012), with which MeMO has been aligned. Being an ontology focused on entities that are published, textual in nature, and/or referred to by bibliographic references, FaBiO defines its own set of entities that are subclasses of the original FRBR entities by taking advantage of the FRBRcore RDF vocabulary (FRBRcore, http://purl.org/vocab/frbr/core#). In order to embrace this approach and be consistent with the scenarios that are present in the case study, MeMO reuses FaBiO interpretations of FRBR entities as superclasses of its entities. In particular: manuscript, text and gloss are conceptualized as subclasses of `fabio:Expression` (since they are carry a content and are not inherently related to a precise format), while codex and folio are conceptualized as subclasses of `fabio:Manifestation`, since they carry a format that functions as a container for both text and glosses, and thus for manuscripts as well.
+
+Currently, MeMO is able to describe the following situations:
+
+* the gloss apparatus of a manuscript, made of glosses and annotation relationships between them and other entities, such as a manuscript, a manuscript text and other glosses;
+
+* textual metadata related to manuscripts (e.g. incipit, explicit and final rubric) and how they change in time;
+
+* the structure of citations that exists between manuscripts, glosses, textual metadata, editions and other similar resources;
+
+* the variations of people’s names in time;
+
+* foliation;
+
+* codex metadata (e.g. dimensions and materials)
+
+The following figure contains a [Graffoo diagram](http://www.essepuntato.it/graffoo) that provides an overview of the classes and properties introduced in MeMO.
+
+![A Graffoo diagram of MeMO](memo.png)
+
+The current version of MeMO reuses several ontologies:
+
+* [CiTO](http://purl.org/spar/cito), an ontology that enables characterization of the nature or type of citations, both factually and rhetorically;
+
+* [DCTerms](http://purl.org/dc/terms), a specification implementing all the metadata terms maintained by the Dublin Core Metadata Initiative, including properties, vocabulary encoding schemes, syntax encoding schemes, and classes;
+
+* [FaBiO](http://purl.org/spar/fabio), an ontology based on the FRBR model and used for describing bibliographical entities in all their various essences;
+
+* [FOAF](http://xmlns.com/foaf/0.1), a vocabulary for describing people and their relations with other people, documents, and other information objects;
+
+* [FRBRcore](http://purl.org/vocab/frbr/core), an RDF vocabulary incorporating the basic concepts and relations described in the IFLA report on the Functional Requirements for Bibliographic Records (FRBR);
+
+* [literal](http://www.essepuntato.it/2010/06/literalreification), an ontology pattern which allows modelling certain literals as individuals of a class so that one may use them as proper subjects or objects of RDF statements within an ontology;
+
+* [TI](http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl), an ontology pattern enables the description of periods of time, each characterized by a starting date and an ending date;
+
+* [TVC](http://purl.org/spar/tvc), an ontology pattern for the description of situations in which entities have values during a particular time and within a particular context.
+
+The next subsections provide a quick overview of all the entities defined, some examples of usage and some queries that MeMO can answer.
     
-    While developing MeMO, a high priority has been given to the goal of reaching a sound balance between precision (to satisfy the user’s needs) and coverage (to ensure a certain degree of extensibility and reuse) of the model. Ultimately, the idea behind the development of MeMO has been to provide a data model for representing the aforementioned collection of medieval codices and manuscripts according to certain requirements and with the possibility to extend it for representing similar resources that exist in other collections.
+### FRBR alignment with FaBiO
 
-    FRBR allows a holistic perspective about the resource, on multiple levels of conceptualization, by breaking down the semantic and conceptual ambiguities related to objects created by human hands into different but related and layered concepts and by allowing the description of an artifact and its relations with other entities to be more expressive, precise and dynamic.
+In order to adequately represent the domain in question according to the demands of the domain expert, it was necessary to design MeMO so as to represent different levels of conceptualization of the collection resources. Moreover, the dynamic nature of the catalogue and the resources it describes had to be taken in consideration as well. Finally, MeMO needed to be flexible enough to accommodate external entities (e.g. critical editions citing the corresponding manuscripts) with ease and to be eventually extended for describing specific scenarios related to manuscript study, representation and analysis.
 
-    Nonetheless, FRBR has some limitations. Even though the definitions of its concepts are quite straightforward, FRBR is not easily understood by the common user, who finds the terms work, expression, manifestation and item not very clear. 
+In light of these considerations, it was chosen to design MeMO around the Functional Requirements for Bibliographic Records standard (FRBR), highly adaptable model that is not bound to a specific implementation and can be applied to both physical and digital resources. FRBR allows a holistic perspective about the resource, on multiple levels of conceptualization (Work, Expression, Manifestation, Item), by breaking down the semantic and conceptual ambiguities related to objects created by human hands into different but related and layered concepts and by allowing the description of an artifact and its relations with other entities to be more expressive, precise and dynamic.
+
+According to FRBR, any object (such as a manuscript, for example) has to be described by taking into consideration all the four levels in order to have a complete overview of it. This multi-leveled conceptualization is difficult for an average user to comprehend, because it is much more intuitive to expect the concept of that object to exist at a single FRBR level. In order to avoid this issue without giving up the expressivity of FRBR, a good solution is to place that object at the level that is deemed more appropriate in relation to the scenario taken into consideration. This approach has been used systematically for the FRBR-aligned Bibliographic Ontology (FaBiO), with which MeMO has been aligned.
+
+Being an ontology focused on entities that are published, textual in nature, and/or referred to by bibliographic references, FaBiO defines its own set of entities that are subclasses of the original FRBR entities. MeMO reuses FaBiO interpretations of FRBR entities as superclasses of its entities. In particular: manuscript, text and gloss are conceptualized as subclasses of fabio:Expression (since they are carry a content and are not inherently related to a precise format), while codex and folio are conceptualized as subclasses of fabio:Manifestation, since they carry a format that functions as a container for both text and glosses, and thus for manuscripts as well.
+
+### MeMO entities
+
+MeMO classes model the components of the collection (codices and manuscripts), their parts (folios, text and glosses) and other ancillary entities (such as books, editions, people, etc.).
     
-    According to FRBR, any object (such as a manuscript, for example) has to be described by taking into consideration all the four levels in order to have a complete overview of it. This multi-leveled conceptualization is difficult for an average user to comprehend, because it is much more intuitive to expect the concept of that object to exist at a single FRBR level. In order to avoid this issue without giving up the expressivity of FRBR, a good solution is to place that object at the level that is deemed more appropriate in relation to the scenario taken into consideration. 
+A manuscript (represented by the class memo:Manuscript) is made up by one text and zero or more glosses. In MeMO, the term “manuscript” refers to an entity made up by other conceptual elements such as the manuscript text (represented by the class memo:Text, it is understood as the primary text of the manuscript) and glosses (represented by the class memo:Gloss, they are comments on the text and are part of the entirety of the manuscript universe). Text and glosses attain a physical realization in the moment they themselves in the physical format carried by a folio.
+
+The distribution of a manuscript through one or more folios is expressed in MeMO by stating that memo:Manuscript, memo:Text and memo:Gloss are embodied in memo:Folio. In this way, it is possible to represent the structure of a manuscript in terms of text and glosses that are part of it. Moreover, MeMO can also represent in an accurate way many different scenarios that are effectively present in the collection of Progetto IRNERIO (e.g. multiples manuscript in the same folio, non-sequential foliation, bilocation of the same manuscript in two codices, etc.).
+
+A codex (represented by the class memo:Codex) is composed by one or more folios, in which one or more manuscripts are embodied. The MeMO understanding of the term “codex” is very precise and refers to a physical object that should not be confused with “the Codex” (i.e. the Codex Justinianeus), nor with the concept of manuscript (classically understood as a physical document written by hand by someone). Instead, it is a composite entity, without a clear authorship and title, that embodies manuscripts.
+
+A folio (a leaf or sheet of paper or another material, represented by the class memo:Folio) is a physical object that is usually - but not necessarily - part of a codex. It is made up of two sides, one called recto (the front side of a folio) and the other called verso (the back side of a folio). It carries a specific format and layout. Most of the time, a folio is part of a codex and accommodates the text and the glosses of a manuscript. However, it is also possible that certain folios may be missing or may function as protection to eventual damage to the codex they are part of (the so-called flyleaves). Folios can be cut from a codex and rearranged in the same or even in another codex. Since there is no closure between a folio and a manuscript, no part-whole relation between them can be established. This is represented in the model via FRBR, in which part-whole relations can exist only between same-level entities. Since a folio is a manifestation and a manuscript is an expression, the relation does not hold up.
+
+Codices and folios are characterized by a series of relevant information for any scholar. Two examples of important information that have been addressed during the development of MeMO are the foliation (the sequence according to which folios are arranged in the codex) and the physical attributes of a codex, such as dimensions (measured in terms of length and width) and materials. MeMO is thus able to represent the structure of a codex in terms of foliation and to return the physical information about the codex, such as its materials, dimensions, identifiers and number of columns.
     
-    This approach has been used systematically for the FRBR-aligned Bibliographic Ontology (FaBiO) (Peroni and Shotton 2012), with which MeMO has been aligned. Being an ontology focused on entities that are published, textual in nature, and/or referred to by bibliographic references, FaBiO defines its own set of entities that are subclasses of the original FRBR entities by taking advantage of the FRBRcore RDF vocabulary (FRBRcore, http://purl.org/vocab/frbr/core#). In order to embrace this approach and be consistent with the scenarios that are present in the case study, MeMO reuses FaBiO interpretations of FRBR entities as superclasses of its entities. In particular: manuscript, text and gloss are conceptualized as subclasses of `fabio:Expression` (since they are carry a content and are not inherently related to a precise format), while codex and folio are conceptualized as subclasses of `fabio:Manifestation`, since they carry a format that functions as a container for both text and glosses, and thus for manuscripts as well.
-
-    Currently, MeMO is able to describe the following situations:
-
-    * the gloss apparatus of a manuscript, made of glosses and annotation relationships between them and other entities, such as a manuscript, a manuscript text and other glosses;
-
-    * textual metadata related to manuscripts (e.g. incipit, explicit and final rubric) and how they change in time;
-
-    * the structure of citations that exists between manuscripts, glosses, textual metadata, editions and other similar resources;
-
-    * the variations of people’s names in time;
-
-    * foliation;
-
-    * codex metadata (e.g. dimensions and materials)
-
-    The following figure contains a [Graffoo diagram](http://www.essepuntato.it/graffoo) that provides an overview of the classes and properties introduced in MeMO.
-
-    ![A Graffoo diagram of MeMO](memo.png)
-
-    The current version of MeMO reuses several ontologies:
-
-    * [CiTO](http://purl.org/spar/cito), an ontology that enables characterization of the nature or type of citations, both factually and rhetorically;
-
-    * [DCTerms](http://purl.org/dc/terms), a specification implementing all the metadata terms maintained by the Dublin Core Metadata Initiative, including properties, vocabulary encoding schemes, syntax encoding schemes, and classes;
-
-    * [FaBiO](http://purl.org/spar/fabio), an ontology based on the FRBR model and used for describing bibliographical entities in all their various essences;
-
-    * [FOAF](http://xmlns.com/foaf/0.1), a vocabulary for describing people and their relations with other people, documents, and other information objects;
-
-    * [FRBRcore](http://purl.org/vocab/frbr/core), an RDF vocabulary incorporating the basic concepts and relations described in the IFLA report on the Functional Requirements for Bibliographic Records (FRBR);
-
-    * [literal](http://www.essepuntato.it/2010/06/literalreification), an ontology pattern which allows modelling certain literals as individuals of a class so that one may use them as proper subjects or objects of RDF statements within an ontology;
-
-    * [TI](http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl), an ontology pattern enables the description of periods of time, each characterized by a starting date and an ending date;
-
-    * [TVC](http://purl.org/spar/tvc), an ontology pattern for the description of situations in which entities have values during a particular time and within a particular context.
-
-    The next subsections provide a quick overview of all the entities defined, some examples of usage and some queries that MeMO can answer.
+In addition to the aforementioned entities, MeMO contains other classes that represent resources and agents contributing somehow to the information contained within the Progetto IRNERIO catalogue (e.g. books, editions, catalog documents, but also people, materials, etc.). Many of these entities have been easily handled through FaBiO, with classes like fabio:Book and fabio:CriticalEdition. FOAF and DCTerms have been reused to model useful concepts, such as person and materials, through the classes foaf:Person and dcterms:PhysicalMedium.
     
-    ### FRBR alignment with FaBiO
+Certain classes, on the other hand, have been specifically created for modelling particular aspects of the catalogue which had not or could not be modelled by other existing models. New classes have been created as subclasses of existing classes existing in other models, in order to refine them in a more accurate way (e.g. memo:SizeMeasurement as subclass of dcterms:SizeOrDuration for representing only the idea of physical dimensions). Finally, some classes have been reused or created in MeMO on the basis of particular Ontology Design Patterns, in order to deal with specific modelling issues.
 
-    In order to adequately represent the domain in question according to the demands of the domain expert, it was necessary to design MeMO so as to represent different levels of conceptualization of the collection resources. Moreover, the dynamic nature of the catalogue and the resources it describes had to be taken in consideration as well. Finally, MeMO needed to be flexible enough to accommodate external entities (e.g. critical editions citing the corresponding manuscripts) with ease and to be eventually extended for describing specific scenarios related to manuscript study, representation and analysis.
+### MeMO relationships
 
-    In light of these considerations, it was chosen to design MeMO around the Functional Requirements for Bibliographic Records standard (FRBR), highly adaptable model that is not bound to a specific implementation and can be applied to both physical and digital resources. FRBR allows a holistic perspective about the resource, on multiple levels of conceptualization (Work, Expression, Manifestation, Item), by breaking down the semantic and conceptual ambiguities related to objects created by human hands into different but related and layered concepts and by allowing the description of an artifact and its relations with other entities to be more expressive, precise and dynamic.
+The part-whole relation between members of the same FRBR level through frbr:part (along with its inverse frbr:partOf) through the OWL 2 formalization of FRBRcore (http://purl.org/spar/frbr) which forces frbr:part and frbr:partOf at the same FRBR level by introducing a series of restrictions to the classes. This way, it is possible to assert that a folio is part of a codex and that a text or a gloss is part of a manuscript by using the same property at different FRBR levels of conceptualization without incurring in logical inconsistencies.
 
-    According to FRBR, any object (such as a manuscript, for example) has to be described by taking into consideration all the four levels in order to have a complete overview of it. This multi-leveled conceptualization is difficult for an average user to comprehend, because it is much more intuitive to expect the concept of that object to exist at a single FRBR level. In order to avoid this issue without giving up the expressivity of FRBR, a good solution is to place that object at the level that is deemed more appropriate in relation to the scenario taken into consideration. This approach has been used systematically for the FRBR-aligned Bibliographic Ontology (FaBiO), with which MeMO has been aligned.
+A key aspect of MeMO is the representation of relationships between and within the different resources that constitute the collection of codices and manuscripts provided by Progetto IRNERIO. For example, citations may play an important role in the description of these kind of resources, because the network of citations created by combining this kind of information represents a very useful resource for scholarly research. A medievalist’s research might be centered around the reconstruction of the network of references between a manuscript text and a series of glosses. Instead, a modern historian might focus on the way glosses and other resources (such as textual metadata) comment on other glosses, thus spreading the volume of commentaries beyond the collection itself. Finally, a contemporary historian might be interested in retracing how a certain manuscript has been cited by critical editions over time.
 
-    Being an ontology focused on entities that are published, textual in nature, and/or referred to by bibliographic references, FaBiO defines its own set of entities that are subclasses of the original FRBR entities. MeMO reuses FaBiO interpretations of FRBR entities as superclasses of its entities. In particular: manuscript, text and gloss are conceptualized as subclasses of fabio:Expression (since they are carry a content and are not inherently related to a precise format), while codex and folio are conceptualized as subclasses of fabio:Manifestation, since they carry a format that functions as a container for both text and glosses, and thus for manuscripts as well.
+Overall, with MeMO it becomes possible to easily browse this intricate data and to compute the level of annotation of each gloss, changing dynamically the perspective on a certain source and inferring new information. In order to do so, it was necessary to take into consideration, during the development of MeMO, a number of different entities and the disparate ways in which these entities could relate to each other. These relationships build up a complex record of interpretations, commentaries and references. In fact, glosses made by different people in different time periods keep layering on the top of each other, either citing or annotating or referring to the text, or another gloss, or a whole manuscript.
 
-    ### MeMO entities
+In the current version of MeMO, the properties that express these relationships are three: dcterms:relation, memo:annotates and cito:cites. The object property dcterms:relation is the most general way to express the idea of an entity that refers to another entity and does not specify the nature of the relationship. memo:annotates indicates that some entity (most likely a comment or a gloss) provides a critical or explanatory observation to another entity, thus implying an interpretive and supplementary intention underlying the relationship (e.g. a gloss may annotate a manuscript text to explain an obscure passage contained within). cito:cites indicates that some citing entity mentions a cited entity and, with respect to the resources of Progetto IRNERIO, it is used to model the particular way a gloss or a comment may refer to another entity (e.g. by including a quotation from the cited entity). It is also used to represent the bibliographic references that are present in the descriptions of codices and manuscript and in other scenarios as well (e.g. metadata citing other works, a book citing one or more codices, a critical edition citing one or more manuscripts, and so on).
 
-    MeMO classes model the components of the collection (codices and manuscripts), their parts (folios, text and glosses) and other ancillary entities (such as books, editions, people, etc.).
+When developing MeMO, domain and range constraints of these properties have not been defined so as to allow an easy integration with other models and augment the model extensibility in addition to what has already been defined, thus allowing the further addition of other types of properties in the future.
     
-    A manuscript (represented by the class memo:Manuscript) is made up by one text and zero or more glosses. In MeMO, the term “manuscript” refers to an entity made up by other conceptual elements such as the manuscript text (represented by the class memo:Text, it is understood as the primary text of the manuscript) and glosses (represented by the class memo:Gloss, they are comments on the text and are part of the entirety of the manuscript universe). Text and glosses attain a physical realization in the moment they themselves in the physical format carried by a folio.
+MeMO reuses existing and well-known models extensively, with the aim of making the ontology as much interoperable as possible. Properties belonging to widely used models, such as DCTerms and FOAF, have been used to describe certain features of the modelled concepts (e.g. dcterms:title, dcterms:identifier, dcterms:extent, dcterms:medium, foaf:name, etc.). However, the model also covers functions that are not offered by existing models, such as the property memo:hasNumbersOfColumns, which involves extremely specialized information that was not taken into consideration by high-level, general ontologies such as those reused. Other properties, such as memo:hasContent and memo:isBasedOn, in spite of being generic in nature, have been created due to the actual specificity that was needed to be expressed by them. The property memo:hasContent, for example, has been added as a way to distinguish the idea of containment relation from the idea of part-whole relation, already expressed by frbr:part. Another example of a very specific property is represented by memo:isBasedOn, which indicates whether the context in which a value in time (such as textual metadata) assumes a certain value depends on a text or a gloss or even both.
 
-    The distribution of a manuscript through one or more folios is expressed in MeMO by stating that memo:Manuscript, memo:Text and memo:Gloss are embodied in memo:Folio. In this way, it is possible to represent the structure of a manuscript in terms of text and glosses that are part of it. Moreover, MeMO can also represent in an accurate way many different scenarios that are effectively present in the collection of Progetto IRNERIO (e.g. multiples manuscript in the same folio, non-sequential foliation, bilocation of the same manuscript in two codices, etc.).
+### Examples of use
 
-    A codex (represented by the class memo:Codex) is composed by one or more folios, in which one or more manuscripts are embodied. The MeMO understanding of the term “codex” is very precise and refers to a physical object that should not be confused with “the Codex” (i.e. the Codex Justinianeus), nor with the concept of manuscript (classically understood as a physical document written by hand by someone). Instead, it is a composite entity, without a clear authorship and title, that embodies manuscripts.
+A description of a medieval codex or manuscript has to necessarily meet the needs of several different types of scholars. Textual scholars, for example, look for precise information about the contents of a codex, a clear overview of the manuscript texts it contains, the title of each manuscript as well as other textual metadata that record more useful information about the single manuscript. They also might be interested in determining the identity of the manuscript text by referencing to one or more editions that cite that manuscript. Scholars whose concerns are primarily artistic, on the other hand, are interested in the decorations of a manuscript, such as illumination, initials, rubrics and illustrations. Paleographers and codicologists need information about the physical features of a codex, such as its dimensions, the foliation, the number of columns per page and so on. Historians are especially interested in the glosses and other forms of commentary that take place in the margins of the page, because the explanatory comments and annotations that medieval manuscripts hoarded over the centuries can present the scholars with a living record of use, study and reference of that resource.
 
-    A folio (a leaf or sheet of paper or another material, represented by the class memo:Folio) is a physical object that is usually - but not necessarily - part of a codex. It is made up of two sides, one called recto (the front side of a folio) and the other called verso (the back side of a folio). It carries a specific format and layout. Most of the time, a folio is part of a codex and accommodates the text and the glosses of a manuscript. However, it is also possible that certain folios may be missing or may function as protection to eventual damage to the codex they are part of (the so-called flyleaves). Folios can be cut from a codex and rearranged in the same or even in another codex. Since there is no closure between a folio and a manuscript, no part-whole relation between them can be established. This is represented in the model via FRBR, in which part-whole relations can exist only between same-level entities. Since a folio is a manifestation and a manuscript is an expression, the relation does not hold up.
+In the following subsections, some scenarios are presented by way of examples of what can be achieved by using MeMO to address certain scholarly needs. The examples are based on test data encoded in RDF Turtle, a RDF serialization that allows one to write RDF statements in a form that is intuitive and compact, with the possibility of concatenating prefixes with base URIs in order to abbreviate them into prefixed names. All the entities that refer to the test data have a specific base URI (https://w3id.org/irnerio/data/memo/) with the prefix ex:. These Turtle sources are available on Github at https://github.com/irnerio-opendata/memo/tree/master/data.
 
-    Codices and folios are characterized by a series of relevant information for any scholar. Two examples of important information that have been addressed during the development of MeMO are the foliation (the sequence according to which folios are arranged in the codex) and the physical attributes of a codex, such as dimensions (measured in terms of length and width) and materials. MeMO is thus able to represent the structure of a codex in terms of foliation and to return the physical information about the codex, such as its materials, dimensions, identifiers and number of columns.
+The prefixes that are used in all the examples provided below are defined as follows:
+
+```
+@prefix ex: <https://w3id.org/irnerio/data/memo/> .
+@prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+@prefix tvc: <http://purl.org/spar/tvc/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+```
+
+#### Scenario 1
+
+A given manuscript (`ex:manuscript_1`) is made up by a text (`ex:text_1`) and six glosses (`ex:gloss_a`, `ex:gloss_b`, `ex:gloss_c`, `ex:gloss_d`, `ex:gloss_e`, `ex:gloss_f`). The network of annotative relationships in which these elements exist is structured as follows:
+
+* `ex:gloss_a` cites `ex:text_1` ;
+* `ex:gloss_b` refers to `ex:text_1` ;
+* `ex:gloss_c` annotates `ex:gloss_a` ;
+* `ex:gloss_d` refers to `ex:gloss_a` ; 
+* `ex:gloss_e` annotates `ex:gloss_b` and `ex:gloss_c` ;
+* `ex:gloss_f` cites `ex:text_1`, refers to `ex:gloss_d` and annotates `ex:gloss_e`.
+
+```
+ex:manuscript_1 a memo:Manuscript ;
+    frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .
+
+ex:gloss_a a memo:Gloss ;
+    cito:cites ex:text_1 .
+
+ex:gloss_b a memo:Gloss ;
+    dcterms:relation ex:text_1 .
     
-    In addition to the aforementioned entities, MeMO contains other classes that represent resources and agents contributing somehow to the information contained within the Progetto IRNERIO catalogue (e.g. books, editions, catalog documents, but also people, materials, etc.). Many of these entities have been easily handled through FaBiO, with classes like fabio:Book and fabio:CriticalEdition. FOAF and DCTerms have been reused to model useful concepts, such as person and materials, through the classes foaf:Person and dcterms:PhysicalMedium.
-    
-    Certain classes, on the other hand, have been specifically created for modelling particular aspects of the catalogue which had not or could not be modelled by other existing models. New classes have been created as subclasses of existing classes existing in other models, in order to refine them in a more accurate way (e.g. memo:SizeMeasurement as subclass of dcterms:SizeOrDuration for representing only the idea of physical dimensions). Finally, some classes have been reused or created in MeMO on the basis of particular Ontology Design Patterns, in order to deal with specific modelling issues.
+ex:gloss_c a memo:Gloss ;
+    memo:annotates ex:gloss_a .
 
-    ### MeMO relationships
+ex:gloss_d a memo:Gloss ;
+    dcterms:relation ex:gloss_a .
 
-    The part-whole relation between members of the same FRBR level through frbr:part (along with its inverse frbr:partOf) through the OWL 2 formalization of FRBRcore (http://purl.org/spar/frbr) which forces frbr:part and frbr:partOf at the same FRBR level by introducing a series of restrictions to the classes. This way, it is possible to assert that a folio is part of a codex and that a text or a gloss is part of a manuscript by using the same property at different FRBR levels of conceptualization without incurring in logical inconsistencies.
+ex:gloss_e a memo:Gloss ;
+    memo:annotates ex:gloss_b , ex:gloss_c .
 
-    A key aspect of MeMO is the representation of relationships between and within the different resources that constitute the collection of codices and manuscripts provided by Progetto IRNERIO. For example, citations may play an important role in the description of these kind of resources, because the network of citations created by combining this kind of information represents a very useful resource for scholarly research. A medievalist’s research might be centered around the reconstruction of the network of references between a manuscript text and a series of glosses. Instead, a modern historian might focus on the way glosses and other resources (such as textual metadata) comment on other glosses, thus spreading the volume of commentaries beyond the collection itself. Finally, a contemporary historian might be interested in retracing how a certain manuscript has been cited by critical editions over time.
+ex:gloss_f a memo:Gloss ;
+    cito:cites ex:text_1 ;
+    dcterms:relation ex:gloss_d ;
+    memo:annotates ex:gloss_e .
 
-    Overall, with MeMO it becomes possible to easily browse this intricate data and to compute the level of annotation of each gloss, changing dynamically the perspective on a certain source and inferring new information. In order to do so, it was necessary to take into consideration, during the development of MeMO, a number of different entities and the disparate ways in which these entities could relate to each other. These relationships build up a complex record of interpretations, commentaries and references. In fact, glosses made by different people in different time periods keep layering on the top of each other, either citing or annotating or referring to the text, or another gloss, or a whole manuscript.
+ex:text_1 a memo:Text .
+```
 
-    In the current version of MeMO, the properties that express these relationships are three: dcterms:relation, memo:annotates and cito:cites. The object property dcterms:relation is the most general way to express the idea of an entity that refers to another entity and does not specify the nature of the relationship. memo:annotates indicates that some entity (most likely a comment or a gloss) provides a critical or explanatory observation to another entity, thus implying an interpretive and supplementary intention underlying the relationship (e.g. a gloss may annotate a manuscript text to explain an obscure passage contained within). cito:cites indicates that some citing entity mentions a cited entity and, with respect to the resources of Progetto IRNERIO, it is used to model the particular way a gloss or a comment may refer to another entity (e.g. by including a quotation from the cited entity). It is also used to represent the bibliographic references that are present in the descriptions of codices and manuscript and in other scenarios as well (e.g. metadata citing other works, a book citing one or more codices, a critical edition citing one or more manuscripts, and so on).
+#### Scenario 2
 
-    When developing MeMO, domain and range constraints of these properties have not been defined so as to allow an easy integration with other models and augment the model extensibility in addition to what has already been defined, thus allowing the further addition of other types of properties in the future.
-    
-    MeMO reuses existing and well-known models extensively, with the aim of making the ontology as much interoperable as possible. Properties belonging to widely used models, such as DCTerms and FOAF, have been used to describe certain features of the modelled concepts (e.g. dcterms:title, dcterms:identifier, dcterms:extent, dcterms:medium, foaf:name, etc.). However, the model also covers functions that are not offered by existing models, such as the property memo:hasNumbersOfColumns, which involves extremely specialized information that was not taken into consideration by high-level, general ontologies such as those reused. Other properties, such as memo:hasContent and memo:isBasedOn, in spite of being generic in nature, have been created due to the actual specificity that was needed to be expressed by them. The property memo:hasContent, for example, has been added as a way to distinguish the idea of containment relation from the idea of part-whole relation, already expressed by frbr:part. Another example of a very specific property is represented by memo:isBasedOn, which indicates whether the context in which a value in time (such as textual metadata) assumes a certain value depends on a text or a gloss or even both.
+`ex:manuscript_1` has `ex:incipit_1`, `ex:explicit_1` and `ex:f_rubric_1`. `ex:manuscript_2` has `ex:incipit_2` and `ex:explicit_2`. `ex:manuscript_3` has `ex:incipit_3`.
 
-    ### Examples of use
+* `ex:incipit_1` has context based on `ex:text_1` and `ex:gloss_a`, at time 1779. It has been created by `ex:agent_1`;
 
-    A description of a medieval codex or manuscript has to necessarily meet the needs of several different types of scholars. Textual scholars, for example, look for precise information about the contents of a codex, a clear overview of the manuscript texts it contains, the title of each manuscript as well as other textual metadata that record more useful information about the single manuscript. They also might be interested in determining the identity of the manuscript text by referencing to one or more editions that cite that manuscript. Scholars whose concerns are primarily artistic, on the other hand, are interested in the decorations of a manuscript, such as illumination, initials, rubrics and illustrations. Paleographers and codicologists need information about the physical features of a codex, such as its dimensions, the foliation, the number of columns per page and so on. Historians are especially interested in the glosses and other forms of commentary that take place in the margins of the page, because the explanatory comments and annotations that medieval manuscripts hoarded over the centuries can present the scholars with a living record of use, study and reference of that resource.
+* `ex:explicit_1` has context based on `ex:text_1` and `ex:gloss_f`, at time 1780. It has been created by `ex:agent_1`;
 
-    In the following subsections, some scenarios are presented by way of examples of what can be achieved by using MeMO to address certain scholarly needs. The examples are based on test data encoded in RDF Turtle, a RDF serialization that allows one to write RDF statements in a form that is intuitive and compact, with the possibility of concatenating prefixes with base URIs in order to abbreviate them into prefixed names. All the entities that refer to the test data have a specific base URI (https://w3id.org/irnerio/data/memo/) with the prefix ex:. These Turtle sources are available on Github at https://github.com/irnerio-opendata/memo/tree/master/data.
+* `ex:f_rubric_1` has context based on `ex:text_1`, at time 1780. It has been created by `ex:agent_1`;
 
-    The prefixes that are used in all the examples provided below are defined as follows:
+* `ex:incipit_2` has context based on `ex:text_2`, at time 1861. It has been created by `ex:agent_2`;
 
-    ```
-    @prefix ex: <https://w3id.org/irnerio/data/memo/> .
-    @prefix memo: <https://w3id.org/irnerio/ontology/memo/> .
-    @prefix cito: <http://purl.org/spar/cito/> .
-    @prefix dcterms: <http://purl.org/dc/terms/> .
-    @prefix fabio: <http://purl.org/spar/fabio/> .
-    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-    @prefix frbr: <http://purl.org/vocab/frbr/core#> .
-    @prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
-    @prefix owl: <http://www.w3.org/2002/07/owl#> .
-    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-    @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
-    @prefix tvc: <http://purl.org/spar/tvc/> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    ```
+* `ex:explicit_2` has context based on `ex:text_2`, at time 1861. It has been created by `ex:agent_2`;
 
-    #### Scenario 1
+* `ex:incipit_3` has context based on `ex:text_3`, at time 1800. It has been created by `ex:agent_1`.
 
-    A given manuscript (ex:manuscript_1) is made up by a text (ex:text_1) and six glosses (ex:gloss_a, ex:gloss_b, ex:gloss_c, ex:gloss_d, ex:gloss_e, ex:gloss_f). The network of annotative relationships in which these elements exist is structured as follows:
+```
+ex:incipit_1 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_1 ;
+    memo:withTextualRole memo:incipit ;
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_1 , ex:gloss_a 
+    ] ;
+    tvc:atTime ex:1779 .
 
-    * `ex:gloss_a` cites `ex:text_1` ;
-    * `ex:gloss_b` refers to `ex:text_1` ;
-    * `ex:gloss_c` annotates `ex:gloss_a` ;
-    * `ex:gloss_d` refers to `ex:gloss_a` ; 
-    * `ex:gloss_e` annotates `ex:gloss_b` and `ex:gloss_c` ;
-    * `ex:gloss_f` cites `ex:text_1`, refers to `ex:gloss_d` and annotates `ex:gloss_e`.
+ex:1779 a ti:TimeInterval ;
+    ti:hasIntervalStartDate "1779"^^xsd:gYear .
 
-    ```
-    ex:manuscript_1 a memo:Manuscript ;
-        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .
+ex:text_1 a memo:Text .
 
-    ex:gloss_a a memo:Gloss ;
-        cito:cites ex:text_1 .
+ex:gloss_a a memo:Gloss .
 
-    ex:gloss_b a memo:Gloss ;
-        dcterms:relation ex:text_1 .
-    
-    ex:gloss_c a memo:Gloss ;
-        memo:annotates ex:gloss_a .
+ex:manuscript_1 a memo:Manuscript ;
+    frbr:part ex:text_1 , ex:gloss_a , ex:gloss_f ;
+    memo:hasTextualMetadata ex:incipit_1 , ex:explicit_1 , ex:f_rubric_1 .
 
-    ex:gloss_d a memo:Gloss ;
-        dcterms:relation ex:gloss_a .
+ex:explicit_1 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_1 ;
+    memo:withTextualRole memo:explicit ;
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_1 , ex:gloss_f
+    ] ;
+    tvc:atTime ex:1780 .
 
-    ex:gloss_e a memo:Gloss ;
-        memo:annotates ex:gloss_b , ex:gloss_c .
+ex:gloss_f a memo:Gloss .
 
-    ex:gloss_f a memo:Gloss ;
-        cito:cites ex:text_1 ;
-        dcterms:relation ex:gloss_d ;
-        memo:annotates ex:gloss_e .
+ex:1780 a ti:TimeInterval ;
+    ti:hasIntervalStartDate "1780"^^xsd:gYear .
 
-    ex:text_1 a memo:Text .
-    ```
+ex:f_rubric_1 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_1 ;
+    memo:withTextualRole memo:finalRubric ;
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_1
+    ] ;
+    tvc:atTime ex:1780 .
 
-    #### Scenario 2
+ex:incipit_2 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_2 ;
+    memo:withTextualRole memo:incipit ;
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_2
+    ] ;
+    tvc:atTime ex:1861 .
 
-    `ex:manuscript_1` has `ex:incipit_1`, `ex:explicit_1` and `ex:f_rubric_1`. `ex:manuscript_2` has `ex:incipit_2` and `ex:explicit_2`. `ex:manuscript_3` has `ex:incipit_3`.
+ex:1861 a ti:TimeInterval ;
+    ti:hasIntervalStartDate "1861"^^xsd:gYear .
 
-    * `ex:incipit_1` has context based on `ex:text_1` and `ex:gloss_a`, at time 1779. It has been created by `ex:agent_1`;
+ex:text_2 a memo:Text .
 
-    * `ex:explicit_1` has context based on `ex:text_1` and `ex:gloss_f`, at time 1780. It has been created by `ex:agent_1`;
+ex:manuscript_2 a memo:Manuscript ;
+    frbr:part ex:text_2 ;
+    memo:hasTextualMetadata ex:incipit_2 , ex:explicit_2 .
 
-    * `ex:f_rubric_1` has context based on `ex:text_1`, at time 1780. It has been created by `ex:agent_1`;
+ex:explicit_2 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_2 ;
+    memo:withTextualRole memo:explicit ;
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_2
+    ] ;
+    tvc:atTime ex:1861 .
 
-    * `ex:incipit_2` has context based on `ex:text_2`, at time 1861. It has been created by `ex:agent_2`;
+ex:incipit_3 a memo:TextualMetadataInTime ;
+    dcterms:creator ex:agent_1 ;
+    memo:withTextualRole memo:incipit ;
+    memo:relatesToTextualContext [
+        a owl:Thing ;
+        memo:isBasedOn ex:text_3
+    ] ;
+    tvc:atTime ex:1800 .
 
-    * `ex:explicit_2` has context based on `ex:text_2`, at time 1861. It has been created by `ex:agent_2`;
+ex:1800 a ti:TimeInterval ;
+    ti:hasIntervalStartDate "1800"^^xsd:gYear .
 
-    * `ex:incipit_3` has context based on `ex:text_3`, at time 1800. It has been created by `ex:agent_1`.
+ex:text_3 a memo:Text .
 
-    ```
-    ex:incipit_1 a memo:TextualMetadataInTime ;
-        dcterms:creator ex:agent_1 ;
+ex:manuscript_3 a memo:Manuscript ;
+    frbr:part ex:text_3 ;
+    memo:hasTextualMetadata ex:incipit_3 .
+
+ex:agent_1 a foaf:Agent .
+
+ex:agent_2 a foaf:Agent .
+```
+
+#### Scenario 3
+The manuscript `ex:manuscript_2` has `ex:incipit_2` and `ex:explicit_2` as textual metadata. The glosses `ex:gloss_g`, `ex:gloss_h`, `ex:gloss_i`, `ex:gloss_l` and the text `ex:text_2` are part of `ex:manuscript_2`. The manuscript `ex:manuscript_3` has `ex:incipit_3` as textual metadata. The glosses `ex:gloss_m`, `ex:gloss_n` and the text `ex:text_3` are part of `ex:manuscript_3`. Additionally:
+
+* `ex:incipit_2` cites `ex:manuscript_1`;
+* `explicit_2` cites `ex:gloss_g`;
+* `ex:gloss_g` annotates `ex:text_2`;
+* `ex:gloss_h` annotates `ex:text_2`;
+* `ex:gloss_i` annotates `ex:gloss_g` and cites `ex:edition_realization_1`, which is the realization of `ex:edition_1`. The title of `ex:edition_1` is "Edition One";
+* `ex:gloss_l` cites `ex:gloss_h`, annotates `ex:gloss_i` and cites `ex:edition_realization_2`, which is the realization of `ex:edition_2`. The title of `ex:edition_2` is "Edition Two";
+* `ex:incipit_3` cites `ex:manuscript_2`;
+* `ex:gloss_m` annotates `ex:text_3` and cites `ex:gloss_l`;
+* `ex:gloss_n` annotates `ex:gloss_m` and cites `ex:edition_realization_1`;
+* `ex:edition_realization_3` cites `ex:manuscript_1`, `ex:manuscript_2` and `ex:manuscript_3`. It is the realization of `ex:edition_3`. The title of `ex:edition_3` is "Edition Three";
+
+```
+ex:manuscript_1 a memo:Manuscript ;
+    frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .
+
+ex:gloss_a a memo:Gloss ;
+    cito:cites ex:text_1 .
+
+ex:gloss_b a memo:Gloss ;
+    dcterms:relation ex:text_1 .
+
+ex:gloss_c a memo:Gloss ;
+    memo:annotates ex:gloss_a .
+
+ex:gloss_d a memo:Gloss ;
+    dcterms:relation ex:gloss_a .
+
+ex:gloss_e a memo:Gloss ;
+    memo:annotates ex:gloss_b , ex:gloss_c .
+
+ex:gloss_f a memo:Gloss ;
+    cito:cites ex:text_1 ;
+    dcterms:relation ex:gloss_d ;
+    memo:annotates ex:gloss_e .
+
+ex:text_1 a memo:Text .
+
+ex:manuscript_2 a memo:Manuscript ;
+    frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l ;
+    memo:hasTextualMetadata ex:incipit_2 , ex:explicit_2 .
+
+ex:incipit_2 a memo:TextualMetadataInTime ;
+    cito:cites ex:manuscript_1 .
+
+ex:explicit_2 a memo:TextualMetadataInTime ;
+    cito:cites ex:gloss_g .
+
+ex:text_2 a memo:Text .
+
+ex:gloss_g a memo:Gloss ;
+    cito:cites ex:manuscript_1 ;
+    dcterms:relation ex:text_1 ;
+    memo:annotates ex:text_2 .
+
+ex:gloss_h a memo:Gloss ;
+    dcterms:relation ex:gloss_e ;
+    memo:annotates ex:gloss_f , ex:text_2 .
+
+ex:gloss_i a memo:Gloss ;
+    memo:annotates ex:gloss_g ;
+    cito:cites ex:edition_1 .
+
+ex:gloss_l a memo:Gloss ;
+    memo:annotates ex:gloss_i ;
+    cito:cites ex:gloss_h , ex:edition_2 .
+
+ex:edition_1 a memo:CriticalEditionVolume ;
+    dcterms:title "Edition One".
+
+ex:edition_2 a memo:CriticalEditionVolume ;
+    dcterms:title "Edition Two" .
+
+ex:manuscript_3 a memo:Manuscript ;
+    frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n ;
+    memo:hasTextualMetadata ex:incipit_3 .
+
+ex:incipit_3 a memo:TextualMetadataInTime ;
+    cito:cites ex:manuscript_2 .
+
+ex:gloss_m a memo:Gloss ;
+    memo:annotates ex:text_3 ;
+    cito:cites ex:gloss_l .
+
+ex:gloss_n a memo:Gloss ;
+    memo:annotates ex:gloss_m ;
+    cito:cites ex:edition_1 .
+
+ex:text_3 a memo:Text .
+
+ex:edition_3 a memo:CriticalEditionVolume ;
+    cito:cites ex:manuscript_1 , ex:manuscript_2, ex:manuscript_3 ;
+    dcterms:title "Edition Three" .
+```
+
+#### Scenario 4
+
+The glosses `ex:gloss_a`, `ex:gloss_b` and `ex:gloss_c` have been created by `ex:glossator_1`, where:
+* `ex:gloss_a` has been created in 1240 under the name _Ioannis Phasellus_;
+* `ex:gloss_b` has been created in 1241 under the name _Ioannis Phasellus_;
+* `ex:gloss_c` has been created in 1250 under the name _Ioannis Phasellus_.
+
+The glosses `ex:gloss_d`, `ex:gloss_e` and `ex:gloss_f` have been created by `ex:glossator_2`, where:
+* `ex:gloss_d` has been created in 1261 under the name _Farnese de Vandimion_;
+* `ex:gloss_e` has been created in 1265 under the name _Farnese_;
+* `ex:gloss_f` has been created in 1266 under the name _Farnese_.
+
+The glosses `ex:gloss_g` and `ex:gloss_h` have been created by `ex:glossator_3`, where:
+* `ex:gloss_g` has been created in 1270 under the name _Boscogne_;
+* `ex:gloss_h` has been created in 1271 under the name _Boscone_.
+
+The glosses `ex:gloss_i` and `ex:gloss_l` have been created by `ex:glossator_4`, where:
+* `ex:gloss_i` has been created in 1276 under the name _Griffith_;
+* `ex:gloss_l` has been created in 1280 under the name _Femto_.
+
+The glosses `ex:gloss_m` and `ex:gloss_n` have been created by `ex:glossator_5`, where:
+* `ex:gloss_m` has been created in 1285 under the name _Gattsu_;
+* `ex:gloss_n` has been created in 1289 under the name _Guts_.
+
+The manuscript `ex:manuscript_1` has been created in 1001 by `ex:author_1` under the name _Barbalo_.
+
+The manuscripts `ex:manuscript_2` and `ex:manuscript_3` have been created by `ex:author_2`, where:
+* `ex:manuscript_2` has been created in 1012 under the name _Serpico_.
+* `ex:manuscript_3` has been created in 1014 under the name _Serpico_.
+* other variants of `ex:author_2`'s name are _Serpicus_ and _Sorbo Serpico_.
+
+```
+ex:manuscript_1 a memo:Manuscript ;
+    frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f ;
+    dcterms:creator ex:author_1 ;
+    dcterms:created "1001"^^xsd:gYear .
+
+ex:author_1 a foaf:Person ;
+    literal:hasLiteral [
+        a literal:Literal , foaf:name ;
+        literal:hasLiteralValue "Barbalo" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "950"^^xsd:gYear ;
+        ]
+    ] .
+
+ex:gloss_a a memo:Gloss ;
+    dcterms:creator ex:glossator_1 ;
+    dcterms:created "1240"^^xsd:gYear ;
+    cito:cites ex:text_1 .
+
+ex:gloss_b a memo:Gloss ;
+    dcterms:creator ex:glossator_1 ;
+    dcterms:created "1241"^^xsd:gYear ;
+    dcterms:relation ex:text_1 .
+
+ex:gloss_c a memo:Gloss ;
+    dcterms:creator ex:glossator_1 ;
+    dcterms:created "1250"^^xsd:gYear ;
+    memo:annotates ex:gloss_a .
+
+ex:glossator_1 a foaf:Person ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Ioannis Phasellus" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1220"^^xsd:gYear
+        ]
+    ] .
+
+ex:gloss_d a memo:Gloss ;
+    dcterms:creator ex:glossator_2 ;
+    dcterms:created "1261"^^xsd:gYear ;
+    dcterms:relation ex:gloss_a .
+
+ex:gloss_e a memo:Gloss ;
+    dcterms:creator ex:glossator_2 ;
+    dcterms:created "1265"^^xsd:gYear ;
+    memo:annotates ex:gloss_b , ex:gloss_c .
+
+ex:gloss_f a memo:Gloss ;
+    dcterms:creator ex:glossator_2 ;
+    dcterms:created "1266"^^xsd:gYear ;
+    cito:cites ex:text_1 ;
+    dcterms:relation ex:gloss_d ;
+    memo:annotates ex:gloss_e .
+
+ex:glossator_2 a foaf:Person ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Farnese de Vandimion" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1240"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1264"^^xsd:gYear
+        ]
+    ] ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Farnese" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1265"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1280"^^xsd:gYear
+        ]
+    ] .
+
+ex:text_1 a memo:Text .
+
+ex:manuscript_2 a memo:Manuscript ;
+    frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l ;
+    dcterms:creator ex:author_2 ;
+    dcterms:created "1012"^^xsd:gYear .
+
+ex:author_2 a foaf:Person ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Serpico" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1000"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1020"^^xsd:gYear
+        ]
+    ] ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Serpicus" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1020"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1025"^^xsd:gYear 
+        ] 
+    ] ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Sorbo Serpico" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1025"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1030"^^xsd:gYear
+        ]
+    ] .
+
+ex:text_2 a memo:Text .
+
+ex:gloss_g a memo:Gloss ;
+    dcterms:creator ex:glossator_3 ;
+    dcterms:created "1270"^^xsd:gYear ;
+    cito:cites ex:manuscript_1 ;
+    dcterms:relation ex:text_1 ;
+    memo:annotates ex:text_2 .
+
+ex:gloss_h a memo:Gloss ;
+    dcterms:creator ex:glossator_3 ;
+    dcterms:created "1271"^^xsd:gYear ;
+    dcterms:relation ex:gloss_e ;
+    memo:annotates ex:gloss_f , ex:text_2 .
+
+ex:glossator_3 a foaf:Person ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Boscogne" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1250"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1270"^^xsd:gYear
+        ]
+    ] ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Boscone" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1271"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1280"^^xsd:gYear
+        ]
+    ] .
+
+ex:gloss_i a memo:Gloss ;
+    dcterms:creator ex:glossator_4 ;
+    dcterms:created "1276"^^xsd:gYear ;
+    memo:annotates ex:gloss_g .
+
+ex:gloss_l a memo:Gloss ;
+    dcterms:creator ex:glossator_4 ;
+    dcterms:created "1280"^^xsd:gYear ;
+    cito:cites ex:gloss_h ;
+    memo:annotates ex:gloss_i .
+
+ex:glossator_4 a foaf:Person ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Guriffis" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1250"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1279"^^xsd:gYear
+        ]
+    ] ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Femto" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1280"^^xsd:gYear
+        ]
+    ] .
+
+ex:manuscript_3 a memo:Manuscript ;
+    frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n ;
+    dcterms:creator ex:author_2 ;
+    dcterms:created "1014"^^xsd:gYear .
+
+ex:gloss_m a memo:Gloss ;
+    dcterms:creator ex:glossator_5 ;
+    dcterms:created "1285"^^xsd:gYear ;
+    memo:annotates ex:text_3 ;
+    cito:cites ex:gloss_l .
+
+ex:gloss_n a memo:Gloss ;
+    dcterms:creator ex:glossator_5 ;
+    dcterms:created "1289"^^xsd:gYear ;
+    memo:annotates ex:gloss_m .
+
+ex:glossator_5 a foaf:Person ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Gattsus" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1240"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1286"^^xsd:gYear
+        ]
+    ] ;
+    literal:hasLiteral [
+        a literal:Literal  , foaf:name ;
+        literal:hasLiteralValue "Gatzo" ;
+        dcterms:valid [
+            a ti:TimeInterval ;
+            ti:hasIntervalStartDate "1286"^^xsd:gYear ;
+            ti:hasIntervalEndDate "1290"^^xsd:gYear
+        ]
+    ] .
+
+ex:text_3 a memo:Text .
+```
+
+#### Scenario 5
+
+The folios `ex:folio_1`, `ex:folio_2`, `ex:folio_3` and `ex:folio_4` are part of the codex `ex:codex_1`. The sides `ex:recto_1` and `ex:verso_1` are part of `ex:folio_1`. The sides `ex:recto_2` and `ex:verso_2` are part of `ex:folio_2`. The sides `ex:recto_3` and `ex:verso_3` are part of `ex:folio_3`. The sides `ex:recto_4` and `ex:verso_4` are part of `ex:folio_4`. In addition, the text `ex:text_1` and the glosses `ex:gloss_a`, `ex:gloss_b`, `ex:gloss_c`, `ex:gloss_d`, `ex:gloss_e`, `ex:gloss_f` are part of `ex:manuscript_1`. The text `ex:text_2` and the glosses `ex:gloss_g`, `ex:gloss_h`, `ex:gloss_i`, `ex:gloss_l` are part of `ex:manuscript_2`. In particular:
+
+* `ex:text_1` and `ex:gloss_a`, `ex:gloss_b`, `ex:gloss_c` are embodied in `ex:folio_1`;
+* `ex:text_1` and `ex:gloss_d`, `ex:gloss_e`, `ex:gloss_f` are embodied in `ex:folio_2`;
+* `ex:text_2` and `ex:gloss_g`, `ex:gloss_h` are embodied in `ex:folio_3`;
+* `ex:text_2` and `ex:gloss_i`, `ex:gloss_l` are embodied in `ex:folio_4`.
+
+`ex:folio_5` and `ex:folio_6` are part of `ex:codex_2`. `ex:recto_5` and `ex:verso_5` are part of `ex:folio_5`. `ex:recto_6` and `ex:verso_6` are part of `ex:folio_6`. In addition, `ex:text_3` and `ex:gloss_m`, `ex:gloss_n` are part of `ex:manuscript_3`. In particular:
+
+* `ex:text_3` and `ex:gloss_m` are embodied in `ex:folio_5`;
+* `ex:text_3` and `ex:gloss_n` are embodied in `ex:folio_6`.
+
+`ex:folio_7` is part of `ex:codex_3`. `ex:recto_7` and `ex:verso_7` are part of `ex:folio_7`. In addition, `ex:text_4` is part of `ex:manuscript_4`. `ex:text_5` is part of `ex:manuscript_5`. In particular:
+
+* `ex:text_4` is embodied in `ex:folio_7`;
+* `ex:text_5` is embodied in `ex:folio_7`.
+
+```
+ex:codex_1 a memo:Codex ;
+    frbr:part ex:folio_1 , ex:folio_2 , ex:folio_3 , ex:folio_4 .
+
+ex:codex_2 a memo:Codex ;
+    frbr:part ex:folio_5 , ex:folio_6 .
+
+ex:codex_3 a memo:Codex ;
+    frbr:part ex:folio_7 .
+
+ex:folio_1 a memo:Folio ;
+    frbr:part ex:recto_1 , ex:verso_1 .
+
+ex:folio_2 a memo:Folio ;
+    frbr:part ex:recto_2 , ex:verso_2 .
+
+ex:folio_3 a memo:Folio ;
+    frbr:part ex:recto_3 , ex:verso_3 .
+
+ex:folio_4 a memo:Folio ;
+    frbr:part ex:recto_4 , ex:verso_4 .
+
+ex:folio_5 a memo:Folio ;
+    frbr:part ex:recto_5 , ex:verso_5 .
+
+ex:folio_6 a memo:Folio ;
+    frbr:part ex:recto_6 , ex:verso_6 .
+
+ex:folio_7 a memo:Folio ;
+    frbr:part ex:recto_7 , ex:verso_7 .
+
+ex:recto_1 a memo:Recto .
+
+ex:recto_2 a memo:Recto .
+
+ex:recto_3 a memo:Recto .
+
+ex:recto_4 a memo:Recto .
+
+ex:recto_5 a memo:Recto .
+
+ex:recto_6 a memo:Recto .
+
+ex:recto_7 a memo:Recto .
+
+ex:verso_1 a memo:Verso .
+
+ex:verso_2 a memo:Verso .
+
+ex:verso_3 a memo:Verso .
+
+ex:verso_4 a memo:Verso .
+
+ex:verso_5 a memo:Verso .
+
+ex:verso_6 a memo:Verso .
+
+ex:verso_7 a memo:Verso .
+
+ex:manuscript_1 a memo:Manuscript ;
+    frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .
+
+ex:manuscript_2 a memo:Manuscript ;
+    frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l .
+
+ex:manuscript_3 a memo:Manuscript ;
+    frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n .
+
+ex:text_1 a memo:Text ;
+    frbr:embodiment ex:folio_1 , ex:folio_2 .
+
+ex:text_2 a memo:Text ;
+    frbr:embodiment ex:folio_3 , ex:folio_4 .
+
+ex:text_3 a memo:Text ;
+    frbr:embodiment ex:folio_5 , ex:folio_6 .
+
+ex:gloss_a a memo:Gloss ;
+    frbr:embodiment ex:folio_1 ;
+    dcterms:creator ex:glossator_1 ;
+    cito:cites ex:text_1 .
+
+ex:gloss_b a memo:Gloss ;
+    frbr:embodiment ex:folio_1 ;
+    dcterms:creator ex:glossator_1 ;
+    dcterms:relation ex:text_1 .
+
+ex:gloss_c a memo:Gloss ;
+    frbr:embodiment ex:folio_1 ;
+    dcterms:creator ex:glossator_1 ;
+    memo:annotates ex:gloss_a .
+
+ex:gloss_d a memo:Gloss ;
+    frbr:embodiment ex:folio_2 ;
+    dcterms:creator ex:glossator_2 ;
+    dcterms:relation ex:gloss_a .
+
+ex:gloss_e a memo:Gloss ;
+    frbr:embodiment ex:folio_2 ;
+    dcterms:creator ex:glossator_2 ;
+    memo:annotates ex:gloss_b , ex:gloss_c .
+
+ex:gloss_f a memo:Gloss ;
+    frbr:embodiment ex:folio_2 ;
+    dcterms:creator ex:glossator_2 ;
+    cito:cites ex:text_1 ;
+    dcterms:relation ex:gloss_d ;
+    memo:annotates ex:gloss_e .
+
+ex:gloss_g a memo:Gloss ;
+    frbr:embodiment ex:folio_3 ;
+    dcterms:creator ex:glossator_3 ;
+    cito:cites ex:manuscript_1 ;
+    dcterms:relation ex:text_1 ;
+    memo:annotates ex:text_2 .
+
+ex:gloss_h a memo:Gloss ;
+    frbr:embodiment ex:folio_3 ;
+    dcterms:creator ex:glossator_3 ;
+    dcterms:relation ex:gloss_e ;
+    memo:annotates ex:gloss_f , ex:text_2 .
+
+ex:gloss_i a memo:Gloss ;
+    frbr:embodiment ex:folio_4 ;
+    dcterms:creator ex:glossator_4 ;
+    memo:annotates ex:gloss_g .
+
+ex:gloss_l a memo:Gloss ;
+    frbr:embodiment ex:folio_4 ;
+    dcterms:creator ex:glossator_4 ;
+    cito:cites ex:gloss_h ;
+    memo:annotates ex:gloss_i .
+
+ex:gloss_m a memo:Gloss ;
+    frbr:embodiment ex:folio_5 ;
+    dcterms:creator ex:glossator_5 ;
+    memo:annotates ex:text_3 ;
+    cito:cites ex:gloss_l .
+
+ex:gloss_n a memo:Gloss ;
+    frbr:embodiment ex:folio_6 ;
+    dcterms:creator ex:glossator_5 ;
+    memo:annotates ex:gloss_m ;
+    dcterms:relation ex:text_3 .
+
+ex:manuscript_4 a memo:Manuscript ;
+    frbr:part ex:text_4 .
+
+ex:manuscript_5 a memo:Manuscript ;
+    frbr:part ex:text_5 .
+
+ex:text_4 a memo:Text ;
+    frbr:embodiment ex:folio_7 .
+
+ex:text_5 a memo:Text ;
+    frbr:embodiment ex:folio_7 .
+
+ex:glossator_1 a foaf:Person .
+
+ex:glossator_2 a foaf:Person .
+
+ex:glossator_3 a foaf:Person .
+
+ex:glossator_4 a foaf:Person .
+
+ex:glossator_5 a foaf:Person .
+```
+
+#### Scenario 6
+
+`ex:codex_1` has identifier "001". It dates back to the XIII century. `ex:binding_1`, `ex:folio_1`, `ex:folio_2`, `ex:folio_3`, `ex:folio_4` are part of it. `ex:recto_1` and `ex:verso_1` are part of `ex:folio_1`. `ex:recto_2` and `ex:verso_2` are part of `ex:folio_2`. `ex:recto_3` and `ex:verso_3` are part of `ex:folio_3`. `ex:recto_4` and `ex:verso_4` are part of `ex:folio_4`. 
+
+`ex:codex_2` has identifier "002". It dates back to a period between the XIV and the XV century. `ex:binding_2`, `ex:folio_5` and `ex:folio_6` are part of it. `ex:recto_5` and `ex:verso_5` are part of `ex:folio_5`. `ex:recto_6` and `ex:verso_6` are part of `ex:folio_6`. 
+
+`ex:text_1` is part of `ex:manuscript_1` (with title "Arbor cum Glossis Ioannis Phasellus") and is embodied in `ex:folio_1` and `ex:folio_2`. `ex:text_2` is part of `ex:manuscript_2` (with title "Epistula ad Barbalum") and is embodied in `ex:folio_3` and `ex:folio_4`. `ex:text_3` is part of `ex:manuscript_3` (with title "Fragmenta Decreti") and is embodied in `ex:folio_5` and `ex:folio_6`.
+
+In particular:
+
+* `ex:binding_1` is made up by `parchment`. The length of `ex:codex_1` is 210mm and its width is 180mm.
+
+* `ex:folio_1` is made up by `paper`. Its length is 210mm and its width is 180mm. It has 2 columns.
+
+* `ex:folio_2` is made up by `paper`. Its length is 210mm and its width is 180mm. It has 1 column.
+
+* `ex:folio_3` is made up by `parchment`. Its length is 210mm and its width is 180mm. It has 1 column.
+
+* `ex:folio_4` is made up by `parchment`. Its length is 210mm and its width is 180mm. It has 2 columns.
+
+* `ex:binding_2` is made up by `parchment`. The length of `ex:codex_2` is 180mm and its width is 140mm.
+
+* `ex:folio_5` is made up by `parchment`. Its length is 160mm and its width is 120mm. It has 2 columns.
+
+* `ex:folio_6` is made up by `parchment`. Its length is 160mm and its width is 120mm. It has 2 columns.
+
+`ex:book_1` (with title "Vermischte Schriften"), created by `ex:author_I`, cites `ex:codex_1` and `ex:codex_2`.
+
+```
+ex:book_1 a fabio:Book ;
+    dcterms:title "Vermischte Schriften" ;
+    dcterms:creator ex:author_I ;
+    cito:cites ex:codex_1 , ex:codex_2 .
+
+ex:author_I a foaf:Person .
+
+ex:recto_1 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
+
+ex:recto_2 a memo:Recto ;
+    memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
+
+ex:recto_3 a memo:Recto ;
+    memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
+
+ex:recto_4 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
+
+ex:recto_5 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
+
+ex:recto_6 a memo:Recto ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
+
+ex:verso_1 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
+
+ex:verso_2 a memo:Verso ;
+    memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
+
+ex:verso_3 a memo:Verso ;
+    memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
+
+ex:verso_4 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
+
+ex:verso_5 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
+
+ex:verso_6 a memo:Verso ;
+    memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
+
+ex:binding_1 a memo:Binding ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_1 .
+
+ex:binding_2 a memo:Binding ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_2 .
+
+ex:folio_1 a memo:Folio ;
+    dcterms:medium memo:paper ;
+    dcterms:extent ex:extent_1 ;
+    frbr:part ex:recto_1 , ex:verso_1 .
+
+ex:folio_2 a memo:Folio ;
+    dcterms:medium memo:paper ;
+    dcterms:extent ex:extent_1 ;
+    frbr:part ex:recto_2 , ex:verso_2 .
+
+ex:folio_3 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_1 ;
+    frbr:part ex:recto_3 , ex:verso_3 .
+
+ex:folio_4 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_1 ;
+    frbr:part ex:recto_4 , ex:verso_4 .
+
+ex:folio_5 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_3 ;
+    frbr:part ex:recto_5 , ex:verso_5 .
+
+ex:folio_6 a memo:Folio ;
+    dcterms:medium memo:parchment ;
+    dcterms:extent ex:extent_3 ;
+    frbr:part ex:recto_6 , ex:verso_6 .
+
+ex:extent_1 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "210"^^xsd:positiveInteger ;
+    memo:hasWidth "180"^^xsd:positiveInteger .
+
+ex:extent_2 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "180"^^xsd:positiveInteger ;
+    memo:hasWidth "140"^^xsd:positiveInteger .
+
+ex:extent_3 a memo:SizeMeasurement ;
+    memo:hasSizeMeasurementUnit memo:millimeters ;
+    memo:hasLength "160"^^xsd:positiveInteger ;
+    memo:hasWidth "120"^^xsd:positiveInteger .
+
+ex:codex_1 a memo:Codex ;
+    dcterms:identifier "001" ;
+    frbr:part ex:binding_1 , ex:folio_1 , ex:folio_2 , ex:folio_3 , ex:folio_4 .
+
+ex:codex_2 a memo:Codex ;
+    dcterms:identifier "002" ;
+    frbr:part ex:binding_2 , ex:folio_5 , ex:folio_6 .
+
+ex:manuscript_1 a memo:Manuscript ;
+    dcterms:title "Arbor cum Glossis Ioannis Phasellus" ;
+    frbr:part ex:text_1 .
+
+ex:manuscript_2 a memo:Manuscript ;
+    dcterms:title "Epistula ad Barbalum" ;
+    frbr:part ex:text_2 .
+
+ex:manuscript_3 a memo:Manuscript ;
+    dcterms:title "Fragmenta Decreti" ;
+    frbr:part ex:text_3 .
+
+ex:text_1 a memo:Text ;
+    frbr:embodiment ex:folio_1 , ex:folio_2 .
+
+ex:text_2 a memo:Text ;
+    frbr:embodiment ex:folio_3 , ex:folio_4 .
+
+ex:text_3 a memo:Text ;
+    frbr:embodiment ex:folio_5 , ex:folio_6 .
+```
+
+### Competency questions
+
+MeMO can be used for answering several questions related to the medieval manuscripts and codices published on the digital catalogue of Progetto IRNERIO. The following subsections introduce some of them, and we accompany them with exemplar SPARQL queries.
+
+The prefixes that are used in all the SPARQL queries provided below are defined as follows:
+
+```
+PREFIX ex: <https://w3id.org/irnerio/data/memo/>
+PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
+PREFIX cito: <http://purl.org/spar/cito/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX fabio: <http://purl.org/spar/fabio/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX frbr: <http://purl.org/vocab/frbr/core#>
+PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl>
+PREFIX tvc: <http://purl.org/spar/tvc/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+```
+
+#### Question 1
+Return all the second-level glosses that are part of `ex:manuscript_1` and that annotate or cite `ex:text_1`.
+
+```
+SELECT ?gloss
+WHERE {
+?gloss a memo:Gloss .
+?gloss ^frbr:part ex:manuscript_1 .
+?gloss (memo:annotates|cito:cites) / (memo:annotates|cito:cites) ex:text_1
+}
+```
+
+#### Question 2
+Return all the second-level glosses that are part of `ex:manuscript_1` and that annotate or refer to `ex:gloss_a`.
+
+```
+SELECT ?gloss
+WHERE {
+?gloss a memo:Gloss .
+?gloss ^frbr:part ex:manuscript_1 .
+?gloss (memo:annotates|dcterms:relation) / (memo:annotates|dcterms:relation) ex:gloss_a
+}
+```
+
+#### Question 3
+Return all the textual metadata in time with textual role "incipit" which have been provided between 1750 and 1850 and the manuscripts they are related to.
+
+```
+SELECT ?tmit ?manuscript
+WHERE {
+?tmit a memo:TextualMetadataInTime ;
+        ^memo:hasTextualMetadata ?manuscript ;
         memo:withTextualRole memo:incipit ;
-        memo:relatesToTextualContext [
-            a owl:Thing ;
-            memo:isBasedOn ex:text_1 , ex:gloss_a 
-        ] ;
-        tvc:atTime ex:1779 .
-
-    ex:1779 a ti:TimeInterval ;
-        ti:hasIntervalStartDate "1779"^^xsd:gYear .
-
-    ex:text_1 a memo:Text .
-
-    ex:gloss_a a memo:Gloss .
-
-    ex:manuscript_1 a memo:Manuscript ;
-        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_f ;
-        memo:hasTextualMetadata ex:incipit_1 , ex:explicit_1 , ex:f_rubric_1 .
-
-    ex:explicit_1 a memo:TextualMetadataInTime ;
-        dcterms:creator ex:agent_1 ;
-        memo:withTextualRole memo:explicit ;
-        memo:relatesToTextualContext [
-            a owl:Thing ;
-            memo:isBasedOn ex:text_1 , ex:gloss_f
-        ] ;
-        tvc:atTime ex:1780 .
-
-    ex:gloss_f a memo:Gloss .
-
-    ex:1780 a ti:TimeInterval ;
-        ti:hasIntervalStartDate "1780"^^xsd:gYear .
-
-    ex:f_rubric_1 a memo:TextualMetadataInTime ;
-        dcterms:creator ex:agent_1 ;
-        memo:withTextualRole memo:finalRubric ;
-        memo:relatesToTextualContext [
-            a owl:Thing ;
-            memo:isBasedOn ex:text_1
-        ] ;
-        tvc:atTime ex:1780 .
-
-    ex:incipit_2 a memo:TextualMetadataInTime ;
-        dcterms:creator ex:agent_2 ;
-        memo:withTextualRole memo:incipit ;
-        memo:relatesToTextualContext [
-            a owl:Thing ;
-            memo:isBasedOn ex:text_2
-        ] ;
-        tvc:atTime ex:1861 .
-
-    ex:1861 a ti:TimeInterval ;
-        ti:hasIntervalStartDate "1861"^^xsd:gYear .
-
-    ex:text_2 a memo:Text .
-
-    ex:manuscript_2 a memo:Manuscript ;
-        frbr:part ex:text_2 ;
-        memo:hasTextualMetadata ex:incipit_2 , ex:explicit_2 .
-
-    ex:explicit_2 a memo:TextualMetadataInTime ;
-        dcterms:creator ex:agent_2 ;
-        memo:withTextualRole memo:explicit ;
-        memo:relatesToTextualContext [
-            a owl:Thing ;
-            memo:isBasedOn ex:text_2
-        ] ;
-        tvc:atTime ex:1861 .
-
-    ex:incipit_3 a memo:TextualMetadataInTime ;
-        dcterms:creator ex:agent_1 ;
-        memo:withTextualRole memo:incipit ;
-        memo:relatesToTextualContext [
-            a owl:Thing ;
-            memo:isBasedOn ex:text_3
-        ] ;
-        tvc:atTime ex:1800 .
-
-    ex:1800 a ti:TimeInterval ;
-        ti:hasIntervalStartDate "1800"^^xsd:gYear .
-
-    ex:text_3 a memo:Text .
-
-    ex:manuscript_3 a memo:Manuscript ;
-        frbr:part ex:text_3 ;
-        memo:hasTextualMetadata ex:incipit_3 .
-
-    ex:agent_1 a foaf:Agent .
-
-    ex:agent_2 a foaf:Agent .
-    ```
-
-    #### Scenario 3
-    The manuscript `ex:manuscript_2` has `ex:incipit_2` and `ex:explicit_2` as textual metadata. The glosses `ex:gloss_g`, `ex:gloss_h`, `ex:gloss_i`, `ex:gloss_l` and the text `ex:text_2` are part of `ex:manuscript_2`. The manuscript `ex:manuscript_3` has `ex:incipit_3` as textual metadata. The glosses `ex:gloss_m`, `ex:gloss_n` and the text `ex:text_3` are part of `ex:manuscript_3`. Additionally:
-
-    * `ex:incipit_2` cites `ex:manuscript_1`;
-    * `explicit_2` cites `ex:gloss_g`;
-    * `ex:gloss_g` annotates `ex:text_2`;
-    * `ex:gloss_h` annotates `ex:text_2`;
-    * `ex:gloss_i` annotates `ex:gloss_g` and cites `ex:edition_realization_1`, which is the realization of `ex:edition_1`. The title of `ex:edition_1` is "Edition One";
-    * `ex:gloss_l` cites `ex:gloss_h`, annotates `ex:gloss_i` and cites `ex:edition_realization_2`, which is the realization of `ex:edition_2`. The title of `ex:edition_2` is "Edition Two";
-    * `ex:incipit_3` cites `ex:manuscript_2`;
-    * `ex:gloss_m` annotates `ex:text_3` and cites `ex:gloss_l`;
-    * `ex:gloss_n` annotates `ex:gloss_m` and cites `ex:edition_realization_1`;
-    * `ex:edition_realization_3` cites `ex:manuscript_1`, `ex:manuscript_2` and `ex:manuscript_3`. It is the realization of `ex:edition_3`. The title of `ex:edition_3` is "Edition Three";
-
-    ```
-    ex:manuscript_1 a memo:Manuscript ;
-        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .
-
-    ex:gloss_a a memo:Gloss ;
-        cito:cites ex:text_1 .
-
-    ex:gloss_b a memo:Gloss ;
-        dcterms:relation ex:text_1 .
-
-    ex:gloss_c a memo:Gloss ;
-        memo:annotates ex:gloss_a .
-
-    ex:gloss_d a memo:Gloss ;
-        dcterms:relation ex:gloss_a .
-
-    ex:gloss_e a memo:Gloss ;
-        memo:annotates ex:gloss_b , ex:gloss_c .
-
-    ex:gloss_f a memo:Gloss ;
-        cito:cites ex:text_1 ;
-        dcterms:relation ex:gloss_d ;
-        memo:annotates ex:gloss_e .
-
-    ex:text_1 a memo:Text .
-
-    ex:manuscript_2 a memo:Manuscript ;
-        frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l ;
-        memo:hasTextualMetadata ex:incipit_2 , ex:explicit_2 .
-
-    ex:incipit_2 a memo:TextualMetadataInTime ;
-        cito:cites ex:manuscript_1 .
-
-    ex:explicit_2 a memo:TextualMetadataInTime ;
-        cito:cites ex:gloss_g .
-
-    ex:text_2 a memo:Text .
-
-    ex:gloss_g a memo:Gloss ;
-        cito:cites ex:manuscript_1 ;
-        dcterms:relation ex:text_1 ;
-        memo:annotates ex:text_2 .
-
-    ex:gloss_h a memo:Gloss ;
-        dcterms:relation ex:gloss_e ;
-        memo:annotates ex:gloss_f , ex:text_2 .
-
-    ex:gloss_i a memo:Gloss ;
-        memo:annotates ex:gloss_g ;
-        cito:cites ex:edition_1 .
-
-    ex:gloss_l a memo:Gloss ;
-        memo:annotates ex:gloss_i ;
-        cito:cites ex:gloss_h , ex:edition_2 .
-
-    ex:edition_1 a memo:CriticalEditionVolume ;
-        dcterms:title "Edition One".
-
-    ex:edition_2 a memo:CriticalEditionVolume ;
-        dcterms:title "Edition Two" .
-
-    ex:manuscript_3 a memo:Manuscript ;
-        frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n ;
-        memo:hasTextualMetadata ex:incipit_3 .
-
-    ex:incipit_3 a memo:TextualMetadataInTime ;
-        cito:cites ex:manuscript_2 .
-
-    ex:gloss_m a memo:Gloss ;
-        memo:annotates ex:text_3 ;
-        cito:cites ex:gloss_l .
-
-    ex:gloss_n a memo:Gloss ;
-        memo:annotates ex:gloss_m ;
-        cito:cites ex:edition_1 .
-
-    ex:text_3 a memo:Text .
-
-    ex:edition_3 a memo:CriticalEditionVolume ;
-        cito:cites ex:manuscript_1 , ex:manuscript_2, ex:manuscript_3 ;
-        dcterms:title "Edition Three" .
-    ```
-
-    #### Scenario 4
-
-    The glosses `ex:gloss_a`, `ex:gloss_b` and `ex:gloss_c` have been created by `ex:glossator_1`, where:
-    * `ex:gloss_a` has been created in 1240 under the name _Ioannis Phasellus_;
-    * `ex:gloss_b` has been created in 1241 under the name _Ioannis Phasellus_;
-    * `ex:gloss_c` has been created in 1250 under the name _Ioannis Phasellus_.
-
-    The glosses `ex:gloss_d`, `ex:gloss_e` and `ex:gloss_f` have been created by `ex:glossator_2`, where:
-    * `ex:gloss_d` has been created in 1261 under the name _Farnese de Vandimion_;
-    * `ex:gloss_e` has been created in 1265 under the name _Farnese_;
-    * `ex:gloss_f` has been created in 1266 under the name _Farnese_.
-
-    The glosses `ex:gloss_g` and `ex:gloss_h` have been created by `ex:glossator_3`, where:
-    * `ex:gloss_g` has been created in 1270 under the name _Boscogne_;
-    * `ex:gloss_h` has been created in 1271 under the name _Boscone_.
-
-    The glosses `ex:gloss_i` and `ex:gloss_l` have been created by `ex:glossator_4`, where:
-    * `ex:gloss_i` has been created in 1276 under the name _Griffith_;
-    * `ex:gloss_l` has been created in 1280 under the name _Femto_.
-
-    The glosses `ex:gloss_m` and `ex:gloss_n` have been created by `ex:glossator_5`, where:
-    * `ex:gloss_m` has been created in 1285 under the name _Gattsu_;
-    * `ex:gloss_n` has been created in 1289 under the name _Guts_.
-
-    The manuscript `ex:manuscript_1` has been created in 1001 by `ex:author_1` under the name _Barbalo_.
-
-    The manuscripts `ex:manuscript_2` and `ex:manuscript_3` have been created by `ex:author_2`, where:
-    * `ex:manuscript_2` has been created in 1012 under the name _Serpico_.
-    * `ex:manuscript_3` has been created in 1014 under the name _Serpico_.
-    * other variants of `ex:author_2`'s name are _Serpicus_ and _Sorbo Serpico_.
-
-    ```
-    ex:manuscript_1 a memo:Manuscript ;
-        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f ;
-        dcterms:creator ex:author_1 ;
-        dcterms:created "1001"^^xsd:gYear .
-
-    ex:author_1 a foaf:Person ;
-        literal:hasLiteral [
-            a literal:Literal , foaf:name ;
-            literal:hasLiteralValue "Barbalo" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "950"^^xsd:gYear ;
-            ]
-        ] .
-
-    ex:gloss_a a memo:Gloss ;
-        dcterms:creator ex:glossator_1 ;
-        dcterms:created "1240"^^xsd:gYear ;
-        cito:cites ex:text_1 .
-
-    ex:gloss_b a memo:Gloss ;
-        dcterms:creator ex:glossator_1 ;
-        dcterms:created "1241"^^xsd:gYear ;
-        dcterms:relation ex:text_1 .
-
-    ex:gloss_c a memo:Gloss ;
-        dcterms:creator ex:glossator_1 ;
-        dcterms:created "1250"^^xsd:gYear ;
-        memo:annotates ex:gloss_a .
-
-    ex:glossator_1 a foaf:Person ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Ioannis Phasellus" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1220"^^xsd:gYear
-            ]
-        ] .
-
-    ex:gloss_d a memo:Gloss ;
-        dcterms:creator ex:glossator_2 ;
-        dcterms:created "1261"^^xsd:gYear ;
-        dcterms:relation ex:gloss_a .
-
-    ex:gloss_e a memo:Gloss ;
-        dcterms:creator ex:glossator_2 ;
-        dcterms:created "1265"^^xsd:gYear ;
-        memo:annotates ex:gloss_b , ex:gloss_c .
-
-    ex:gloss_f a memo:Gloss ;
-        dcterms:creator ex:glossator_2 ;
-        dcterms:created "1266"^^xsd:gYear ;
-        cito:cites ex:text_1 ;
-        dcterms:relation ex:gloss_d ;
-        memo:annotates ex:gloss_e .
-
-    ex:glossator_2 a foaf:Person ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Farnese de Vandimion" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1240"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1264"^^xsd:gYear
-            ]
-        ] ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Farnese" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1265"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1280"^^xsd:gYear
-            ]
-        ] .
-
-    ex:text_1 a memo:Text .
-
-    ex:manuscript_2 a memo:Manuscript ;
-        frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l ;
-        dcterms:creator ex:author_2 ;
-        dcterms:created "1012"^^xsd:gYear .
-
-    ex:author_2 a foaf:Person ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Serpico" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1000"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1020"^^xsd:gYear
-            ]
-        ] ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Serpicus" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1020"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1025"^^xsd:gYear 
-            ] 
-        ] ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Sorbo Serpico" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1025"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1030"^^xsd:gYear
-            ]
-        ] .
-
-    ex:text_2 a memo:Text .
-
-    ex:gloss_g a memo:Gloss ;
-        dcterms:creator ex:glossator_3 ;
-        dcterms:created "1270"^^xsd:gYear ;
-        cito:cites ex:manuscript_1 ;
-        dcterms:relation ex:text_1 ;
-        memo:annotates ex:text_2 .
-
-    ex:gloss_h a memo:Gloss ;
-        dcterms:creator ex:glossator_3 ;
-        dcterms:created "1271"^^xsd:gYear ;
-        dcterms:relation ex:gloss_e ;
-        memo:annotates ex:gloss_f , ex:text_2 .
-
-    ex:glossator_3 a foaf:Person ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Boscogne" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1250"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1270"^^xsd:gYear
-            ]
-        ] ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Boscone" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1271"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1280"^^xsd:gYear
-            ]
-        ] .
-
-    ex:gloss_i a memo:Gloss ;
-        dcterms:creator ex:glossator_4 ;
-        dcterms:created "1276"^^xsd:gYear ;
-        memo:annotates ex:gloss_g .
-
-    ex:gloss_l a memo:Gloss ;
-        dcterms:creator ex:glossator_4 ;
-        dcterms:created "1280"^^xsd:gYear ;
-        cito:cites ex:gloss_h ;
-        memo:annotates ex:gloss_i .
-
-    ex:glossator_4 a foaf:Person ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Guriffis" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1250"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1279"^^xsd:gYear
-            ]
-        ] ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Femto" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1280"^^xsd:gYear
-            ]
-        ] .
-
-    ex:manuscript_3 a memo:Manuscript ;
-        frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n ;
-        dcterms:creator ex:author_2 ;
-        dcterms:created "1014"^^xsd:gYear .
-
-    ex:gloss_m a memo:Gloss ;
-        dcterms:creator ex:glossator_5 ;
-        dcterms:created "1285"^^xsd:gYear ;
-        memo:annotates ex:text_3 ;
-        cito:cites ex:gloss_l .
-
-    ex:gloss_n a memo:Gloss ;
-        dcterms:creator ex:glossator_5 ;
-        dcterms:created "1289"^^xsd:gYear ;
-        memo:annotates ex:gloss_m .
-
-    ex:glossator_5 a foaf:Person ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Gattsus" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1240"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1286"^^xsd:gYear
-            ]
-        ] ;
-        literal:hasLiteral [
-            a literal:Literal  , foaf:name ;
-            literal:hasLiteralValue "Gatzo" ;
-            dcterms:valid [
-                a ti:TimeInterval ;
-                ti:hasIntervalStartDate "1286"^^xsd:gYear ;
-                ti:hasIntervalEndDate "1290"^^xsd:gYear
-            ]
-        ] .
-
-    ex:text_3 a memo:Text .
-    ```
-
-    #### Scenario 5
-
-    The folios `ex:folio_1`, `ex:folio_2`, `ex:folio_3` and `ex:folio_4` are part of the codex `ex:codex_1`. The sides `ex:recto_1` and `ex:verso_1` are part of `ex:folio_1`. The sides `ex:recto_2` and `ex:verso_2` are part of `ex:folio_2`. The sides `ex:recto_3` and `ex:verso_3` are part of `ex:folio_3`. The sides `ex:recto_4` and `ex:verso_4` are part of `ex:folio_4`. In addition, the text `ex:text_1` and the glosses `ex:gloss_a`, `ex:gloss_b`, `ex:gloss_c`, `ex:gloss_d`, `ex:gloss_e`, `ex:gloss_f` are part of `ex:manuscript_1`. The text `ex:text_2` and the glosses `ex:gloss_g`, `ex:gloss_h`, `ex:gloss_i`, `ex:gloss_l` are part of `ex:manuscript_2`. In particular:
-
-    * `ex:text_1` and `ex:gloss_a`, `ex:gloss_b`, `ex:gloss_c` are embodied in `ex:folio_1`;
-    * `ex:text_1` and `ex:gloss_d`, `ex:gloss_e`, `ex:gloss_f` are embodied in `ex:folio_2`;
-    * `ex:text_2` and `ex:gloss_g`, `ex:gloss_h` are embodied in `ex:folio_3`;
-    * `ex:text_2` and `ex:gloss_i`, `ex:gloss_l` are embodied in `ex:folio_4`.
-
-    `ex:folio_5` and `ex:folio_6` are part of `ex:codex_2`. `ex:recto_5` and `ex:verso_5` are part of `ex:folio_5`. `ex:recto_6` and `ex:verso_6` are part of `ex:folio_6`. In addition, `ex:text_3` and `ex:gloss_m`, `ex:gloss_n` are part of `ex:manuscript_3`. In particular:
-
-    * `ex:text_3` and `ex:gloss_m` are embodied in `ex:folio_5`;
-    * `ex:text_3` and `ex:gloss_n` are embodied in `ex:folio_6`.
-
-    `ex:folio_7` is part of `ex:codex_3`. `ex:recto_7` and `ex:verso_7` are part of `ex:folio_7`. In addition, `ex:text_4` is part of `ex:manuscript_4`. `ex:text_5` is part of `ex:manuscript_5`. In particular:
-
-    * `ex:text_4` is embodied in `ex:folio_7`;
-    * `ex:text_5` is embodied in `ex:folio_7`.
-
-    ```
-    ex:codex_1 a memo:Codex ;
-        frbr:part ex:folio_1 , ex:folio_2 , ex:folio_3 , ex:folio_4 .
-
-    ex:codex_2 a memo:Codex ;
-        frbr:part ex:folio_5 , ex:folio_6 .
-
-    ex:codex_3 a memo:Codex ;
-        frbr:part ex:folio_7 .
-
-    ex:folio_1 a memo:Folio ;
-        frbr:part ex:recto_1 , ex:verso_1 .
-
-    ex:folio_2 a memo:Folio ;
-        frbr:part ex:recto_2 , ex:verso_2 .
-
-    ex:folio_3 a memo:Folio ;
-        frbr:part ex:recto_3 , ex:verso_3 .
-
-    ex:folio_4 a memo:Folio ;
-        frbr:part ex:recto_4 , ex:verso_4 .
-
-    ex:folio_5 a memo:Folio ;
-        frbr:part ex:recto_5 , ex:verso_5 .
-
-    ex:folio_6 a memo:Folio ;
-        frbr:part ex:recto_6 , ex:verso_6 .
-
-    ex:folio_7 a memo:Folio ;
-        frbr:part ex:recto_7 , ex:verso_7 .
-
-    ex:recto_1 a memo:Recto .
-
-    ex:recto_2 a memo:Recto .
-
-    ex:recto_3 a memo:Recto .
-
-    ex:recto_4 a memo:Recto .
-
-    ex:recto_5 a memo:Recto .
-
-    ex:recto_6 a memo:Recto .
-
-    ex:recto_7 a memo:Recto .
-
-    ex:verso_1 a memo:Verso .
-
-    ex:verso_2 a memo:Verso .
-
-    ex:verso_3 a memo:Verso .
-
-    ex:verso_4 a memo:Verso .
-
-    ex:verso_5 a memo:Verso .
-
-    ex:verso_6 a memo:Verso .
-
-    ex:verso_7 a memo:Verso .
-
-    ex:manuscript_1 a memo:Manuscript ;
-        frbr:part ex:text_1 , ex:gloss_a , ex:gloss_b , ex:gloss_c , ex:gloss_d , ex:gloss_e , ex:gloss_f .
-
-    ex:manuscript_2 a memo:Manuscript ;
-        frbr:part ex:text_2 , ex:gloss_g , ex:gloss_h , ex:gloss_i , ex:gloss_l .
-
-    ex:manuscript_3 a memo:Manuscript ;
-        frbr:part ex:text_3 , ex:gloss_m , ex:gloss_n .
-
-    ex:text_1 a memo:Text ;
-        frbr:embodiment ex:folio_1 , ex:folio_2 .
-
-    ex:text_2 a memo:Text ;
-        frbr:embodiment ex:folio_3 , ex:folio_4 .
-
-    ex:text_3 a memo:Text ;
-        frbr:embodiment ex:folio_5 , ex:folio_6 .
-
-    ex:gloss_a a memo:Gloss ;
-        frbr:embodiment ex:folio_1 ;
-        dcterms:creator ex:glossator_1 ;
-        cito:cites ex:text_1 .
-
-    ex:gloss_b a memo:Gloss ;
-        frbr:embodiment ex:folio_1 ;
-        dcterms:creator ex:glossator_1 ;
-        dcterms:relation ex:text_1 .
-
-    ex:gloss_c a memo:Gloss ;
-        frbr:embodiment ex:folio_1 ;
-        dcterms:creator ex:glossator_1 ;
-        memo:annotates ex:gloss_a .
-
-    ex:gloss_d a memo:Gloss ;
-        frbr:embodiment ex:folio_2 ;
-        dcterms:creator ex:glossator_2 ;
-        dcterms:relation ex:gloss_a .
-
-    ex:gloss_e a memo:Gloss ;
-        frbr:embodiment ex:folio_2 ;
-        dcterms:creator ex:glossator_2 ;
-        memo:annotates ex:gloss_b , ex:gloss_c .
-
-    ex:gloss_f a memo:Gloss ;
-        frbr:embodiment ex:folio_2 ;
-        dcterms:creator ex:glossator_2 ;
-        cito:cites ex:text_1 ;
-        dcterms:relation ex:gloss_d ;
-        memo:annotates ex:gloss_e .
-
-    ex:gloss_g a memo:Gloss ;
-        frbr:embodiment ex:folio_3 ;
-        dcterms:creator ex:glossator_3 ;
-        cito:cites ex:manuscript_1 ;
-        dcterms:relation ex:text_1 ;
-        memo:annotates ex:text_2 .
-
-    ex:gloss_h a memo:Gloss ;
-        frbr:embodiment ex:folio_3 ;
-        dcterms:creator ex:glossator_3 ;
-        dcterms:relation ex:gloss_e ;
-        memo:annotates ex:gloss_f , ex:text_2 .
-
-    ex:gloss_i a memo:Gloss ;
-        frbr:embodiment ex:folio_4 ;
-        dcterms:creator ex:glossator_4 ;
-        memo:annotates ex:gloss_g .
-
-    ex:gloss_l a memo:Gloss ;
-        frbr:embodiment ex:folio_4 ;
-        dcterms:creator ex:glossator_4 ;
-        cito:cites ex:gloss_h ;
-        memo:annotates ex:gloss_i .
-
-    ex:gloss_m a memo:Gloss ;
-        frbr:embodiment ex:folio_5 ;
-        dcterms:creator ex:glossator_5 ;
-        memo:annotates ex:text_3 ;
-        cito:cites ex:gloss_l .
-
-    ex:gloss_n a memo:Gloss ;
-        frbr:embodiment ex:folio_6 ;
-        dcterms:creator ex:glossator_5 ;
-        memo:annotates ex:gloss_m ;
-        dcterms:relation ex:text_3 .
-
-    ex:manuscript_4 a memo:Manuscript ;
-        frbr:part ex:text_4 .
-
-    ex:manuscript_5 a memo:Manuscript ;
-        frbr:part ex:text_5 .
-
-    ex:text_4 a memo:Text ;
-        frbr:embodiment ex:folio_7 .
-
-    ex:text_5 a memo:Text ;
-        frbr:embodiment ex:folio_7 .
-
-    ex:glossator_1 a foaf:Person .
-
-    ex:glossator_2 a foaf:Person .
-
-    ex:glossator_3 a foaf:Person .
-
-    ex:glossator_4 a foaf:Person .
-
-    ex:glossator_5 a foaf:Person .
-    ```
-
-    #### Scenario 6
-
-    `ex:codex_1` has identifier "001". It dates back to the XIII century. `ex:binding_1`, `ex:folio_1`, `ex:folio_2`, `ex:folio_3`, `ex:folio_4` are part of it. `ex:recto_1` and `ex:verso_1` are part of `ex:folio_1`. `ex:recto_2` and `ex:verso_2` are part of `ex:folio_2`. `ex:recto_3` and `ex:verso_3` are part of `ex:folio_3`. `ex:recto_4` and `ex:verso_4` are part of `ex:folio_4`. 
-
-    `ex:codex_2` has identifier "002". It dates back to a period between the XIV and the XV century. `ex:binding_2`, `ex:folio_5` and `ex:folio_6` are part of it. `ex:recto_5` and `ex:verso_5` are part of `ex:folio_5`. `ex:recto_6` and `ex:verso_6` are part of `ex:folio_6`. 
-
-    `ex:text_1` is part of `ex:manuscript_1` (with title "Arbor cum Glossis Ioannis Phasellus") and is embodied in `ex:folio_1` and `ex:folio_2`. `ex:text_2` is part of `ex:manuscript_2` (with title "Epistula ad Barbalum") and is embodied in `ex:folio_3` and `ex:folio_4`. `ex:text_3` is part of `ex:manuscript_3` (with title "Fragmenta Decreti") and is embodied in `ex:folio_5` and `ex:folio_6`.
-
-    In particular:
-
-    * `ex:binding_1` is made up by `parchment`. The length of `ex:codex_1` is 210mm and its width is 180mm.
-
-    * `ex:folio_1` is made up by `paper`. Its length is 210mm and its width is 180mm. It has 2 columns.
-
-    * `ex:folio_2` is made up by `paper`. Its length is 210mm and its width is 180mm. It has 1 column.
-
-    * `ex:folio_3` is made up by `parchment`. Its length is 210mm and its width is 180mm. It has 1 column.
-
-    * `ex:folio_4` is made up by `parchment`. Its length is 210mm and its width is 180mm. It has 2 columns.
-
-    * `ex:binding_2` is made up by `parchment`. The length of `ex:codex_2` is 180mm and its width is 140mm.
-
-    * `ex:folio_5` is made up by `parchment`. Its length is 160mm and its width is 120mm. It has 2 columns.
-
-    * `ex:folio_6` is made up by `parchment`. Its length is 160mm and its width is 120mm. It has 2 columns.
-
-    `ex:book_1` (with title "Vermischte Schriften"), created by `ex:author_I`, cites `ex:codex_1` and `ex:codex_2`.
-
-    ```
-    ex:book_1 a fabio:Book ;
-        dcterms:title "Vermischte Schriften" ;
-        dcterms:creator ex:author_I ;
-        cito:cites ex:codex_1 , ex:codex_2 .
-
-    ex:author_I a foaf:Person .
-
-    ex:recto_1 a memo:Recto ;
-        memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
-
-    ex:recto_2 a memo:Recto ;
-        memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
-
-    ex:recto_3 a memo:Recto ;
-        memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
-
-    ex:recto_4 a memo:Recto ;
-        memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
-
-    ex:recto_5 a memo:Recto ;
-        memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
-
-    ex:recto_6 a memo:Recto ;
-        memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
-
-    ex:verso_1 a memo:Verso ;
-        memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
-
-    ex:verso_2 a memo:Verso ;
-        memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
-
-    ex:verso_3 a memo:Verso ;
-        memo:hasNumberOfColumns "1"^^xsd:positiveInteger .
-
-    ex:verso_4 a memo:Verso ;
-        memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
-
-    ex:verso_5 a memo:Verso ;
-        memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
-
-    ex:verso_6 a memo:Verso ;
-        memo:hasNumberOfColumns "2"^^xsd:positiveInteger .
-
-    ex:binding_1 a memo:Binding ;
-        dcterms:medium memo:parchment ;
-        dcterms:extent ex:extent_1 .
-
-    ex:binding_2 a memo:Binding ;
-        dcterms:medium memo:parchment ;
-        dcterms:extent ex:extent_2 .
-
-    ex:folio_1 a memo:Folio ;
-        dcterms:medium memo:paper ;
-        dcterms:extent ex:extent_1 ;
-        frbr:part ex:recto_1 , ex:verso_1 .
-
-    ex:folio_2 a memo:Folio ;
-        dcterms:medium memo:paper ;
-        dcterms:extent ex:extent_1 ;
-        frbr:part ex:recto_2 , ex:verso_2 .
-
-    ex:folio_3 a memo:Folio ;
-        dcterms:medium memo:parchment ;
-        dcterms:extent ex:extent_1 ;
-        frbr:part ex:recto_3 , ex:verso_3 .
-
-    ex:folio_4 a memo:Folio ;
-        dcterms:medium memo:parchment ;
-        dcterms:extent ex:extent_1 ;
-        frbr:part ex:recto_4 , ex:verso_4 .
-
-    ex:folio_5 a memo:Folio ;
-        dcterms:medium memo:parchment ;
-        dcterms:extent ex:extent_3 ;
-        frbr:part ex:recto_5 , ex:verso_5 .
-
-    ex:folio_6 a memo:Folio ;
-        dcterms:medium memo:parchment ;
-        dcterms:extent ex:extent_3 ;
-        frbr:part ex:recto_6 , ex:verso_6 .
-
-    ex:extent_1 a memo:SizeMeasurement ;
-        memo:hasSizeMeasurementUnit memo:millimeters ;
-        memo:hasLength "210"^^xsd:positiveInteger ;
-        memo:hasWidth "180"^^xsd:positiveInteger .
-
-    ex:extent_2 a memo:SizeMeasurement ;
-        memo:hasSizeMeasurementUnit memo:millimeters ;
-        memo:hasLength "180"^^xsd:positiveInteger ;
-        memo:hasWidth "140"^^xsd:positiveInteger .
-
-    ex:extent_3 a memo:SizeMeasurement ;
-        memo:hasSizeMeasurementUnit memo:millimeters ;
-        memo:hasLength "160"^^xsd:positiveInteger ;
-        memo:hasWidth "120"^^xsd:positiveInteger .
-
-    ex:codex_1 a memo:Codex ;
-        dcterms:identifier "001" ;
-        frbr:part ex:binding_1 , ex:folio_1 , ex:folio_2 , ex:folio_3 , ex:folio_4 .
-
-    ex:codex_2 a memo:Codex ;
-        dcterms:identifier "002" ;
-        frbr:part ex:binding_2 , ex:folio_5 , ex:folio_6 .
-
-    ex:manuscript_1 a memo:Manuscript ;
-        dcterms:title "Arbor cum Glossis Ioannis Phasellus" ;
-        frbr:part ex:text_1 .
-
-    ex:manuscript_2 a memo:Manuscript ;
-        dcterms:title "Epistula ad Barbalum" ;
-        frbr:part ex:text_2 .
-
-    ex:manuscript_3 a memo:Manuscript ;
-        dcterms:title "Fragmenta Decreti" ;
-        frbr:part ex:text_3 .
-
-    ex:text_1 a memo:Text ;
-        frbr:embodiment ex:folio_1 , ex:folio_2 .
-
-    ex:text_2 a memo:Text ;
-        frbr:embodiment ex:folio_3 , ex:folio_4 .
-
-    ex:text_3 a memo:Text ;
-        frbr:embodiment ex:folio_5 , ex:folio_6 .
-    ```
-
-    ### Competency questions
-
-    MeMO can be used for answering several questions related to the medieval manuscripts and codices published on the digital catalogue of Progetto IRNERIO. The following subsections introduce some of them, and we accompany them with exemplar SPARQL queries.
-
-    The prefixes that are used in all the SPARQL queries provided below are defined as follows:
-
-    ```
-    PREFIX ex: <https://w3id.org/irnerio/data/memo/>
-    PREFIX memo: <https://w3id.org/irnerio/ontology/memo/>
-    PREFIX cito: <http://purl.org/spar/cito/>
-    PREFIX dcterms: <http://purl.org/dc/terms/>
-    PREFIX fabio: <http://purl.org/spar/fabio/>
-    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-    PREFIX frbr: <http://purl.org/vocab/frbr/core#>
-    PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
-    PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl>
-    PREFIX tvc: <http://purl.org/spar/tvc/>
-    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-    ```
-
-    #### Question 1
-    Return all the second-level glosses that are part of `ex:manuscript_1` and that annotate or cite `ex:text_1`.
-
-    ```
-    SELECT ?gloss
-    WHERE {
-    ?gloss a memo:Gloss .
-    ?gloss ^frbr:part ex:manuscript_1 .
-    ?gloss (memo:annotates|cito:cites) / (memo:annotates|cito:cites) ex:text_1
-    }
-    ```
-
-    #### Question 2
-    Return all the second-level glosses that are part of `ex:manuscript_1` and that annotate or refer to `ex:gloss_a`.
-
-    ```
-    SELECT ?gloss
-    WHERE {
-    ?gloss a memo:Gloss .
-    ?gloss ^frbr:part ex:manuscript_1 .
-    ?gloss (memo:annotates|dcterms:relation) / (memo:annotates|dcterms:relation) ex:gloss_a
-    }
-    ```
-
-    #### Question 3
-    Return all the textual metadata in time with textual role "incipit" which have been provided between 1750 and 1850 and the manuscripts they are related to.
-
-    ```
-    SELECT ?tmit ?manuscript
-    WHERE {
-    ?tmit a memo:TextualMetadataInTime ;
-            ^memo:hasTextualMetadata ?manuscript ;
-            memo:withTextualRole memo:incipit ;
-            tvc:atTime ?time .
-    ?time ti:hasIntervalStartDate ?date .
-    FILTER
+        tvc:atTime ?time .
+?time ti:hasIntervalStartDate ?date .
+FILTER
     (
-        ?date > "1750"^^xsd:gYear && 
-        ?date < "1850"^^xsd:gYear
+    ?date > "1750"^^xsd:gYear && 
+    ?date < "1850"^^xsd:gYear
     )
-    }
-    ```
+}
+```
 
-    #### Question 4
-    Return all the textual metadata in time whose contents are based only on a text, their respective textual roles and the manuscripts they are related to.
+#### Question 4
+Return all the textual metadata in time whose contents are based only on a text, their respective textual roles and the manuscripts they are related to.
 
-    ```
-    SELECT ?tmit ?role ?manuscript
-    WHERE {
-    ?tmit a memo:TextualMetadataInTime ;
-            ^memo:hasTextualMetadata ?manuscript ;
-            memo:withTextualRole ?role ;
-            memo:relatesToTextualContext ?context .
-    FILTER NOT EXISTS
+```
+SELECT ?tmit ?role ?manuscript
+WHERE {
+?tmit a memo:TextualMetadataInTime ;
+        ^memo:hasTextualMetadata ?manuscript ;
+        memo:withTextualRole ?role ;
+        memo:relatesToTextualContext ?context .
+FILTER NOT EXISTS
     {
-        ?text a memo:Gloss .
-        ?context memo:isBasedOn ?text .
+    ?text a memo:Gloss .
+    ?context memo:isBasedOn ?text .
     }
-    }
-    ```
+}
+```
 
-    #### Question 5
-    Return all the manuscripts in which at least a second-level gloss that annotates a text cites the same critical edition.
+#### Question 5
+Return all the manuscripts in which at least a second-level gloss that annotates a text cites the same critical edition.
 
-    ```
-    SELECT ?manuscript
-    WHERE {
-    ?text a memo:Text .
+```
+SELECT ?manuscript
+WHERE {
+?text a memo:Text .
+?gloss a memo:Gloss ;
+        ^frbr:part ?manuscript ;
+        memo:annotates / memo:annotates ?text ;
+        cito:cites ?edition .
+?edition a memo:CriticalEditionVolume .
+}
+```
+
+#### Question 6
+Return all the name variants of `ex:author_2` under which he created a manuscript, all the manuscripts he created and all the respective glossators of each manuscript.
+
+```
+SELECT DISTINCT ?name ?manuscript ?glossator
+WHERE
+{
+    ex:author_2 ^dcterms:creator ?manuscript ;
+            litre:hasLiteral ?literal .
     ?gloss a memo:Gloss ;
             ^frbr:part ?manuscript ;
-            memo:annotates / memo:annotates ?text ;
-            cito:cites ?edition .
-    ?edition a memo:CriticalEditionVolume .
-    }
-    ```
+            dcterms:creator ?glossator .
+    ?literal litre:hasLiteralValue ?name .
+    ?manuscript dcterms:created ?date .
+    FILTER EXISTS
+        {
+            ?literal dcterms:valid ?interval .
+            ?interval ti:hasIntervalStartDate ?start ;
+                    ti:hasIntervalEndDate ?end .
+            FILTER 
+            (
+            ?date >= ?start && 
+            ?date <= ?end
+            )
+        }  
+}
+```
 
-    #### Question 6
-    Return all the name variants of `ex:author_2` under which he created a manuscript, all the manuscripts he created and all the respective glossators of each manuscript.
+#### Question 7
+Return all the glosses that refer to the text embodied in `ex:folio_2` but that are not themselves embodied in it.
 
-    ```
-    SELECT DISTINCT ?name ?manuscript ?glossator
-    WHERE
-    {
-        ex:author_2 ^dcterms:creator ?manuscript ;
-                litre:hasLiteral ?literal .
-        ?gloss a memo:Gloss ;
-                ^frbr:part ?manuscript ;
-                dcterms:creator ?glossator .
-        ?literal litre:hasLiteralValue ?name .
-        ?manuscript dcterms:created ?date .
-        FILTER EXISTS
-            {
-                ?literal dcterms:valid ?interval .
-                ?interval ti:hasIntervalStartDate ?start ;
-                        ti:hasIntervalEndDate ?end .
-                FILTER 
-                (
-                ?date >= ?start && 
-                ?date <= ?end
-                )
-            }  
-    }
-    ```
+```
+SELECT ?gloss
+WHERE {
+?gloss a memo:Gloss ;
+        frbr:embodiment ?folio ;
+        dcterms:relation ?text .
+?text a memo:Text ;
+        frbr:embodiment ex:folio_2 .
+?folio a memo:Folio .
+FILTER ( ex:folio_2 != ?folio )
+}
+```
 
-    #### Question 7
-    Return all the glosses that refer to the text embodied in `ex:folio_2` but that are not themselves embodied in it.
+#### Question 8
+Return all the folios in which more than one manuscript text is embodied.
 
-    ```
-    SELECT ?gloss
-    WHERE {
-    ?gloss a memo:Gloss ;
-            frbr:embodiment ?folio ;
-            dcterms:relation ?text .
-    ?text a memo:Text ;
-            frbr:embodiment ex:folio_2 .
-    ?folio a memo:Folio .
-    FILTER ( ex:folio_2 != ?folio )
-    }
-    ```
+```
+SELECT ?folio (COUNT(?folio) AS ?count)
+WHERE {
+?manuscript frbr:part ?text .
+?text a memo:Text ;
+        frbr:embodiment ?folio .
+}
+GROUP BY ?folio HAVING ( ?count > "1"^^xsd:integer )
+```
 
-    #### Question 8
-    Return all the folios in which more than one manuscript text is embodied.
-
-    ```
-    SELECT ?folio (COUNT(?folio) AS ?count)
-    WHERE {
-    ?manuscript frbr:part ?text .
-    ?text a memo:Text ;
-            frbr:embodiment ?folio .
-    }
-    GROUP BY ?folio HAVING ( ?count > "1"^^xsd:integer )
-    ```
-
-    #### Question 9
-    Return all the titles of the manuscripts contained in codices being cited by works created by `ex:author_I`, the identifier of each codex and the title of each work.
+#### Question 9
+Return all the titles of the manuscripts contained in codices being cited by works created by `ex:author_I`, the identifier of each codex and the title of each work.
     
-    ```
-    SELECT DISTINCT ?manuscripttitle ?id ?booktitle
-    WHERE {
-    ?manuscript a memo:Manuscript ;
-                dcterms:title ?manuscripttitle ;
-                frbr:part ?text .
-    ?text a memo:Text ;
-            frbr:embodiment ?folio .
-    ?folio a memo:Folio ;
-            ^frbr:part ?codex .
-    ?codex a memo:Codex ;
-            dcterms:identifier ?id ;
-            ^cito:cites ?book .
-    ?book a fabio:Book ;
-            dcterms:creator ex:author_I ;
-            dcterms:title ?booktitle.
-    }
-    ```
+```
+SELECT DISTINCT ?manuscripttitle ?id ?booktitle
+WHERE {
+?manuscript a memo:Manuscript ;
+            dcterms:title ?manuscripttitle ;
+            frbr:part ?text .
+?text a memo:Text ;
+        frbr:embodiment ?folio .
+?folio a memo:Folio ;
+        ^frbr:part ?codex .
+?codex a memo:Codex ;
+        dcterms:identifier ?id ;
+        ^cito:cites ?book .
+?book a fabio:Book ;
+        dcterms:creator ex:author_I ;
+        dcterms:title ?booktitle.
+}
+```
 
-    """ .
+""" .
 
 # 
 # 
