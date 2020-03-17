@@ -27,19 +27,19 @@
     dc:title "The Medieval Manuscript Ontology (MeMO)"@en ;
     dc:rights "This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/)."@en ;
     dc:description """MeMO, the Medieval Manuscripts Ontology, is an OWL 2 DL ontology that aims to provide a framework for the formal description of the medieval codices and manuscripts described in the Project IRNERIO catalogue and the relations that exist between them.
-    
-It is centered on a set of concepts (codex, manuscript, folio, text and gloss), which have been precisely defined via the Functional Requirements for Bibliographic Records (FRBR) standard in order to model such complexity in an accurate and logically consistent structure.
-    
+
+It is centered on a set of concepts (codex, manuscript, folio, text and gloss), which have been precisely defined via the Functional Requirements for Bibliographic Records (FRBR) standard in order to model such complexity in an accurate and logically consistent structure.    
+
 The model thus becomes able to cover multiple use cases and scenarios in proportion to how many requirements have been adequately met.
-  
+
 While developing MeMO, a high priority has been given to the goal of reaching a sound balance between precision (to satisfy the user’s needs) and coverage (to ensure a certain degree of extensibility and reuse) of the model. Ultimately, the idea behind the development of MeMO has been to provide a data model for representing the aforementioned collection of medieval codices and manuscripts according to certain requirements and with the possibility to extend it for representing similar resources that exist in other collections.
 
 FRBR allows a holistic perspective about the resource, on multiple levels of conceptualization, by breaking down the semantic and conceptual ambiguities related to objects created by human hands into different but related and layered concepts and by allowing the description of an artifact and its relations with other entities to be more expressive, precise and dynamic.
 
 Nonetheless, FRBR has some limitations. Even though the definitions of its concepts are quite straightforward, FRBR is not easily understood by the common user, who finds the terms work, expression, manifestation and item not very clear. 
-   
+
 According to FRBR, any object (such as a manuscript, for example) has to be described by taking into consideration all the four levels in order to have a complete overview of it. This multi-leveled conceptualization is difficult for an average user to comprehend, because it is much more intuitive to expect the concept of that object to exist at a single FRBR level. In order to avoid this issue without giving up the expressivity of FRBR, a good solution is to place that object at the level that is deemed more appropriate in relation to the scenario taken into consideration. 
-    
+
 This approach has been used systematically for the FRBR-aligned Bibliographic Ontology (FaBiO) (Peroni and Shotton 2012), with which MeMO has been aligned. Being an ontology focused on entities that are published, textual in nature, and/or referred to by bibliographic references, FaBiO defines its own set of entities that are subclasses of the original FRBR entities by taking advantage of the FRBRcore RDF vocabulary (FRBRcore, http://purl.org/vocab/frbr/core#). In order to embrace this approach and be consistent with the scenarios that are present in the case study, MeMO reuses FaBiO interpretations of FRBR entities as superclasses of its entities. In particular: manuscript, text and gloss are conceptualized as subclasses of `fabio:Expression` (since they are carry a content and are not inherently related to a precise format), while codex and folio are conceptualized as subclasses of `fabio:Manifestation`, since they carry a format that functions as a container for both text and glosses, and thus for manuscripts as well.
 
 Currently, MeMO is able to describe the following situations:
@@ -79,7 +79,7 @@ The current version of MeMO reuses several ontologies:
 * [TVC](http://purl.org/spar/tvc), an ontology pattern for the description of situations in which entities have values during a particular time and within a particular context.
 
 The next subsections provide a quick overview of all the entities defined, some examples of usage and some queries that MeMO can answer.
-    
+
 ### FRBR alignment with FaBiO
 
 In order to adequately represent the domain in question according to the demands of the domain expert, it was necessary to design MeMO so as to represent different levels of conceptualization of the collection resources. Moreover, the dynamic nature of the catalogue and the resources it describes had to be taken in consideration as well. Finally, MeMO needed to be flexible enough to accommodate external entities (e.g. critical editions citing the corresponding manuscripts) with ease and to be eventually extended for describing specific scenarios related to manuscript study, representation and analysis.
@@ -93,7 +93,7 @@ Being an ontology focused on entities that are published, textual in nature, and
 ### MeMO entities
 
 MeMO classes model the components of the collection (codices and manuscripts), their parts (folios, text and glosses) and other ancillary entities (such as books, editions, people, etc.).
-    
+
 A manuscript (represented by the class memo:Manuscript) is made up by one text and zero or more glosses. In MeMO, the term “manuscript” refers to an entity made up by other conceptual elements such as the manuscript text (represented by the class memo:Text, it is understood as the primary text of the manuscript) and glosses (represented by the class memo:Gloss, they are comments on the text and are part of the entirety of the manuscript universe). Text and glosses attain a physical realization in the moment they themselves in the physical format carried by a folio.
 
 The distribution of a manuscript through one or more folios is expressed in MeMO by stating that memo:Manuscript, memo:Text and memo:Gloss are embodied in memo:Folio. In this way, it is possible to represent the structure of a manuscript in terms of text and glosses that are part of it. Moreover, MeMO can also represent in an accurate way many different scenarios that are effectively present in the collection of Progetto IRNERIO (e.g. multiples manuscript in the same folio, non-sequential foliation, bilocation of the same manuscript in two codices, etc.).
@@ -103,9 +103,9 @@ A codex (represented by the class memo:Codex) is composed by one or more folios,
 A folio (a leaf or sheet of paper or another material, represented by the class memo:Folio) is a physical object that is usually - but not necessarily - part of a codex. It is made up of two sides, one called recto (the front side of a folio) and the other called verso (the back side of a folio). It carries a specific format and layout. Most of the time, a folio is part of a codex and accommodates the text and the glosses of a manuscript. However, it is also possible that certain folios may be missing or may function as protection to eventual damage to the codex they are part of (the so-called flyleaves). Folios can be cut from a codex and rearranged in the same or even in another codex. Since there is no closure between a folio and a manuscript, no part-whole relation between them can be established. This is represented in the model via FRBR, in which part-whole relations can exist only between same-level entities. Since a folio is a manifestation and a manuscript is an expression, the relation does not hold up.
 
 Codices and folios are characterized by a series of relevant information for any scholar. Two examples of important information that have been addressed during the development of MeMO are the foliation (the sequence according to which folios are arranged in the codex) and the physical attributes of a codex, such as dimensions (measured in terms of length and width) and materials. MeMO is thus able to represent the structure of a codex in terms of foliation and to return the physical information about the codex, such as its materials, dimensions, identifiers and number of columns.
-    
+
 In addition to the aforementioned entities, MeMO contains other classes that represent resources and agents contributing somehow to the information contained within the Progetto IRNERIO catalogue (e.g. books, editions, catalog documents, but also people, materials, etc.). Many of these entities have been easily handled through FaBiO, with classes like fabio:Book and fabio:CriticalEdition. FOAF and DCTerms have been reused to model useful concepts, such as person and materials, through the classes foaf:Person and dcterms:PhysicalMedium.
-    
+
 Certain classes, on the other hand, have been specifically created for modelling particular aspects of the catalogue which had not or could not be modelled by other existing models. New classes have been created as subclasses of existing classes existing in other models, in order to refine them in a more accurate way (e.g. memo:SizeMeasurement as subclass of dcterms:SizeOrDuration for representing only the idea of physical dimensions). Finally, some classes have been reused or created in MeMO on the basis of particular Ontology Design Patterns, in order to deal with specific modelling issues.
 
 ### MeMO relationships
@@ -119,7 +119,7 @@ Overall, with MeMO it becomes possible to easily browse this intricate data and 
 In the current version of MeMO, the properties that express these relationships are three: dcterms:relation, memo:annotates and cito:cites. The object property dcterms:relation is the most general way to express the idea of an entity that refers to another entity and does not specify the nature of the relationship. memo:annotates indicates that some entity (most likely a comment or a gloss) provides a critical or explanatory observation to another entity, thus implying an interpretive and supplementary intention underlying the relationship (e.g. a gloss may annotate a manuscript text to explain an obscure passage contained within). cito:cites indicates that some citing entity mentions a cited entity and, with respect to the resources of Progetto IRNERIO, it is used to model the particular way a gloss or a comment may refer to another entity (e.g. by including a quotation from the cited entity). It is also used to represent the bibliographic references that are present in the descriptions of codices and manuscript and in other scenarios as well (e.g. metadata citing other works, a book citing one or more codices, a critical edition citing one or more manuscripts, and so on).
 
 When developing MeMO, domain and range constraints of these properties have not been defined so as to allow an easy integration with other models and augment the model extensibility in addition to what has already been defined, thus allowing the further addition of other types of properties in the future.
-    
+
 MeMO reuses existing and well-known models extensively, with the aim of making the ontology as much interoperable as possible. Properties belonging to widely used models, such as DCTerms and FOAF, have been used to describe certain features of the modelled concepts (e.g. dcterms:title, dcterms:identifier, dcterms:extent, dcterms:medium, foaf:name, etc.). However, the model also covers functions that are not offered by existing models, such as the property memo:hasNumbersOfColumns, which involves extremely specialized information that was not taken into consideration by high-level, general ontologies such as those reused. Other properties, such as memo:hasContent and memo:isBasedOn, in spite of being generic in nature, have been created due to the actual specificity that was needed to be expressed by them. The property memo:hasContent, for example, has been added as a way to distinguish the idea of containment relation from the idea of part-whole relation, already expressed by frbr:part. Another example of a very specific property is represented by memo:isBasedOn, which indicates whether the context in which a value in time (such as textual metadata) assumes a certain value depends on a text or a gloss or even both.
 
 ### Examples of use
@@ -167,7 +167,7 @@ ex:gloss_a a memo:Gloss ;
 
 ex:gloss_b a memo:Gloss ;
     dcterms:relation ex:text_1 .
-    
+
 ex:gloss_c a memo:Gloss ;
     memo:annotates ex:gloss_a .
 
