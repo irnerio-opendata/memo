@@ -114,13 +114,13 @@ literal:hasSameLiteralValueAs a owl:ObjectProperty,
 ti:hasIntervalEndDate a owl:DatatypeProperty ;
     rdfs:label "has interval end date"@en ;
     rdfs:comment "This property indicates the end date of a time interval."@en ;
-    rdfs:isDefinedBy ti: ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> ;
     rdfs:subPropertyOf ti:hasIntervalDate .
 
 ti:hasIntervalStartDate a owl:DatatypeProperty ;
     rdfs:label "has interval start date"@en ;
     rdfs:comment "This property indicates the start date of a time interval."@en ;
-    rdfs:isDefinedBy ti: ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> ;
     rdfs:subPropertyOf ti:hasIntervalDate .
 
 owl:Thing a owl:Class .
@@ -280,7 +280,7 @@ literal:isLiteralOf a owl:ObjectProperty ;
 ti:TimeInterval a owl:Class ;
     rdfs:label "time interval"@en ;
     rdfs:comment "Any region in a dimensional space that aims at representing time."@en ;
-    rdfs:isDefinedBy ti: .
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
 
 foaf:Agent a owl:Class ;
     rdfs:label "agent"@en ;
@@ -413,7 +413,7 @@ ti:hasIntervalDate a owl:DatatypeProperty ;
     rdfs:label "has interval date"@en ;
     rdfs:comment "This property encodes values from xsd:date (or any other date-related xsd datatype) for a time interval. A same time interval can have more than one date value: begin date, end date, date at which the interval holds, as well as dates expressed in different formats: xsd:gYear, xsd:dateTime, etc."@en ;
     rdfs:domain ti:TimeInterval ;
-    rdfs:isDefinedBy ti: .
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
 
 :Binding a owl:Class ;
     rdfs:label "binding"@en ;
