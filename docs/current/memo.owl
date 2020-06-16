@@ -10,7 +10,7 @@
 @prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
 @prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
 @prefix tvc: <http://purl.org/spar/tvc/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -74,7 +74,7 @@ The current version of MeMO reuses several ontologies:
 
 * [literal](http://www.essepuntato.it/2010/06/literalreification), an ontology pattern which allows modelling certain literals as individuals of a class so that one may use them as proper subjects or objects of RDF statements within an ontology;
 
-* [TI](http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl), an ontology pattern enables the description of periods of time, each characterized by a starting date and an ending date;
+* [TI](http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#), an ontology pattern enables the description of periods of time, each characterized by a starting date and an ending date;
 
 * [TVC](http://purl.org/spar/tvc), an ontology pattern for the description of situations in which entities have values during a particular time and within a particular context.
 
@@ -142,7 +142,7 @@ The prefixes that are used in all the examples provided below are defined as fol
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+@prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
 @prefix tvc: <http://purl.org/spar/tvc/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 ```
@@ -1001,7 +1001,7 @@ PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl>
+PREFIX ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#>
 PREFIX tvc: <http://purl.org/spar/tvc/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 ```
@@ -1422,7 +1422,7 @@ ti:hasIntervalDate a owl:DatatypeProperty ;
     rdfs:label "has interval date"@en ;
     rdfs:comment "This property encodes values from xsd:date (or any other date-related xsd datatype) for a time interval. A same time interval can have more than one date value: begin date, end date, date at which the interval holds, as well as dates expressed in different formats: xsd:gYear, xsd:dateTime, etc."@en ;
     rdfs:domain ti:TimeInterval ;
-    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
 #
 # http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate
 
@@ -1430,7 +1430,7 @@ ti:hasIntervalEndDate a owl:DatatypeProperty ;
     rdfs:subPropertyOf ti:hasIntervalDate ;
     rdfs:label "has interval end date"@en ;
     rdfs:comment "This property indicates the end date of a time interval."@en ;
-    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
 #
 # http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate
 
@@ -1438,7 +1438,7 @@ ti:hasIntervalStartDate a owl:DatatypeProperty ;
     rdfs:subPropertyOf ti:hasIntervalDate ;
     rdfs:label "has interval start date"@en ;
     rdfs:comment "This property indicates the start date of a time interval."@en ;
-    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
 #
 # http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue
 
@@ -1732,7 +1732,7 @@ dcterms:PhysicalMedium a owl:Class ;
 ti:TimeInterval a owl:Class ;
     rdfs:label "time interval"@en ;
     rdfs:comment "Any region in a dimensional space that aims at representing time."@en ;
-    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl> .
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
 #
 # https://w3id.org/irnerio/ontology/memo/Verso
 
