@@ -12,7 +12,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sit: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
 @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
-@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
 @prefix tvc: <http://purl.org/spar/tvc/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -381,7 +381,7 @@ foaf:Agent a owl:Class ;
     rdfs:label "is textual context for"@en ;
     rdfs:comment "A property relating a textual context to the textual role for which that textual context provides the context."@en ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> ;
-    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owlhasTimeIndexedSetting> .
+    rdfs:subPropertyOf tisit:hasTimeIndexedSetting .
 
 :isTextualMetadataOf a owl:ObjectProperty ;
     rdfs:label "is textual metadata of"@en ;
@@ -392,7 +392,7 @@ foaf:Agent a owl:Class ;
     rdfs:label "is textual role in"@en ;
     rdfs:comment "This property relates a textual role to the textual metadata with that role."@en ;
     rdfs:isDefinedBy <https://w3id.org/irnerio/ontology/memo> ;
-    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owlhasTimeIndexedSetting> .
+    rdfs:subPropertyOf tisit:hasTimeIndexedSetting .
 
 dcterms:PhysicalMedium a owl:Class ;
     rdfs:label "physical medium"@en ;

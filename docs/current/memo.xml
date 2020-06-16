@@ -6,263 +6,280 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://purl.org/dc/terms/valid">
-    <rdfs:comment xml:lang="en">This property indicates a date range in which something related to a resource is valid.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-    <rdfs:label xml:lang="en">has date valid</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/decimeters">
-    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
-    <rdfs:label xml:lang="en">decimeters</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:comment xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one tenth of a meter.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/relatesToTextualContext">
-    <rdfs:label xml:lang="en">relates to textual context</rdfs:label>
-    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isTextualContextFor"/>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isAnnotatedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/tvc/withinContext"/>
-    <rdfs:domain rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"/>
-    <rdfs:comment xml:lang="en">This property relates a time-indexed situation describing textual metadata with a certain textual role to a textual context for that situation.</rdfs:comment>
+    <rdfs:label xml:lang="en">is annotated by</rdfs:label>
+    <rdfs:comment xml:lang="en">This property indicates that some entity is given a critical explanation by another entity.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/annotates">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">annotates</rdfs:label>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#realizationOf">
+    <rdfs:comment xml:lang="en">This property relates an expression, that is an intellectual or artistic realization of a work, to that work.</rdfs:comment>
+    <rdfs:label xml:lang="en">is realization of</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment xml:lang="en">This property indicates that an entity makes a critical or explanatory observation for another entity.</rdfs:comment>
-    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isAnnotatedBy"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/meters">
-    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">meters</rdfs:label>
-    <rdfs:comment xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one meter.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/identifier">
-    <rdfs:comment xml:lang="en">This property indicates a unique and unambiguous reference to the resource within a given context.</rdfs:comment>
-    <rdfs:label xml:lang="en">has identifier</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2812C46">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/irnerio/ontology/memo/hasLength"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isTextualMetadataOf">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:comment xml:lang="en">This property relates some textual metadata to some resource that has been provided with it.</rdfs:comment>
-    <rdfs:label xml:lang="en">is textual metadata of</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2738C27">
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Codex">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="f857661a7c7b44fc0854b5821bb821095b3"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime">
-    <rdfs:comment xml:lang="en">A set of textual data that gives information about certain aspects of a manuscript according to the textual role it assumes.</rdfs:comment>
-    <rdfs:label xml:lang="en">textual metadata in time</rdfs:label>
+    <rdfs:label xml:lang="en">codex</rdfs:label>
+    <rdfs:comment xml:lang="en">A book constructed of one or more folios and at most one binding.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2675C9"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/tvc/ValueInTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2668C43"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2680C9"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/finalRubric">
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/parchment">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualRole"/>
-    <rdfs:label xml:lang="en">final rubric</rdfs:label>
-    <rdfs:comment xml:lang="en">A textual role assumed by a textual metadata in time. It is based on the textual string containing the words that explicitly indicate the end of the manuscript text, a gloss, or both.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2759C9">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Recto"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+    <rdfs:comment xml:lang="en">Named individual of physical medium. It indicates a material made from animal skin.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/PhysicalMedium"/>
+    <rdfs:label xml:lang="en">parchment</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
     <rdfs:comment xml:lang="en">This property is used to specify the literal value that an individual of Literal represents.</rdfs:comment>
     <rdfs:label xml:lang="en">has literal value</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/hasLiteral">
-    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
-    <rdfs:comment xml:lang="en">This property relates individuals of any class to a reified literal.</rdfs:comment>
-    <owl:inverseOf rdf:resource="http://www.essepuntato.it/2010/06/literalreification/isLiteralOf"/>
-    <rdfs:label xml:lang="en">has literal</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Gloss">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:label xml:lang="en">gloss</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Comment"/>
+    <rdfs:comment xml:lang="en">An annotation that is part of a manuscript. It consists of a brief explanation or a continuous commentary accompanying a manuscript text (as in the margin or between the lines of the text).</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-    <rdfs:comment xml:lang="en">This property indicates a name given to a resource by which the resource is formally known.</rdfs:comment>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/centimeters">
+    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
+    <rdfs:label xml:lang="en">centimeters</rdfs:label>
+    <rdfs:comment xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one hundredth of a meter.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2668C43">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="ub1bL2671C27"/>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/identifier">
+    <rdfs:comment xml:lang="en">This property indicates a unique and unambiguous reference to the resource within a given context.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">has title</rdfs:label>
+    <rdfs:label xml:lang="en">has identifier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#part">
-    <rdfs:label xml:lang="en">has part</rdfs:label>
-    <rdfs:comment xml:lang="en">This property indicates an endeavor that is part of another endeavour.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/incipit">
+    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualRole"/>
+    <rdfs:comment xml:lang="en">A textual role assumed by a textual metadata in time. It is based on the textual string containing the opening words of either the a manuscript text, a gloss, or both.</rdfs:comment>
+    <rdfs:label xml:lang="en">incipit</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasContent">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isContentOf"/>
+    <rdfs:comment xml:lang="en">This property links two entities that share a relation of containment with each other.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/core#partOf"/>
+    <rdfs:label xml:lang="en">has content</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasSizeMeasurementUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurement"/>
+    <rdfs:comment xml:lang="en">This property indicates that an size is being measured with a certain size measurement unit.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:range rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
+    <rdfs:label xml:lang="en">has size measurement unit</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/isLiteralOf">
+    <rdfs:label xml:lang="en">is literal of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This property connects the reified literal to the individuals that are using it.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">This property indicates the date of creation of the resource.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:label xml:lang="en">has creation date</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/Comment">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A verbal or written remark concerning some entity. In written form, a comment is often appended to that entity and termed an annotation (for example, a notation added by way of explanation, interpretation, etc.).</rdfs:comment>
+    <rdfs:label xml:lang="en">comment</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/fabio/CriticalEdition">
+    <rdfs:label xml:lang="en">critical edition</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A new edition of a historical publication, edited by a scholar other than the original author.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
     <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Work"/>
     <rdfs:subClassOf rdf:nodeID="ub1bL2700C34"/>
-    <rdfs:label xml:lang="en">critical edition</rdfs:label>
-    <rdfs:comment xml:lang="en">A new edition of a historical publication, edited by a scholar other than the original author.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2680C9">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Folio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/withTextualRole">
+    <rdfs:range rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualRole"/>
+    <rdfs:comment xml:lang="en">This property relates some textual metadata in time to its textual role.</rdfs:comment>
+    <rdfs:label xml:lang="en">with textual role</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/tvc/withValue"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:domain rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isTextualRoleIn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/tvc/atTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">at time</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc"/>
+    <rdfs:comment xml:lang="en">This property specifies the particular time interval that has been associated to something.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/TextualRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">textual role</rdfs:label>
+    <rdfs:comment xml:lang="en">A function assumed by some textual metadata in time. A textual metadata in time can assume the role of either incipit, explicit or final rubric.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">agent</rdfs:label>
+    <rdfs:comment xml:lang="en">An entity that has the power to act in the world of discourse (for example, a person or a group of people).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/hasSameLiteralValueAs">
+    <rdfs:label xml:lang="en">has same literal value as</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This property relates the reified literal to another one that has the same literal value.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isTextualRoleIn">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:comment xml:lang="en">This property relates a textual role to the textual metadata with that role.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting"/>
+    <rdfs:label xml:lang="en">is textual role in</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/SizeMeasurement">
+    <rdfs:subClassOf rdf:nodeID="ub1bL2816C9"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2820C9"/>
+    <rdfs:label xml:lang="en">size measurement</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/SizeOrDuration"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2812C46"/>
+    <rdfs:comment xml:lang="en">The amount of space or surface that something occupies or the distance over which it extends.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isTextualContextFor">
-    <rdfs:comment xml:lang="en">A property relating a textual context to the textual role for which that textual context provides the context.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owlhasTimeIndexedSetting"/>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/millimeters">
+    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
+    <rdfs:label xml:lang="en">millimeters</rdfs:label>
+    <rdfs:comment xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one thousandth of a meter.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">is textual context for</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Recto">
     <rdfs:comment xml:lang="en">The side of a folio that usually (but not necessarily) is to be read first.</rdfs:comment>
-    <rdfs:label xml:lang="en">recto</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/irnerio/ontology/memo/Side"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2755C43">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Side"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/CriticalEditionVolume">
-    <rdfs:label xml:lang="en">critical edition volume</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">The specific realization of a critical edition.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Folio">
-    <rdfs:subClassOf rdf:nodeID="ub1bL2759C9"/>
-    <rdfs:comment xml:lang="en">The page of a codex. It is made up by two sides, called respectively recto and verso.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
-    <rdfs:label xml:lang="en">folio</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2755C43"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2764C9"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/withTextualRole">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"/>
-    <rdfs:comment xml:lang="en">This property relates some textual metadata in time to its textual role.</rdfs:comment>
-    <rdfs:range rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualRole"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/tvc/withValue"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isTextualRoleIn"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">with textual role</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2764C9">
-    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Verso"/>
+    <rdfs:label xml:lang="en">recto</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/cito/isCitedBy">
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/cito"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment xml:lang="en">This property indicates that the cited entity is cited by the citing entity.</rdfs:comment>
     <rdfs:label xml:lang="en">is cited by</rdfs:label>
+    <rdfs:comment xml:lang="en">This property indicates that the cited entity is cited by the citing entity.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/fabio/Expression">
-    <rdfs:label xml:lang="en">expression</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Side">
+    <rdfs:subClassOf rdf:nodeID="ub1bL2800C43"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Binding">
-    <rdfs:label xml:lang="en">binding</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
     <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
-    <rdfs:comment xml:lang="en">The structure that holds a codex together.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A single side of a folio.</rdfs:comment>
+    <rdfs:label xml:lang="en">side</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/medium">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has medium</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-    <rdfs:comment xml:lang="en">This property indicates the material of a resource.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/hasSameLiteralValueAs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
-    <rdfs:comment xml:lang="en">This property relates the reified literal to another one that has the same literal value.</rdfs:comment>
-    <rdfs:label xml:lang="en">has same literal value as</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Codex">
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/relatesToTextualContext">
+    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isTextualContextFor"/>
+    <rdfs:label xml:lang="en">relates to textual context</rdfs:label>
+    <rdfs:comment xml:lang="en">This property relates a time-indexed situation describing textual metadata with a certain textual role to a textual context for that situation.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/tvc/withinContext"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2675C9"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2680C9"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A book constructed of one or more folios and at most one binding.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2668C43"/>
-    <rdfs:label xml:lang="en">codex</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Manuscript">
-    <rdfs:subClassOf rdf:nodeID="ub1bL2742C9"/>
-    <rdfs:comment xml:lang="en">A handwritten composition constructed of one text and zero or more glosses.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">manuscript</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2735C40"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
     <rdfs:label xml:lang="en">has creator</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment xml:lang="en">This property indicates an entity primarily responsible for making the resource.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:comment xml:lang="en">This property indicates an entity primarily responsible for making the resource.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/relation">
+    <rdfs:comment xml:lang="en">This property indicates that an entity refers in the most general way to another entity.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:label xml:lang="en">refers to</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/Literal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">It describes reified literals, where the literal value they represent is specified through the property literal:hasLiteralValue. Each individual of this class must always have a specified value.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
+    <rdfs:label xml:lang="en">literal</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isBasedOn">
-    <rdfs:comment xml:lang="en">This property indicates that some entity is based on another entity. For example, the textual context on which some textual metadata in time has assumed a certain textual role may be based on a manuscript text, a gloss, or both.</rdfs:comment>
     <rdfs:label xml:lang="en">is based on</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:comment xml:lang="en">This property indicates that some entity is based on another entity. For example, the textual context on which some textual metadata in time has assumed a certain textual role may be based on a manuscript text, a gloss, or both.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isTextualRoleIn">
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owlhasTimeIndexedSetting"/>
-    <rdfs:comment xml:lang="en">This property relates a textual role to the textual metadata with that role.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">is textual role in</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasContent">
-    <rdfs:comment xml:lang="en">This property links two entities that share a relation of containment with each other.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isContentOf"/>
-    <rdfs:label xml:lang="en">has content</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  <rdf:Description rdf:nodeID="ub1bL2755C43">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Side"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isAnnotatedBy">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">is annotated by</rdfs:label>
-    <rdfs:comment xml:lang="en">This property indicates that some entity is given a critical explanation by another entity.</rdfs:comment>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/PhysicalMedium">
+    <rdfs:label xml:lang="en">physical medium</rdfs:label>
+    <rdfs:comment xml:lang="en">A physical material or carrier.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/cito/cites">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="http://purl.org/spar/cito/isCitedBy"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
-    <rdfs:label xml:lang="en">cites</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/cito"/>
-    <rdfs:comment xml:lang="en">Subproperty of dcterms:relation. It refers to an entity citing a cited entity, either directly and explicitly, indirectly, or implicitly.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/paper">
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Folio">
+    <rdfs:subClassOf rdf:nodeID="ub1bL2755C43"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="http://purl.org/dc/terms/PhysicalMedium"/>
-    <rdfs:comment xml:lang="en">Named individual of physical medium. It indicates a thin, flat material made from vegetable fibers.</rdfs:comment>
-    <rdfs:label xml:lang="en">paper</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2759C9"/>
+    <rdfs:label xml:lang="en">folio</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The page of a codex. It is made up by two sides, called respectively recto and verso.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2764C9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">person</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:comment xml:lang="en">An individual human being.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasTextualMetadata">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isTextualMetadataOf"/>
+    <rdfs:label xml:lang="en">has textual metadata</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/tvc/hasValue"/>
+    <rdfs:comment xml:lang="en">This property relates some resource to some textual metadata in time.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f898cd798540345108f6fe7fc5a29609cb2">
+    <rdf:first rdf:resource="https://w3id.org/irnerio/ontology/memo/Binding"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate">
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has interval start date</rdfs:label>
+    <rdfs:comment xml:lang="en">This property indicates the start date of a time interval.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isContentOf">
     <rdfs:label xml:lang="en">is content of</rdfs:label>
@@ -270,25 +287,114 @@
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate">
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"/>
-    <rdfs:label xml:lang="en">has interval start date</rdfs:label>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment xml:lang="en">This property indicates the start date of a time interval.</rdfs:comment>
+    <rdfs:label xml:lang="en">has name</rdfs:label>
+    <rdfs:comment xml:lang="en">This property indicates the full name for something.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has interval date</rdfs:label>
+    <rdfs:comment xml:lang="en">This property encodes values from xsd:date (or any other date-related xsd datatype) for a time interval. A same time interval can have more than one date value: begin date, end date, date at which the interval holds, as well as dates expressed in different formats: xsd:gYear, xsd:dateTime, etc.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2816C9">
+    <owl:onProperty rdf:resource="https://w3id.org/irnerio/ontology/memo/hasWidth"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2800C43">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/irnerio/ontology/memo/hasNumberOfColumns"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/Expression">
+    <rdfs:label xml:lang="en">expression</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/explicit">
+    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualRole"/>
+    <rdfs:comment xml:lang="en">A textual role assumed by a textual metadata in time. It is based on the textual string containing the closing words of either the manuscript text, a gloss, or both.</rdfs:comment>
+    <rdfs:label xml:lang="en">explicit</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2759C9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Recto"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/Manifestation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
+    <rdfs:label xml:lang="en">manifestation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Text">
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The primary text that is part of a manuscript.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2840C40"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:label xml:lang="en">text</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasNumberOfColumns">
+    <rdfs:label xml:lang="en">has number of columns</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/irnerio/ontology/memo/Side"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:comment xml:lang="en">This property specifies the number of columns that are present on the side of a folio.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasWidth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:label xml:lang="en">has width</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:comment xml:lang="en">This property indicates the size of something in terms of width.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/valid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:label xml:lang="en">has date valid</rdfs:label>
+    <rdfs:comment xml:lang="en">This property indicates a date range in which something related to a resource is valid.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/core#embodimentOf"/>
+    <rdfs:comment xml:lang="en">This property indicates that the expression of a work is embodied in a particular manifestation.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has embodiment</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/extent">
+    <rdfs:range rdf:resource="http://purl.org/dc/terms/SizeOrDuration"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has extent</rdfs:label>
+    <rdfs:comment xml:lang="en">This property indicates the extent of a resource.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Binding">
+    <rdfs:label xml:lang="en">binding</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
+    <rdfs:comment xml:lang="en">The structure that holds a codex together.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2820C9">
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/irnerio/ontology/memo/hasSizeMeasurementUnit"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <rdfs:label xml:lang="en">MeMO</rdfs:label>
-    <owl:versionIRI rdf:resource="https://w3id.org/irnerio/ontology/memo/2020-03-06"/>
-    <owl:versionInfo xml:lang="en">March 3, 2020</owl:versionInfo>
-    <dc:contributor>Monica Palmirani (https://orcid.org/0000-0002-8557-8084)</dc:contributor>
-    <ns1:preferredNamespacePrefix>memo</ns1:preferredNamespacePrefix>
-    <rdfs:comment xml:lang="en">The Medieval Manuscript Ontology (MeMO) is an ontology that aims at providing a means to represent medieval manuscripts and all the entities and relations that are related to them.</rdfs:comment>
-    <dc:rights xml:lang="en">This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/).</dc:rights>
-    <dc:creator>Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)</dc:creator>
-    <dc:title xml:lang="en">The Medieval Manuscript Ontology (MeMO)</dc:title>
     <dc:contributor>Silvio Peroni (http://orcid.org/0000-0003-0530-4305)</dc:contributor>
+    <dc:rights xml:lang="en">This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/).</dc:rights>
+    <ns1:preferredNamespacePrefix>memo</ns1:preferredNamespacePrefix>
+    <dc:contributor>Monica Palmirani (https://orcid.org/0000-0002-8557-8084)</dc:contributor>
+    <dc:title xml:lang="en">The Medieval Manuscript Ontology (MeMO)</dc:title>
+    <rdfs:label xml:lang="en">MeMO</rdfs:label>
     <dc:description>MeMO, the Medieval Manuscripts Ontology, is an OWL 2 DL ontology that aims to provide a framework for the formal description of the medieval codices and manuscripts described in the Project IRNERIO catalogue and the relations that exist between them.&#13;
 &#13;
 It is centered on a set of concepts (codex, manuscript, folio, text and gloss), which have been precisely defined via the Functional Requirements for Bibliographic Records (FRBR) standard in order to model such complexity in an accurate and logically consistent structure.    &#13;
@@ -1425,343 +1531,237 @@ WHERE {&#13;
 ```&#13;
 &#13;
 </dc:description>
+    <owl:versionInfo xml:lang="en">March 3, 2020</owl:versionInfo>
+    <rdfs:comment xml:lang="en">The Medieval Manuscript Ontology (MeMO) is an ontology that aims at providing a means to represent medieval manuscripts and all the entities and relations that are related to them.</rdfs:comment>
+    <dc:creator>Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)</dc:creator>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/irnerio/ontology/memo/2020-03-06"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate">
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
-    <rdfs:comment xml:lang="en">This property encodes values from xsd:date (or any other date-related xsd datatype) for a time interval. A same time interval can have more than one date value: begin date, end date, date at which the interval holds, as well as dates expressed in different formats: xsd:gYear, xsd:dateTime, etc.</rdfs:comment>
-    <rdfs:label xml:lang="en">has interval date</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2840C40">
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Manuscript"/>
+  <rdf:Description rdf:nodeID="ub1bL2742C9">
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Text"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#partOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/annotates">
+    <rdfs:comment xml:lang="en">This property indicates that an entity makes a critical or explanatory observation for another entity.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isAnnotatedBy"/>
+    <rdfs:label xml:lang="en">annotates</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2812C46">
+    <owl:onProperty rdf:resource="https://w3id.org/irnerio/ontology/memo/hasLength"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/centimeters">
-    <rdfs:comment xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one hundredth of a meter.</rdfs:comment>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime">
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/tvc/ValueInTime"/>
+    <rdfs:comment xml:lang="en">A set of textual data that gives information about certain aspects of a manuscript according to the textual role it assumes.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">centimeters</rdfs:label>
-    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment xml:lang="en">This property indicates that the expression of a work is embodied in a particular manifestation.</rdfs:comment>
-    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/core#embodimentOf"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
-    <rdfs:label xml:lang="en">has embodiment</rdfs:label>
+    <rdfs:label xml:lang="en">textual metadata in time</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:nodeID="ub1bL2671C27">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="f857661a7c7b44fc0854b5821bb821095b1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/SizeMeasurement">
-    <rdfs:subClassOf rdf:nodeID="ub1bL2820C9"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2812C46"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2816C9"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">size measurement</rdfs:label>
-    <rdfs:comment xml:lang="en">The amount of space or surface that something occupies or the distance over which it extends.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/SizeOrDuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Gloss">
-    <rdfs:label xml:lang="en">gloss</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Comment"/>
-    <rdfs:comment xml:lang="en">An annotation that is part of a manuscript. It consists of a brief explanation or a continuous commentary accompanying a manuscript text (as in the margin or between the lines of the text).</rdfs:comment>
+    <owl:unionOf rdf:nodeID="f898cd798540345108f6fe7fc5a29609cb1"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#partOf">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">is part of</rdfs:label>
-    <rdfs:comment xml:lang="en">This property indicates an endeavour incorporating another endeavour.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2700C34">
-    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#realization"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/CriticalEditionVolume"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasNumberOfColumns">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:domain rdf:resource="https://w3id.org/irnerio/ontology/memo/Side"/>
-    <rdfs:comment xml:lang="en">This property specifies the number of columns that are present on the side of a folio.</rdfs:comment>
-    <rdfs:label xml:lang="en">has number of columns</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/extent">
-    <rdfs:range rdf:resource="http://purl.org/dc/terms/SizeOrDuration"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment xml:lang="en">This property indicates the extent of a resource.</rdfs:comment>
-    <rdfs:label xml:lang="en">has extent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has creation date</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-    <rdfs:comment xml:lang="en">This property indicates the date of creation of the resource.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2800C43">
-    <owl:onProperty rdf:resource="https://w3id.org/irnerio/ontology/memo/hasNumberOfColumns"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodimentOf">
-    <rdfs:label xml:lang="en">is embodiment of</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment xml:lang="en">This property indicates that a particular manifestation embodies an expression of a work.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/tvc/atTime">
-    <rdfs:label xml:lang="en">at time</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/tvc"/>
-    <rdfs:comment xml:lang="en">This property specifies the particular time interval that has been associated to something.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/isLiteralOf">
-    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
-    <rdfs:label xml:lang="en">is literal of</rdfs:label>
-    <rdfs:comment xml:lang="en">This property connects the reified literal to the individuals that are using it.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="f857661a7c7b44fc0854b5821bb821095b1">
-    <rdf:first rdf:resource="https://w3id.org/irnerio/ontology/memo/Folio"/>
-    <rdf:rest rdf:nodeID="f857661a7c7b44fc0854b5821bb821095b2"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/millimeters">
-    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
-    <rdfs:comment xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one thousandth of a meter.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">millimeters</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2816C9">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/irnerio/ontology/memo/hasWidth"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <rdfs:label xml:lang="en">person</rdfs:label>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Manuscript">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    <rdfs:comment xml:lang="en">An individual human being.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasSizeMeasurementUnit">
-    <rdfs:range rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
-    <rdfs:comment xml:lang="en">This property indicates that an size is being measured with a certain size measurement unit.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurement"/>
-    <rdfs:label xml:lang="en">has size measurement unit</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Side">
-    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Manifestation"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2800C43"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">side</rdfs:label>
-    <rdfs:comment xml:lang="en">A single side of a folio.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2820C9">
-    <owl:onProperty rdf:resource="https://w3id.org/irnerio/ontology/memo/hasSizeMeasurementUnit"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
-    <rdfs:label xml:lang="en">agent</rdfs:label>
-    <rdfs:comment xml:lang="en">An entity that has the power to act in the world of discourse (for example, a person or a group of people).</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/fabio/Comment">
-    <rdfs:comment xml:lang="en">A verbal or written remark concerning some entity. In written form, a comment is often appended to that entity and termed an annotation (for example, a notation added by way of explanation, interpretation, etc.).</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
-    <rdfs:label xml:lang="en">comment</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2668C43">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
-    <owl:allValuesFrom rdf:nodeID="ub1bL2671C27"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Text">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">text</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2742C9"/>
+    <rdfs:label xml:lang="en">manuscript</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL2840C40"/>
-    <rdfs:comment xml:lang="en">The primary text that is part of a manuscript.</rdfs:comment>
+    <rdfs:comment xml:lang="en">A handwritten composition constructed of one text and zero or more glosses.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL2735C40"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/fabio/Book">
+    <rdfs:comment xml:lang="en">A non-serial document that is complete in one volume or a designated finite number of volumes.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">book</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isTextualContextFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting"/>
+    <rdfs:label xml:lang="en">is textual context for</rdfs:label>
+    <rdfs:comment xml:lang="en">A property relating a textual context to the textual role for which that textual context provides the context.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#realizationOf">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
-    <rdfs:comment xml:lang="en">This property relates an expression, that is an intellectual or artistic realization of a work, to that work.</rdfs:comment>
+  <rdf:Description rdf:about="http://purl.org/spar/cito/cites">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
+    <rdfs:label xml:lang="en">cites</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">is realization of</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/cito"/>
+    <rdfs:comment xml:lang="en">Subproperty of dcterms:relation. It refers to an entity citing a cited entity, either directly and explicitly, indirectly, or implicitly.</rdfs:comment>
+    <owl:inverseOf rdf:resource="http://purl.org/spar/cito/isCitedBy"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#realization">
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/core#realizationOf"/>
+    <rdfs:comment xml:lang="en">This property relates a work, that has been realized by an expression, to that particular expression.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
     <rdfs:label xml:lang="en">has realization</rdfs:label>
-    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/core#realizationOf"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment xml:lang="en">This property relates a work, that has been realized by an expression, to that particular expression.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/CriticalEditionVolume">
+    <rdfs:label xml:lang="en">critical edition volume</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Expression"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The specific realization of a critical edition.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/meters">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
+    <rdfs:label xml:lang="en">meters</rdfs:label>
+    <rdfs:comment xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one meter.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2840C40">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#partOf"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Manuscript"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/paper">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:comment xml:lang="en">Named individual of physical medium. It indicates a thin, flat material made from vegetable fibers.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/PhysicalMedium"/>
+    <rdfs:label xml:lang="en">paper</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval">
+    <rdfs:comment xml:lang="en">Any region in a dimensional space that aims at representing time.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">time interval</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate">
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has interval end date</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
+    <rdfs:comment xml:lang="en">This property indicates the end date of a time interval.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/fabio/Work">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">work</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/Literal">
-    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">It describes reified literals, where the literal value they represent is specified through the property literal:hasLiteralValue. Each individual of this class must always have a specified value.</rdfs:comment>
-    <rdfs:label xml:lang="en">literal</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/relation">
-    <rdfs:comment xml:lang="en">This property indicates that an entity refers in the most general way to another entity.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-    <rdfs:label xml:lang="en">refers to</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2675C9">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="ub1bL2764C9">
     <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Binding"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Verso"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2010/06/literalreification/hasLiteral">
+    <owl:inverseOf rdf:resource="http://www.essepuntato.it/2010/06/literalreification/isLiteralOf"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.essepuntato.it/2010/06/literalreification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has literal</rdfs:label>
+    <rdfs:comment xml:lang="en">This property relates individuals of any class to a reified literal.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/Verso">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
     <rdfs:label xml:lang="en">verso</rdfs:label>
     <rdfs:comment xml:lang="en">The side of a folio that usually (but not necessarily) is to be read second.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/irnerio/ontology/memo/Side"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/incipit">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:comment xml:lang="en">A textual role assumed by a textual metadata in time. It is based on the textual string containing the opening words of either the a manuscript text, a gloss, or both.</rdfs:comment>
-    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualRole"/>
-    <rdfs:label xml:lang="en">incipit</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasWidth">
-    <rdfs:label xml:lang="en">has width</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment xml:lang="en">This property indicates the size of something in terms of width.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/TextualRole">
-    <rdfs:comment xml:lang="en">A function assumed by some textual metadata in time. A textual metadata in time can assume the role of either incipit, explicit or final rubric.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">textual role</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2680C9">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Folio"/>
+  <rdf:Description rdf:nodeID="ub1bL2738C27">
+    <owl:unionOf rdf:nodeID="f898cd798540345108f6fe7fc5a29609cb3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL2742C9">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Text"/>
-    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasTextualMetadata">
-    <rdfs:comment xml:lang="en">This property relates some resource to some textual metadata in time.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">has textual metadata</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/tvc/hasValue"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/irnerio/ontology/memo/isTextualMetadataOf"/>
-    <rdfs:range rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualMetadataInTime"/>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodimentOf">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/fabio/Book">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A non-serial document that is complete in one volume or a designated finite number of volumes.</rdfs:comment>
-    <rdfs:label xml:lang="en">book</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/parchment">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="http://purl.org/dc/terms/PhysicalMedium"/>
-    <rdfs:label xml:lang="en">parchment</rdfs:label>
-    <rdfs:comment xml:lang="en">Named individual of physical medium. It indicates a material made from animal skin.</rdfs:comment>
+    <rdfs:comment xml:lang="en">This property indicates that a particular manifestation embodies an expression of a work.</rdfs:comment>
+    <rdfs:label xml:lang="en">is embodiment of</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:nodeID="ub1bL2735C40">
-    <owl:allValuesFrom rdf:nodeID="ub1bL2738C27"/>
     <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+    <owl:allValuesFrom rdf:nodeID="ub1bL2738C27"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/PhysicalMedium">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdfs:label xml:lang="en">has title</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
-    <rdfs:label xml:lang="en">physical medium</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:comment xml:lang="en">A physical material or carrier.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/explicit">
-    <rdfs:label xml:lang="en">explicit</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualRole"/>
-    <rdfs:comment xml:lang="en">A textual role assumed by a textual metadata in time. It is based on the textual string containing the closing words of either the manuscript text, a gloss, or both.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/spar/fabio/Manifestation">
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/fabio"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">manifestation</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate">
+    <rdfs:comment xml:lang="en">This property indicates a name given to a resource by which the resource is formally known.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate"/>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
-    <rdfs:comment xml:lang="en">This property indicates the end date of a time interval.</rdfs:comment>
-    <rdfs:label xml:lang="en">has interval end date</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#partOf">
+    <rdfs:comment xml:lang="en">This property indicates an endeavour incorporating another endeavour.</rdfs:comment>
+    <rdfs:label xml:lang="en">is part of</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL2700C34">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/CriticalEditionVolume"/>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#realization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#part">
+    <rdfs:label xml:lang="en">has part</rdfs:label>
+    <owl:inverseOf rdf:resource="http://purl.org/vocab/frbr/core#partOf"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/frbr/core"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This property indicates an endeavor that is part of another endeavour.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f898cd798540345108f6fe7fc5a29609cb4">
+    <rdf:first rdf:resource="https://w3id.org/irnerio/ontology/memo/Gloss"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
-    <rdfs:label xml:lang="en">size measurement unit</rdfs:label>
     <rdfs:comment xml:lang="en">The definite magnitude of a quantity, defined and adopted by convention or by law, that is used as a standard for measurement of size.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:label xml:lang="en">size measurement unit</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="f857661a7c7b44fc0854b5821bb821095b2">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="https://w3id.org/irnerio/ontology/memo/Binding"/>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/decimeters">
+    <rdfs:label xml:lang="en">decimeters</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:comment xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one tenth of a meter.</rdfs:comment>
+    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/SizeMeasurementUnit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/finalRubric">
+    <rdfs:label xml:lang="en">final rubric</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdf:type rdf:resource="https://w3id.org/irnerio/ontology/memo/TextualRole"/>
+    <rdfs:comment xml:lang="en">A textual role assumed by a textual metadata in time. It is based on the textual string containing the words that explicitly indicate the end of the manuscript text, a gloss, or both.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f898cd798540345108f6fe7fc5a29609cb3">
+    <rdf:first rdf:resource="https://w3id.org/irnerio/ontology/memo/Text"/>
+    <rdf:rest rdf:nodeID="f898cd798540345108f6fe7fc5a29609cb4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/isTextualMetadataOf">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:label xml:lang="en">is textual metadata of</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">This property relates some textual metadata to some resource that has been provided with it.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
-    <rdfs:comment xml:lang="en">This property indicates the full name for something.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1"/>
-    <rdfs:label xml:lang="en">has name</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="f857661a7c7b44fc0854b5821bb821095b3">
-    <rdf:first rdf:resource="https://w3id.org/irnerio/ontology/memo/Text"/>
-    <rdf:rest rdf:nodeID="f857661a7c7b44fc0854b5821bb821095b4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="f857661a7c7b44fc0854b5821bb821095b4">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="https://w3id.org/irnerio/ontology/memo/Gloss"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/irnerio/ontology/memo/hasLength">
-    <rdfs:label xml:lang="en">has length</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:comment xml:lang="en">This property indicates the size of something in terms of length.</rdfs:comment>
+    <rdfs:label xml:lang="en">has length</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/irnerio/ontology/memo"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval">
-    <rdfs:comment xml:lang="en">Any region in a dimensional space that aims at representing time.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">time interval</rdfs:label>
+  <rdf:Description rdf:nodeID="ub1bL2675C9">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://w3id.org/irnerio/ontology/memo/Binding"/>
+    <owl:onProperty rdf:resource="http://purl.org/vocab/frbr/core#part"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/medium">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms"/>
+    <rdfs:comment xml:lang="en">This property indicates the material of a resource.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has medium</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f898cd798540345108f6fe7fc5a29609cb1">
+    <rdf:first rdf:resource="https://w3id.org/irnerio/ontology/memo/Folio"/>
+    <rdf:rest rdf:nodeID="f898cd798540345108f6fe7fc5a29609cb2"/>
   </rdf:Description>
 </rdf:RDF>

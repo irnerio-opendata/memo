@@ -11,7 +11,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ti: <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
-@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> .
+@prefix tisit: <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#> .
 @prefix tvc: <http://purl.org/spar/tvc/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
